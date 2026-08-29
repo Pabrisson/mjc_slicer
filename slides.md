@@ -30,6 +30,10 @@ bare: true
 
 Comprendre **PrusaSlicer** pour ne plus imprimer au hasard
 
+<div class="mt-6 font-mono text-sm">
+  <a href="https://pabrisson.github.io/mjc_slicer" target="_blank" class="opacity-70 hover:opacity-100">https://pabrisson.github.io/mjc_slicer</a>
+</div>
+
 <div class="abs-br m-6 text-xs opacity-40">
   Espace ou <KeyCap k="→" /> pour avancer
 </div>

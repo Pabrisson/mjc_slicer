@@ -30,7 +30,7 @@ module: 7 · Diagnostiquer un échec
 <div><DefectSide side="machine" /></div>
 <div><DefectSide side="matiere" /></div>
 
-<div v-click>
+<div v-click="1">
 <DefectCard side="slicer"
   title="Trous sur le dessus"
   symptom="La surface du dessus est grumeleuse et percée"
@@ -38,7 +38,7 @@ module: 7 · Diagnostiquer un échec
   fix="Ajouter 2 coques horizontales, ou monter le remplissage à 20 %" />
 </div>
 
-<div v-click>
+<div v-click="3">
 <DefectCard side="machine"
   title="Ça ne colle pas au plateau"
   symptom="Un coin se relève, la pièce se détache"
@@ -46,7 +46,7 @@ module: 7 · Diagnostiquer un échec
   fix="Nettoyer le plateau à l'alcool, reprendre le Z-offset" />
 </div>
 
-<div v-click>
+<div v-click="5">
 <DefectCard side="matiere"
   title="Fils et bavures"
   symptom="Une toile d'araignée entre les parties de la pièce"
@@ -54,7 +54,7 @@ module: 7 · Diagnostiquer un échec
   fix="Sécher la bobine, vérifier le profil de filament" />
 </div>
 
-<div v-click>
+<div v-click="2">
 <DefectCard side="slicer"
   title="Surplomb qui s'affaisse"
   symptom="Le dessous d'un porte-à-faux pendouille en vagues"
@@ -62,7 +62,7 @@ module: 7 · Diagnostiquer un échec
   fix="Réorienter la pièce, ou activer les supports" />
 </div>
 
-<div v-click>
+<div v-click="4">
 <DefectCard side="machine"
   title="Couches décalées"
   symptom="Tout l'objet est déporté à partir d'une hauteur"
@@ -70,7 +70,7 @@ module: 7 · Diagnostiquer un échec
   fix="Vérifier courroies et tiges, puis relancer" />
 </div>
 
-<div v-click>
+<div v-click="6">
 <DefectCard side="matiere"
   title="Couches qui se séparent"
   symptom="La pièce casse net entre deux couches, sans effort"
@@ -82,7 +82,7 @@ module: 7 · Diagnostiquer un échec
 
 <div v-click="7" class="mt-3.5 text-center text-xs opacity-60">
 Guide complet, 25 défauts illustrés :
-<span class="font-mono" style="color: var(--prusa-orange)">simplify3d.com/resources/print-quality-troubleshooting/</span>
+<a href="https://www.simplify3d.com/resources/print-quality-troubleshooting/" target="_blank" rel="noopener" class="font-mono" style="color: var(--prusa-orange)">simplify3d.com/resources/print-quality-troubleshooting/</a>
 </div>
 
 <!--
@@ -93,8 +93,9 @@ jeu. Poser chaque défaut comme une devinette avant de cliquer -
 « La pièce se décolle. Qui a une idée ? » - et laisser la carte tomber dans
 sa colonne. La position EST la réponse, pas une étiquette à lire.
 
-L'ordre d'apparition est volontairement mélangé (machine, slicer, matière,
-slicer, machine, matière) pour qu'ils ne devinent pas le côté par habitude.
+Les cartes tombent côté par côté : les deux du slicer d'abord, puis les deux
+de la machine, puis les deux de la matière. Une colonne se remplit entièrement
+avant de passer à la suivante - on traite un côté à la fois, sans sauter.
 
 Ils viennent de voir les cinq réglages, ils vont trouver. Chaque bonne réponse
 prouve que le module 5 a marché.
