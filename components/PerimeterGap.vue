@@ -4,7 +4,7 @@ import { computed, ref } from 'vue'
 /**
  * Coupe d'un emboîtement, vu de dessus dans le slicer.
  * Deux idées en une : un mur est un nombre entier de largeurs d'extrusion,
- * et deux pièces qui se touchent au dessin sont soudées à l'impression.
+ * et deux pièces qui se touchent à la modélisation sont soudées à l'impression.
  */
 const EW = 0.45 // largeur d'extrusion réelle avec une buse 0,4
 const perimeters = ref(2)
@@ -61,7 +61,7 @@ const gapPx = computed(() => gap.value * SC)
         <span class="w-24 font-mono">{{ perimeters }} → {{ wall.toFixed(2) }} mm</span>
       </label>
       <label class="flex items-center gap-2">
-        <span class="opacity-60">Jeu au dessin</span>
+        <span class="opacity-60">Jeu modélisé</span>
         <input v-model.number="gap" type="range" min="0" max="0.6" step="0.05" class="w-24 accent-[#fa6831]">
         <span class="w-14 font-mono">{{ gap.toFixed(2) }} mm</span>
       </label>

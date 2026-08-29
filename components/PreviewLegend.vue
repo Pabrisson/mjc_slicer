@@ -8,7 +8,7 @@ const items = [
   { c: '#ffaa00', n: 'Périmètre interne', d: 'Les murs derrière la peau. La solidité vient surtout d’eux.' },
   { c: '#d10000', n: 'Remplissage', d: 'La structure interne. Rapide, large, jamais visible.' },
   { c: '#8d5f00', n: 'Remplissage plein', d: 'Ferme le dessus et le dessous du remplissage.' },
-  { c: '#4d9dff', n: 'Couche pleine du dessus', d: 'La face du dessus. Si elle est moche, tout l’objet paraît raté.' },
+  { c: '#4d9dff', n: 'Coque horizontale du dessus', d: 'La face du dessus. Si elle est moche, tout l’objet paraît raté.' },
   { c: '#3fa34d', n: 'Pont', d: 'Extrusion tendue dans le vide. À surveiller.' },
   { c: '#00cbbb', n: 'Jupe et bordure', d: 'Amorçage et accroche. Ne fait pas partie de la pièce.' },
   { c: '#9b7fbb', n: 'Support', d: 'Matière jetable. Tout ce qui est violet finit à la poubelle.' },

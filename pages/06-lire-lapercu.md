@@ -212,7 +212,7 @@ L'arbitrage temps/qualité est un vrai geste de métier. Le faire en direct :
 découper en 0.20mm NORMAL, noter le temps, basculer en 0.10mm DETAIL, redécouper,
 comparer. Deux clics, et la salle voit le coût réel de la finesse.
 
-Sur le coût : à la MJC c'est un sujet concret. Une bobine de 1 kg à 25 € fait
+Sur le coût : à l'atelier c'est un sujet concret. Une bobine de 1 kg à 25 € fait
 2,5 centimes le gramme. Le porte-téléphone revient à environ 1 €.
 -->
 
@@ -238,7 +238,7 @@ module: 6 · Lire l'aperçu
 
 <div class="temoin">
 <strong style="color: var(--prusa-orange)">3 · Des murs qui se troublent</strong><br>
-<span class="text-xs opacity-70">En vue Largeur, des traits très fins ou des trous entre périmètres. Le mur du modèle n'est pas un multiple de 0,45 mm. → épaissir au dessin.</span>
+<span class="text-xs opacity-70">En vue Largeur, des traits très fins ou des trous entre périmètres. Le mur du modèle n'est pas un multiple de 0,45 mm. → épaissir à la modélisation.</span>
 </div>
 
 <div class="temoin">
@@ -272,7 +272,7 @@ le montrer enlève l'excuse du « je n'ai pas le temps ».
 
 Le point 3 mérite une démonstration si le temps le permet : un mur de 1,0 mm
 avec des traits de 0,45 mm, ça fait deux traits et 0,1 mm de trou au milieu.
-PrusaSlicer le comble comme il peut. C'est pour ça qu'on dessine les murs en
+PrusaSlicer le comble comme il peut. C'est pour ça qu'on modélise les murs en
 multiples de la largeur d'extrusion - 0,9 ou 1,35 mm plutôt que 1,0.
 
 Inviter la salle à photographier cette slide. C'est celle qu'ils voudront

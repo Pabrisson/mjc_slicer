@@ -54,7 +54,7 @@ Toutes ces valeurs sont saisissables **au clavier** dans le panneau de droite. P
 
 <div class="piege mb-3 mt-4 text-sm">
 <strong>Le modèle est 25 fois trop petit</strong><br>
-<span class="text-xs">Un STL dessiné en pouces. Mettre l'échelle à <span class="font-mono">2540 %</span>. PrusaSlicer propose souvent la correction : accepter.</span>
+<span class="text-xs">Un STL modélisé en pouces. Mettre l'échelle à <span class="font-mono">2540 %</span>. PrusaSlicer propose souvent la correction : accepter.</span>
 </div>
 
 <div class="piege mb-3 text-sm">
@@ -78,8 +78,8 @@ Le coup des pouces arrive vraiment souvent avec les modèles américains de
 Thingiverse. Le montrer : ouvrir un modèle, le voir minuscule, appliquer 2540 %.
 
 Sur l'échelle : rappeler que le PLA se rétracte d'environ 0,3 % en refroidissant.
-Sur 100 mm, ça fait 0,3 mm. Ne pas compenser à l'échelle - ce n'est pas le bon
-levier, et on verra le vrai au module 5 avec la boîte.
+Sur 100 mm, ça fait 0,3 mm. Ne pas compenser à l'échelle - ça déforme tout
+l'objet. Un ajustement se prévoit à la modélisation, pas au moment de poser.
 
 Sur les objets multiples : si quelqu'un demande, dire qu'on peut imprimer
 « un objet à la fois » (l'imprimante finit une pièce avant de commencer la

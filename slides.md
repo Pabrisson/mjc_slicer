@@ -3,9 +3,9 @@ theme: default
 title: Les bases d'un slicer
 info: |
   ## Les bases d'un slicer - PrusaSlicer
-  Formation MJC · 2 h · débutants
+  Formation · 2 h · débutants
   Du fichier 3D au G-code : comprendre ce que fait vraiment un slicer.
-author: MJC
+author: Atelier impression 3D
 class: text-center
 transition: slide-left
 mdc: true
@@ -20,7 +20,7 @@ module: Accueil
 bare: true
 ---
 
-<!-- IMAGE : photo d'accroche en fond, prise à la MJC.
+<!-- IMAGE : photo d'accroche en fond, prise à l'atelier.
      Une MK2.5S en cours d'impression, vue rapprochée sur la buse et les premières
      couches, lumière chaude, arrière-plan flou. Cadrage 16/9 paysage.
      Une fois la photo prise : la déposer dans public/ et ajouter au frontmatter

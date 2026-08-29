@@ -54,8 +54,8 @@ module: 7 · Diagnostiquer un échec
 <DefectCard side="slicer"
   title="Trous sur le dessus"
   symptom="La surface du dessus est grumeleuse et percée"
-  cause="Les couches pleines n'ont pas assez d'appuis pour se tendre."
-  fix="Ajouter 2 couches pleines, ou monter le remplissage à 20 %" />
+  cause="Les coques horizontales n'ont pas assez d'appuis pour se tendre."
+  fix="Ajouter 2 coques horizontales, ou monter le remplissage à 20 %" />
 </div>
 
 <div v-click>

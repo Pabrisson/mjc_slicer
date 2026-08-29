@@ -61,7 +61,7 @@ Le message de la dernière ligne compte : ne pas donner l'impression qu'il reste
 une montagne à gravir. Ces outils s'attrapent au fil des impressions, pas dans
 une formation.
 
-Si quelqu'un demande la MMU ou l'impression multicolore : dire que la MJC en a
+Si quelqu'un demande la MMU ou l'impression multicolore : dire que l'atelier en a
 une / n'en a pas (à adapter), et que c'est un sujet à part entière.
 -->
 
@@ -106,7 +106,6 @@ bare: true
 |---|---|
 | 1.3 | macro de la buse en train d'extruder |
 | 3.4 | deux crochets : cassé à plat / intact debout |
-| 5.4 | boîte : couvercle bloqué / couvercle ajusté |
 | 5.6 | dessus grumeleux / dessus lisse |
 
 </div>

@@ -17,68 +17,6 @@ ou juste après les supports. Le module se coupe bien en deux.
 
 ---
 module: 5 · Les 5 réglages
----
-
-# La carte du module
-
-<div class="grid grid-cols-5 gap-3 mt-8 text-center text-sm">
-
-<div v-click class="temoin">
-<div class="text-2xl mb-1"><carbon-square-outline style="color: var(--prusa-orange)" /></div>
-<strong>Périmètres</strong>
-<div class="text-xs opacity-55 mt-1">l'épaisseur des murs</div>
-</div>
-
-<div v-click class="temoin">
-<div class="text-2xl mb-1"><carbon-grid style="color: var(--prusa-orange)" /></div>
-<strong>Remplissage</strong>
-<div class="text-xs opacity-55 mt-1">ce qu'il y a dedans</div>
-</div>
-
-<div v-click class="temoin">
-<div class="text-2xl mb-1"><carbon-layers style="color: var(--prusa-orange)" /></div>
-<strong>Couches pleines</strong>
-<div class="text-xs opacity-55 mt-1">le dessus et le dessous</div>
-</div>
-
-<div v-click class="temoin">
-<div class="text-2xl mb-1"><carbon-tree-view-alt style="color: var(--prusa-orange)" /></div>
-<strong>Supports</strong>
-<div class="text-xs opacity-55 mt-1">l'échafaudage jetable</div>
-</div>
-
-<div v-click class="temoin">
-<div class="text-2xl mb-1"><carbon-align-box-bottom-center style="color: var(--prusa-orange)" /></div>
-<strong>Adhérence</strong>
-<div class="text-xs opacity-55 mt-1">tenir au plateau</div>
-</div>
-
-</div>
-
-<div v-click class="mt-10">
-
-Ces cinq-là sont dans le panneau de droite, **sans même ouvrir les onglets de réglages**. Ils couvrent l'écrasante majorité des ajustements qu'un débutant a besoin de faire.
-
-</div>
-
-<div v-click class="regle mt-4">
-
-Les autres - températures, vitesses, rétraction, ventilation, accélérations - sont réglés par les profils. On verra à la fin du module **pourquoi il faut leur ficher la paix**.
-
-</div>
-
-<!--
-Minutage : 55-57 min.
-
-Poser le contrat du module : cinq réglages, un par un, avec à chaque fois
-« ce que ça fait », « la bonne valeur », « l'erreur classique ».
-
-Insister sur le fait qu'ils sont tous accessibles depuis le panneau de droite
-en mode Avancé. Beaucoup croient qu'il faut plonger dans les onglets.
--->
-
----
-module: 5 · Les 5 réglages
 layout: two-cols-header
 ---
 
@@ -123,88 +61,19 @@ Avec une buse de 0,4 mm, un trait fait **0,45 mm de large**. Deux périmètres, 
 </div>
 
 <!--
-Minutage : 57-60 min.
+Minutage : 55-59 min.
 
 Manipuler le curseur « Périmètres » : montrer que le mur grossit par bonds de
-0,45 mm. Ce n'est pas continu, et c'est la clé de la slide suivante.
+0,45 mm. Ce n'est pas continu, et c'est ce qui explique les emboîtements ratés.
 
 L'affirmation « la solidité vient des périmètres » est contre-intuitive et
 mérite d'être martelée. C'est probablement la meilleure économie de temps
 d'impression que la salle emportera aujourd'hui.
 
-Ne pas encore parler du jeu - le deuxième curseur sert à la slide suivante.
-Si quelqu'un l'a repéré, dire « on y arrive tout de suite ».
--->
-
----
-module: 5 · Les 5 réglages
-layout: two-cols-header
----
-
-# Le couvercle qui ne rentre pas
-
-<div class="text-sm opacity-60 -mt-3 mb-2">Troisième objet témoin : la boîte. Le classique absolu du débutant.</div>
-
-::left::
-
-<div class="pr-6">
-
-<Placeholder ref="5.4"
-  brief="Photo d'une boîte imprimée avec son couvercle : deux exemplaires côte à côte. À gauche un couvercle bloqué à mi-course, forcé, avec une trace blanche de contrainte. À droite le même qui se ferme proprement, tenu entre deux doigts. Fond neutre."
-  kind="photo" ratio="4/3" />
-
-</div>
-
-::right::
-
-<div class="pl-4 text-sm">
-
-Sur l'écran de dessin, les deux pièces se touchent **exactement**. À l'impression, elles sont soudées.
-
-<v-clicks>
-
-<div class="mt-3">
-
-Trois causes qui s'additionnent :
-
-</div>
-
-- La matière **s'écrase et déborde** légèrement de son trait
-- La pièce **se rétracte** en refroidissant, mais pas partout pareil
-- Les coins intérieurs sont **arrondis** par le diamètre de la buse
-
-<div class="regle mt-3">
-
-**Prévoir le jeu au dessin : 0,2 mm** pour un ajustement juste, **0,3 mm** pour une pièce qui doit coulisser. C'est une règle de conception, pas un réglage de slicer.
-
-</div>
-
-<div class="mt-3 opacity-60 text-xs">
-
-En mode Expert, <span class="font-mono">Compensation de la taille XY</span> permet de rattraper globalement une pièce déjà dessinée. À utiliser en dernier recours : ça déforme tout l'objet.
-
-</div>
-
-</v-clicks>
-
-</div>
-
-<!--
-Minutage : 60-63 min.
-
-Faire circuler les deux boîtes. Le « clac » du bon couvercle est très
-satisfaisant, et la boîte forcée avec sa marque blanche parle d'elle-même.
-
-Le point à faire passer : ce n'est PAS un défaut de l'imprimante, et ce n'est
-pas non plus un réglage à trouver. C'est une donnée physique du procédé qu'on
-anticipe au moment du dessin. Un objet téléchargé bien conçu a déjà ce jeu.
-
-Si quelqu'un demande pourquoi les modèles de Printables s'emboîtent bien :
-justement, l'auteur a prévu le jeu. Et quand ça ne marche pas, c'est souvent
-que le modèle a été dessiné pour une autre machine.
-
-Le curseur « jeu » du schéma précédent illustre bien : le passer de 0 à 0,2
-en direct.
+Le deuxième curseur, « jeu », vaut trente secondes : deux pièces qui se touchent
+exactement à la modélisation sortent soudées. Prévoir 0,2 mm pour un ajustement
+juste, 0,3 mm pour une pièce qui doit coulisser. C'est une règle de conception,
+pas un réglage de slicer.
 -->
 
 ---
@@ -232,7 +101,7 @@ layout: two-cols-header
 
 <div class="piege">
 
-**L'erreur la plus fréquente de la formation** : mettre 50 % « pour que ce soit solide ». On double le temps et la matière pour un gain de résistance quasi nul.
+**L'erreur la plus fréquente** : mettre 50 % « pour que ce soit solide ». On double le temps et la matière pour un gain de résistance quasi nul.
 
 </div>
 
@@ -250,7 +119,7 @@ Besoin de solidité ? **Ajouter un périmètre avant d'ajouter du remplissage.**
 
 <div class="mt-3 opacity-60 text-xs">
 
-**0 %** donne une coque creuse - parfait pour un objet décoratif, à condition d'augmenter les couches pleines du dessus qui n'ont plus rien pour reposer.
+**0 %** donne une coque creuse - parfait pour un objet décoratif, à condition d'augmenter les coques horizontales du dessus qui n'ont plus rien pour reposer.
 
 </div>
 
@@ -259,7 +128,7 @@ Besoin de solidité ? **Ajouter un périmètre avant d'ajouter du remplissage.**
 </div>
 
 <!--
-Minutage : 63-66 min.
+Minutage : 59-63 min.
 
 Manipuler les trois motifs et le curseur. Faire remarquer la barre verte
 (solidité) qui plafonne alors que la barre orange (temps) continue à monter :
@@ -279,7 +148,7 @@ module: 5 · Les 5 réglages
 layout: two-cols-header
 ---
 
-# 3 · Les couches pleines
+# 3 · Les coques horizontales
 
 <div class="text-sm opacity-60 -mt-3 mb-2">Le dessus et le dessous : les seules surfaces qu'on regarde vraiment.</div>
 
@@ -291,7 +160,7 @@ layout: two-cols-header
 
 <div>
 
-Sous le remplissage et au-dessus de lui, le slicer pose des **couches pleines** pour fermer l'objet.
+Sous le remplissage et au-dessus de lui, le slicer pose des **coques horizontales** pour fermer l'objet.
 
 </div>
 
@@ -303,7 +172,7 @@ Sous le remplissage et au-dessus de lui, le slicer pose des **couches pleines** 
 
 <div class="mt-3">
 
-Les valeurs Prusa par défaut, en 0,20 mm :
+Les valeurs par défaut, en 0.20 mm sont généralement :
 
 </div>
 
@@ -331,14 +200,14 @@ Moins dessous, parce que la première couche est déjà pleine et écrasée sur 
 
 <div v-click class="piege mt-3 text-sm">
 
-**Des trous et des bosses sur le dessus** - ce qu'on appelle le *pillowing*. La couche pleine n'a pas assez d'appuis pour se tendre. Deux corrections : **+2 couches pleines**, ou **remplissage à 20 %** pour rapprocher les points d'appui.
+**Des trous et des bosses sur le dessus** - ce qu'on appelle le *pillowing*. La coque horizontale n'a pas assez d'appuis pour se tendre. Deux corrections : **+2 coques horizontales**, ou **remplissage à 20 %** pour rapprocher les points d'appui.
 
 </div>
 
 </div>
 
 <!--
-Minutage : 66-69 min.
+Minutage : 63-67 min.
 
 C'est un réglage qu'on touche rarement, mais qui explique un défaut très
 fréquent et très visible. Le présenter comme un outil de diagnostic plutôt
@@ -369,24 +238,18 @@ layout: two-cols-header
 
 <div class="mb-2 text-xs">
 
-| Réglage PrusaSlicer | Quand |
-|---|---|
-| **Aucun** | Le défaut. Essayer d'abord |
-| **Depuis le plateau** | Le plus sûr : rien ne s'appuie sur l'objet |
-| **Partout** | Nécessaire, mais laisse des marques |
-| **Pour les renforts** | Uniquement là où on a peint |
+| Réglage PrusaSlicer                | Quand                                      |
+|------------------------------------|--------------------------------------------|
+| **Aucun**                          | Le défaut. Essayer d'abord                 |
+| **Depuis le plateau**              | Le plus sûr : rien ne s'appuie sur l'objet |
+| **Partout**                        | Nécessaire, mais laisse des marques        |
+| **Seulement pour les générateurs** | Uniquement là où il y as les générateurs   |
 
 </div>
 
 <div class="regle text-xs">
 
-**Les supports organiques** : des troncs fins et ramifiés. Deux à trois fois moins de matière, plus faciles à arracher, moins de marques. Les activer par défaut.
-
-</div>
-
-<div class="piege mt-2 text-xs">
-
-Le seuil d'angle est à **55°** par défaut, pas 45. Prusa est optimiste, et il a souvent raison.
+**Les supports organiques** : des troncs fins et ramifiés. Deux à trois fois moins de matière, plus faciles à arracher, moins de marques.
 
 </div>
 
@@ -417,7 +280,7 @@ Avant d'en activer : réorienter la pièce, la couper en deux (<KeyCap k="C" />)
 </div>
 
 <!--
-Minutage : 69-73 min.
+Minutage : 67-72 min.
 
 Montrer l'outil « peinture des supports » en direct sur la figurine : on
 badigeonne le menton, et seul le menton reçoit un support. C'est spectaculaire
@@ -480,7 +343,6 @@ layout: two-cols-header
 <div v-click class="regle mt-4 text-sm">
 
 **Mais le vrai facteur d'adhérence n'est pas dans le slicer.**
-
 Un plateau **propre** - dégraissé à l'alcool isopropylique, jamais touché avec les doigts - règle neuf décollements sur dix. Aucune bordure ne rattrape un plateau gras.
 
 </div>
@@ -488,13 +350,13 @@ Un plateau **propre** - dégraissé à l'alcool isopropylique, jamais touché av
 </div>
 
 <!--
-Minutage : 73-77 min. Fin de la première partie du module 5.
+Minutage : 72-77 min. Fin de la première partie du module 5.
 
 La distinction jupe / bordure est mal connue et souvent inversée. Un moyen
 mnémotechnique : la jupe ne touche pas, la bordure borde.
 
 Sur le plateau propre : c'est le conseil le plus rentable de la journée et il
-ne coûte rien. À la MJC, montrer où est le flacon d'alcool et le chiffon.
+ne coûte rien. À l'atelier, montrer où est le flacon d'alcool et le chiffon.
 Rappeler qu'on ne touche jamais la surface d'impression avec les doigts -
 le gras de la peau suffit à faire lâcher une pièce.
 
@@ -507,12 +369,7 @@ module: 5 · Les 5 réglages
 
 # Ce qu'on ne touche pas
 
-<div class="grid grid-cols-4 gap-3 mt-6 text-center text-sm">
-
-<div v-click class="temoin opacity-70">
-<strong>Températures</strong>
-<div class="text-xs opacity-60 mt-1">buse et plateau</div>
-</div>
+<div class="grid grid-cols-3 gap-3 mt-6 text-center text-sm">
 
 <div v-click class="temoin opacity-70">
 <strong>Vitesses</strong>
@@ -545,13 +402,13 @@ Monter la température améliore l'adhésion entre couches - et fait filer le fi
 
 </div>
 
-<div class="regle mt-6">
+<div class="regle mt-6 text-sm">
 
 Prusa a passé des centaines d'heures à trouver cet équilibre pour **cette machine, cette matière, cette hauteur de couche**. Un débutant qui change une valeur ne l'améliore pas : il le casse.
 
 </div>
 
-<div class="piege mt-4">
+<div class="piege mt-4 text-sm">
 
 **Le bon réflexe** : un problème de température, de fil ou de collage se corrige en **changeant de profil de filament**, pas en tapant une valeur. Si le profil de votre bobine n'existe pas, prendre le profil générique de la matière - jamais bricoler celui d'une autre.
 
