@@ -30,21 +30,21 @@ module: 1 · Pourquoi un slicer ?
 
 <div>
 
-Un **STL**, c'est une liste de triangles. Rien d'autre.
+Un **STL**, c'est une liste de triangles. Rien d'autre. Appeler "Maillage" ou "Mesh" en anglais.
 
 <v-clicks>
 
 - Une **coque fermée**, comme une peau de ballon
 - Pas d'épaisseur, pas de matière, pas de vide
 - Aucune notion de **temps**, de **trajet**, de **température**
-- Aucune idée de ce qu'est le haut, le bas, ou la gravité
+- Aucune idée de ce qu'est le haut, le bas, de sa position
 
 </v-clicks>
 
-<div v-click class="regle mt-4 text-sm">
-
-C'est **le plan d'une maison**, pas la maison. Il décrit une forme, il ne dit pas comment la fabriquer.
-
+<div v-click class="regle mt-4 p-2">
+  <span class="text-sm">
+    C'est <strong>le plan d'une maison</strong>, pas la maison. Il décrit une forme, il ne dit pas comment la fabriquer.
+  </span>
 </div>
 
 </div>
@@ -57,11 +57,11 @@ C'est **le plan d'une maison**, pas la maison. Il décrit une forme, il ne dit p
 
 <div v-click class="mt-3 text-sm">
 
-| Format | Ce qu'il transporte |
-|---|---|
-| **STL** | Des triangles. Le standard, le plus bête |
-| **3MF** | Triangles + échelle + couleurs + réglages |
-| **STEP** | La géométrie exacte, pas approchée |
+| Format          | Ce qu'il transporte                            |
+|-----------------|------------------------------------------------|
+| **STL/OBJ/FBX** | Seulement le mesh. Le standard, le plus simple |
+| **3MF**         | Mesh + réglages d'impression                   |
+| **STEP**        | B-Rep exact, assemblages, tolérances           |
 
 </div>
 
@@ -100,7 +100,7 @@ layout: two-cols-header
 <v-clicks depth="2">
 
 1. **Déplacer** la buse par rapport au plateau - <span class="font-mono text-sm">X</span>, <span class="font-mono text-sm">Y</span>, <span class="font-mono text-sm">Z</span>
-2. **Pousser ou tirer** le filament - <span class="font-mono text-sm">E</span>
+2. **Pousser (Extruder) ou tirer (Retracter)** le filament - <span class="font-mono text-sm">E</span>
 3. **Chauffer** la buse et le plateau
 4. **Ventiler** pour figer la matière déposée
 
@@ -108,7 +108,7 @@ layout: two-cols-header
 
 <div v-click class="piege mt-8">
 
-Elle ne sait pas ce qu'est **un cube**, **un cercle** ou **un porte-à-faux**. Elle ne voit rien, ne mesure rien, ne vérifie rien. Elle exécute.
+Elle ne sait pas ce qu'est **un cube** ou **un cercle**. Elle ne voit rien, ne mesure rien, ne vérifie rien. Elle exécute seulement.
 
 </div>
 
@@ -153,39 +153,42 @@ module: 1 · Pourquoi un slicer ?
 
 # Le G-code, en vrai
 
-Le langage que la machine comprend : une ligne, un ordre.
+Le langage que la machine comprend : une ligne, une execution.
 
 ```asm {all|1|2|3|4-5|all}
-G1 Z0.20 F720                    ; monter à la hauteur de la 1re couche
-G1 X85.5 Y92.3 F7200             ; se placer là-bas, sans rien extruder
+G1 Z0.20 F720                    ; monter à la hauteur de la 1re couche (0.20mm)
+G1 X85.5 Y92.3 F7200             ; se positionne à ces coordonnées, sans rien extruder
 G1 X114.5 Y92.3 E0.9612 F1800    ; tracer 29 mm en poussant 0,96 mm de filament
-M104 S215                        ; consigne buse : 215 °C
+M104 S215                        ; chauffe la buse : 215 °C
 M106 S255                        ; ventilateur à fond
 ```
 
-<div class="grid grid-cols-3 gap-6 mt-8 text-center">
+<div class="grid grid-cols-3 gap-6 mt-4 text-center">
 
 <div v-click>
-  <div class="text-3xl font-mono" style="color: var(--prusa-orange)">500</div>
-  <div class="text-sm opacity-60">couches pour un objet<br>de 10 cm en 0,2 mm</div>
+  <carbon-layers class="text-4xl mb-0" style="color: var(--prusa-orange)" />
+  <div class="text-2xl font-mono mb-2" style="color: var(--prusa-orange)">500</div>
+  <div class="text-sm opacity-60">couches pour un cube<br>de 10 cm en 0,2 mm</div>
 </div>
 
 <div v-click>
-  <div class="text-3xl font-mono" style="color: var(--prusa-orange)">~1 M</div>
+  <carbon-code class="text-4xl mb-0" style="color: var(--prusa-orange)" />
+  <div class="text-2xl font-mono mb-2" style="color: var(--prusa-orange)">~1 M</div>
   <div class="text-sm opacity-60">lignes de G-code<br>pour cet objet</div>
 </div>
 
 <div v-click>
-  <div class="text-3xl font-mono" style="color: var(--prusa-orange)">0</div>
+  <carbon-edit-off class="text-4xl mb-0" style="color: var(--prusa-orange)" />
+  <div class="text-2xl font-mono mb-2" style="color: var(--prusa-orange)">0 lignes</div>
   <div class="text-sm opacity-60">que vous écrirez<br>à la main</div>
 </div>
 
 </div>
 
-<div v-click class="regle mt-8">
-
-**Le slicer écrit ce fichier pour vous.** Tout ce qu'on va voir aujourd'hui, ce sont les réglages qui changent ce qu'il écrit.
-
+<div v-click class="regle mt-4 p-2">
+  <span class="text-sm">
+    <strong>Le slicer écrit ce fichier pour vous.</strong> Tout ce qu'on va voir aujourd'hui, ce sont les réglages qui changent ce qu'il écrit.
+  </span>
 </div>
 
 <!--
@@ -260,10 +263,10 @@ La machine ne fabrique **jamais un volume**. Elle empile des tranches plates.
 
 </v-clicks>
 
-<div v-click class="regle mt-6 text-sm">
-
-Ces quatre conséquences sont **les quatre chapitres suivants**. Tout découle de cette seule contrainte.
-
+<div v-click class="regle mt-4 p-2">
+  <span class="text-sm">
+    Ces quatre conséquences sont <strong>les quatre chapitres suivants</strong>. Tout découle de cette seule contrainte.
+  </span>
 </div>
 
 </div>

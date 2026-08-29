@@ -160,7 +160,7 @@ module: 2 · Le tour du propriétaire
 <div v-click class="temoin">
 <div class="text-xs uppercase tracking-wide opacity-50">Filament</div>
 <div class="font-mono text-sm mt-1" style="color: var(--prusa-orange)">Prusament PLA</div>
-<div class="text-xs opacity-60 mt-2">La matière <strong>et la marque</strong>. Températures, ventilation, rétraction, débit.</div>
+<div class="text-xs opacity-60 mt-2">La matière, Températures, ventilation, rétraction, débit.</div>
 </div>
 
 <div v-click class="temoin">
@@ -173,13 +173,13 @@ module: 2 · Le tour du propriétaire
 
 <div v-click class="mt-6">
 
-Les trois listes sont **liées** : changer d'imprimante filtre les profils compatibles. On ne peut pas afficher un profil 0,25 mm avec une buse 0,4 - PrusaSlicer le cache.
+Les trois sont **liées** : changer d'imprimante filtre les profils compatibles. On ne peut pas afficher un profil 0,25 mm avec une buse 0,4 - PrusaSlicer le cache automatiquement.
 
 </div>
 
 <div v-click class="piege mt-4">
 
-**Le piège n°1** : changer la buse sur la machine sans changer le profil. Le slicer continue à calculer pour 0,4 mm. Résultat garanti : sous-extrusion ou bouchon.
+**Le piège n°1** : changer de diamètre la buse sur la machine sans changer le profil. Le slicer continue à calculer pour 0,4 mm. Résultat garanti : sous-extrusion ou bouchon.
 
 </div>
 

@@ -40,6 +40,12 @@ en déposant le fichier dans `public/`.
 
 Pour l'image de couverture, ajouter `background: /cover.jpg` au frontmatter de `slides.md`.
 
+## Modèles 3D
+
+La slide 44 liste les modèles Printables utilisés comme objets témoins, avec le nombre
+d'exemplaires à imprimer et les variantes d'orientation ou de hauteur de couche qui
+servent aux comparaisons en séance.
+
 ## Annotations déplaçables
 
 La slide 10 utilise `v-drag` : en mode `pnpm dev`, les quatre étiquettes se déplacent à la

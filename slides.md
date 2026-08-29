@@ -30,10 +30,6 @@ bare: true
 
 Comprendre **PrusaSlicer** pour ne plus imprimer au hasard
 
-<div class="mt-10 text-sm opacity-60">
-  2 heures · Prusa i3 MK2.5S · buse 0,4 mm · PLA
-</div>
-
 <div class="abs-br m-6 text-xs opacity-40">
   Espace ou <KeyCap k="→" /> pour avancer
 </div>
@@ -61,26 +57,22 @@ routeAlias: sommaire
 
 <v-clicks>
 
-<Link to="mod1"><span class="font-mono opacity-40 mr-2">12'</span> <strong>Pourquoi un slicer ?</strong><br><span class="text-xs opacity-50">Le fossé entre un fichier et une machine</span></Link>
+<Link class="py-2" to="mod1"><span class="font-mono opacity-40 mr-1">1.</span><strong>Pourquoi un slicer ?</strong><br><span class="text-xs opacity-50">Le fossé entre un fichier et une machine</span></Link>
 
-<Link to="mod2"><span class="font-mono opacity-40 mr-2">10'</span> <strong>Le tour du propriétaire</strong><br><span class="text-xs opacity-50">Les 3 vues, les 3 modes, le trio de profils</span></Link>
+<Link class="py-2" to="mod2"><span class="font-mono opacity-40 mr-1">2.</span><strong>Le tour du propriétaire</strong><br><span class="text-xs opacity-50">Les 3 vues, les 3 modes, le trio de profils</span></Link>
 
-<Link to="mod3"><span class="font-mono opacity-40 mr-2">15'</span> <strong>Poser l'objet</strong><br><span class="text-xs opacity-50">Le geste qui décide de tout : l'orientation</span></Link>
+<Link class="py-2" to="mod3"><span class="font-mono opacity-40 mr-1">3.</span><strong>Poser l'objet</strong><br><span class="text-xs opacity-50">Le geste qui décide de tout : l'orientation</span></Link>
 
-<Link to="mod4"><span class="font-mono opacity-40 mr-2">12'</span> <strong>Choisir un profil</strong><br><span class="text-xs opacity-50">Hauteur de couche, qualité, matière</span></Link>
+<Link class="py-2" to="mod4"><span class="font-mono opacity-40 mr-1">4.</span><strong>Choisir un profil</strong><br><span class="text-xs opacity-50">Hauteur de couche, qualité, matière</span></Link>
 
-<Link to="mod5"><span class="font-mono opacity-40 mr-2">25'</span> <strong>Les 5 réglages qui comptent</strong><br><span class="text-xs opacity-50">Et les vingt autres qu'on laisse tranquilles</span></Link>
+<Link class="py-2" to="mod5"><span class="font-mono opacity-40 mr-1">5.</span><strong>Les 5 réglages qui comptent</strong><br><span class="text-xs opacity-50">Et les vingt autres qu'on laisse tranquilles</span></Link>
 
-<Link to="mod6"><span class="font-mono opacity-40 mr-2">15'</span> <strong>Trancher et lire l'aperçu</strong><br><span class="text-xs opacity-50">Voir le problème avant de perdre 4 heures</span></Link>
+<Link class="py-2" to="mod6"><span class="font-mono opacity-40 mr-1">6.</span><strong>Trancher et lire l'aperçu</strong><br><span class="text-xs opacity-50">Voir le problème avant de perdre 4 heures</span></Link>
 
-<Link to="mod7"><span class="font-mono opacity-40 mr-2">10'</span> <strong>Galerie de défauts</strong><br><span class="text-xs opacity-50">Slicer ou machine : de quel côté chercher ?</span></Link>
+<Link class="py-2" to="mod7"><span class="font-mono opacity-40 mr-1">7.</span><strong>Galerie de défauts</strong><br><span class="text-xs opacity-50">Slicer ou machine : de quel côté chercher ?</span></Link>
 
 </v-clicks>
 
-</div>
-
-<div v-click class="mt-8 text-center text-sm opacity-60">
-  Les titres sont cliquables - on peut sauter, revenir, s'arrêter sur une question.
 </div>
 
 <!--
@@ -107,6 +99,8 @@ module: Accueil
 
 ## <carbon-checkmark-filled class="text-green-600" /> Au programme
 
+<br/>
+
 <v-clicks>
 
 - **Comprendre** ce qu'un slicer fabrique réellement
@@ -125,13 +119,14 @@ module: Accueil
 
 ## <carbon-close-filled class="text-red-500 opacity-70" /> Hors sujet aujourd'hui
 
+<br/>
+
 <v-clicks>
 
-- **Dessiner** un objet en 3D - c'est une autre formation
+- **Modèliser** un objet en 3D (c'est une autre formation)
 - Le **mode Expert** et ses 350 réglages
-- La **calibration** et l'entretien de la machine
-- Le **multi-matériaux** (MMU), la résine, le métal
-- Les **autres slicers** - les principes sont les mêmes
+- Le **multi-matériaux** (MMU), la résine, le SLA-SLS
+- Les **autres slicers que PrusaSlicer** - les principes sont les mêmes
 
 </v-clicks>
 
@@ -139,9 +134,9 @@ module: Accueil
 
 ::bottom::
 
-<div v-click class="regle mt-6 mx-8">
+<div v-click class="regle mx-2">
 
-**Le but de la sortie** : que vous puissiez ouvrir un fichier trouvé sur Printables, l'orienter correctement, choisir votre profil, vérifier l'aperçu et lancer - sans copier les réglages du voisin.
+**Le but de la sortie** : que vous puissiez ouvrir un fichier trouvé sur internet, l'orienter correctement, choisir votre profil, vérifier l'aperçu et lancer.
 
 </div>
 
