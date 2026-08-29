@@ -22,24 +22,28 @@ module: 7 · Diagnostiquer un échec
 
 # Les défauts les plus fréquents
 
-<div class="text-sm opacity-60 -mt-3 mb-1.5">D'après le guide de dépannage Simplify3D. Symptôme, cause, geste correctif.</div>
+<div class="text-sm opacity-60 -mt-3 mb-2">Six défauts, trois côtés. Le symptôme, la cause, le geste qui corrige.</div>
 
-<div class="grid grid-cols-3 gap-2">
+<div class="grid grid-cols-3 gap-x-3.5 gap-y-3">
+
+<div><DefectSide side="slicer" /></div>
+<div><DefectSide side="machine" /></div>
+<div><DefectSide side="matiere" /></div>
 
 <div v-click>
 <DefectCard side="slicer"
-  title="Ça ne colle pas au plateau"
-  symptom="Un coin se relève, la pièce se détache"
-  cause="Plateau gras ou mal réglé, trop peu de surface au contact."
-  fix="Nettoyer à l'alcool, vérifier le Z-offset, mettre une bordure" />
+  title="Trous sur le dessus"
+  symptom="La surface du dessus est grumeleuse et percée"
+  cause="Les coques horizontales n'ont pas assez d'appuis pour se tendre au-dessus du remplissage."
+  fix="Ajouter 2 coques horizontales, ou monter le remplissage à 20 %" />
 </div>
 
 <div v-click>
 <DefectCard side="machine"
-  title="Sous-extrusion"
-  symptom="Traits fins, trous entre les lignes, couches incomplètes"
-  cause="Buse partiellement bouchée, ou filament qui frotte."
-  fix="Vérifier la bobine, nettoyage à froid de la buse" />
+  title="Ça ne colle pas au plateau"
+  symptom="Un coin se relève, la pièce se détache"
+  cause="Plateau gras, ou première couche posée trop haut. Le PLA n'accroche pas sur du gras."
+  fix="Nettoyer le plateau à l'alcool, reprendre le Z-offset" />
 </div>
 
 <div v-click>
@@ -52,18 +56,10 @@ module: 7 · Diagnostiquer un échec
 
 <div v-click>
 <DefectCard side="slicer"
-  title="Trous sur le dessus"
-  symptom="La surface du dessus est grumeleuse et percée"
-  cause="Les coques horizontales n'ont pas assez d'appuis pour se tendre."
-  fix="Ajouter 2 coques horizontales, ou monter le remplissage à 20 %" />
-</div>
-
-<div v-click>
-<DefectCard side="matiere"
-  title="Surchauffe"
-  symptom="Coins arrondis, petits détails fondus, aspect affaissé"
-  cause="La couche n'a pas le temps de figer. Fréquent sur les pointes."
-  fix="Ventilation à fond, ou imprimer deux pièces à la fois" />
+  title="Surplomb qui s'affaisse"
+  symptom="Le dessous d'un porte-à-faux pendouille en vagues"
+  cause="Au-delà de 45°, la buse dépose dans le vide : rien ne tient la couche."
+  fix="Réorienter la pièce, ou activer les supports" />
 </div>
 
 <div v-click>
@@ -71,12 +67,20 @@ module: 7 · Diagnostiquer un échec
   title="Couches décalées"
   symptom="Tout l'objet est déporté à partir d'une hauteur"
   cause="Obstacle rencontré ou courroie qui a sauté. La machine a perdu sa position."
-  fix="Vérifier courroies et tiges. Le slicer n'y peut rien" />
+  fix="Vérifier courroies et tiges, puis relancer" />
+</div>
+
+<div v-click>
+<DefectCard side="matiere"
+  title="Couches qui se séparent"
+  symptom="La pièce casse net entre deux couches, sans effort"
+  cause="Trop froid pour cette bobine : les couches ne se soudent pas entre elles."
+  fix="Monter la buse de 5 à 10 °C, suivre la fiche de la bobine" />
 </div>
 
 </div>
 
-<div v-click class="mt-2 text-center text-xs opacity-60">
+<div v-click="7" class="mt-3.5 text-center text-xs opacity-60">
 Guide complet, 25 défauts illustrés :
 <span class="font-mono" style="color: var(--prusa-orange)">simplify3d.com/resources/print-quality-troubleshooting/</span>
 </div>
@@ -84,17 +88,29 @@ Guide complet, 25 défauts illustrés :
 <!--
 Minutage : 96-102 min.
 
-Poser chaque défaut comme une devinette avant de cliquer :
-« La pièce se décolle. Qui a une idée ? »
+Les trois colonnes sont visibles avant le premier clic : c'est le plateau de
+jeu. Poser chaque défaut comme une devinette avant de cliquer -
+« La pièce se décolle. Qui a une idée ? » - et laisser la carte tomber dans
+sa colonne. La position EST la réponse, pas une étiquette à lire.
+
+L'ordre d'apparition est volontairement mélangé (machine, slicer, matière,
+slicer, machine, matière) pour qu'ils ne devinent pas le côté par habitude.
+
 Ils viennent de voir les cinq réglages, ils vont trouver. Chaque bonne réponse
 prouve que le module 5 a marché.
 
 Faire circuler les pièces ratées réelles au fur et à mesure. Une caisse de
 ratés est le meilleur investissement pédagogique d'un fablab.
 
-Le code couleur des étiquettes porte le message du module : orange le slicer,
-bleu la machine, violet la matière. Trois des six défauts ne se corrigent PAS
-dans le logiciel. C'est le point à faire passer avant la slide suivante.
+Le point à faire passer avant la slide suivante : deux défauts par côté, et
+QUATRE sur six ne se corrigent pas dans le logiciel. Le slicer n'est pas le
+coupable par défaut.
+
+Deux nuances à donner à l'oral si quelqu'un les soulève :
+- l'adhérence peut aussi se soigner au slicer (bordure, radeau), mais tant que
+  le plateau est gras aucune bordure ne sauvera l'impression ;
+- le surplomb qui s'affaisse est le seul défaut de la slide qu'on voit dans
+  l'aperçu, en bleu « périmètre en surplomb » - lien direct avec le module 6.
 
 La référence Simplify3D est en anglais mais très illustrée : chaque défaut a
 sa photo. C'est la meilleure ressource à donner à quelqu'un qui bute chez lui.
@@ -106,18 +122,29 @@ module: 7 · Diagnostiquer un échec
 
 # La méthode, en trois questions
 
-```mermaid {scale: 0.62}
+```mermaid {scale: 0.65}
 flowchart LR
     A["Une impression<br/>rate"] --> B{"Toujours au<br/>même endroit ?"}
-    B -->|Non| D["Côté machine<br/><small>courroies, buse</small>"]
+    B -->|Non| D["Côté machine"]
     B -->|Oui| C{"Visible dans<br/>l'aperçu ?"}
-    C -->|Oui| E["Côté slicer<br/><small>orientation, supports</small>"]
+    C -->|Oui| E["Côté slicer"]
     C -->|Non| F{"Change avec une<br/>autre bobine ?"}
-    F -->|Oui| G["Côté matière<br/><small>humidité</small>"]
+    F -->|Oui| G["Côté matière"]
     F -->|Non| D
+
+    %% Les questions restent neutres : seule l'issue porte une couleur,
+    %% et ce sont celles des trois colonnes de la slide précédente.
+    classDef etape fill:transparent,stroke:#9ca3af
+    classDef slicer fill:#fa6831,stroke:#d8511e,color:#ffffff
+    classDef machine fill:#2f7fe0,stroke:#2467b8,color:#ffffff
+    classDef matiere fill:#7d5ba6,stroke:#654888,color:#ffffff
+    class A,B,C,F etape
+    class E slicer
+    class D machine
+    class G matiere
 ```
 
-<div v-click class="regle mt-2">
+<div v-click class="regle mt-2 text-sm">
 
 **Une seule modification à la fois, et on relance.** Changer trois réglages ensemble et voir que ça marche n'apprend rien : on ne saura jamais lequel était le bon.
 
@@ -126,10 +153,13 @@ flowchart LR
 <!--
 Minutage : 102-105 min. Fin du module 7.
 
-Ce petit arbre est ce qu'il faut retenir du module. Le dérouler à voix haute
-sur un cas concret, par exemple une pièce qui se décolle toujours du même coin :
-même endroit → oui ; visible dans l'aperçu → oui, la base est minuscule →
-côté slicer, bordure.
+Ce petit arbre est ce qu'il faut retenir du module. Les trois issues reprennent
+exactement les couleurs des colonnes de la slide précédente : orange le slicer,
+bleu la machine, violet la matière. Le dire une fois, ils feront le lien seuls.
+
+Le dérouler à voix haute sur un cas concret, par exemple une pièce qui se
+décolle toujours du même coin : même endroit → oui ; visible dans l'aperçu →
+non ; change avec une autre bobine → non → côté machine, plateau et Z-offset.
 
 La règle « une modification à la fois » est la plus difficile à tenir et la
 plus importante. C'est de la méthode, pas de la technique - et c'est ce qui

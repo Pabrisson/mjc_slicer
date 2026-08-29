@@ -4,11 +4,23 @@
   --slidev-theme-primary: #fa6831;
   /* Le rouge des pièges et des inconvénients */
   --prusa-rouge: #c62828;
+
+  /* Les trois côtés du diagnostic (module 7). Le même code couleur porte la
+     galerie de défauts, l'arbre de décision et les cartes : orange le slicer,
+     bleu la machine, violet la matière. Valeurs assombries en thème clair
+     pour rester lisibles en projection. */
+  --cote-slicer: #fa6831;
+  --cote-machine: #2f7fe0;
+  --cote-matiere: #7d5ba6;
 }
 
 html.dark {
   --prusa-orange: #ff7a45;
   --prusa-rouge: #ef5350;
+
+  --cote-slicer: #ff7a45;
+  --cote-machine: #62b0ff;
+  --cote-matiere: #b79ad6;
 }
 
 /* Respirer un peu plus : une formation se lit de loin */
