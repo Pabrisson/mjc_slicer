@@ -25,9 +25,7 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v7
-
       - uses: pnpm/action-setup@v6
-
       - uses: actions/setup-node@v7
         with:
           node-version: 22
@@ -36,26 +34,17 @@ jobs:
       - name: Installer les dépendances
         run: pnpm install --frozen-lockfile
 
-      # playwright-chromium ne fait pas partie des dépendances du projet :
-      # il n'est utile qu'à l'export PDF, donc uniquement ici.
       - name: Installer Playwright
         run: |
           pnpm add -D -w playwright-chromium
           pnpm exec playwright install-deps chromium
 
-      # Le build précède l'export : une erreur de compilation des slides
-      # échoue en une minute, sans attendre le démarrage de Chromium.
       - name: Construire le site
         run: pnpm exec slidev build --base "$BASE_PATH" --router-mode hash --out dist
 
-      # --dark est obligatoire : sans lui, Slidev exporte 45 pages blanches
-      # (thème sombre + Chromium n'imprime pas les fonds = texte blanc sur
-      # blanc). Voir les contraintes globales.
       - name: Exporter le PDF
         run: pnpm exec slidev export --format pdf --output "$PDF_NAME" --timeout 60000 --dark
 
-      # Un export vide réussit sans erreur et produit le bon nombre de pages :
-      # seule la taille le distingue d'un export correct (10 ko contre 2,3 Mo).
       - name: Vérifier que le PDF n'est pas vide
         run: |
           taille=$(stat -c%s "$PDF_NAME")
@@ -100,7 +89,6 @@ jobs:
         with:
           name: pdf
 
-      # Le CLI gh est préinstallé sur les runners : aucune action tierce.
       - name: Publier la Release
         env:
           GH_TOKEN: ${{ github.token }}

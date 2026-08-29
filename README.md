@@ -119,4 +119,11 @@ Le tag doit suivre le motif `*.*.*`, sans préfixe `v`. Aucun autre événement 
 
 ### Prérequis, à faire une seule fois
 
-Dans **Settings → Pages**, régler **Source** sur **GitHub Actions**. Sans cela, le job `deploy` échoue. Le dépôt doit par ailleurs être public.
+Deux réglages sont nécessaires, et l'oubli du second est le piège classique.
+
+1. Dans **Settings → Pages**, régler **Source** sur **GitHub Actions**. Le dépôt doit par ailleurs être public.
+2. Dans **Settings → Environments → `github-pages`**, section **Deployment branches and tags**, autoriser les tags. GitHub n'autorise par défaut que la branche par défaut : comme la publication est déclenchée par un tag, le job `deploy` est sinon rejeté avec
+> Tag "1.0.0" is not allowed to deploy to github-pages due to environment protection rules.
+
+Choisir **Selected branches and tags**, puis **Add deployment branch or tag rule**, **Ref type** = **Tag**, motif `*.*.*`, et **Add rule**.
+Ces réglages ne concernent que le déploiement du site. Le PDF et la Release, eux, aboutissent sans eux.
