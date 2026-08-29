@@ -100,3 +100,23 @@ Le mode `/print` ne reflète pas la mise en page réelle. Pour un audit fiable, 
 deck et exécuter dans la console du navigateur une boucle qui parcourt les slides via
 `window.__slidev__.nav.go(i, 999)` et compare le bas de chaque élément feuille au bas de
 `.slidev-page-<i>`, moins les 26 px du bandeau.
+
+## Publier une version
+
+Le site et le PDF sont publiés automatiquement à la création d'un tag de version :
+
+```bash
+git tag 1.0.0
+git push origin 1.0.0
+```
+
+Le workflow `.github/workflows/release.yml` construit alors la présentation, en exporte un PDF, puis :
+
+- déploie le site sur <https://pabrisson.github.io/mjc_slicer/>
+- crée la Release `1.0.0` avec `mjc-slicer-1.0.0.pdf` en pièce jointe et des notes générées depuis les commits
+
+Le tag doit suivre le motif `*.*.*`, sans préfixe `v`. Aucun autre événement ne déclenche de publication : les commits sur `main` ne modifient pas le site en ligne.
+
+### Prérequis, à faire une seule fois
+
+Dans **Settings → Pages**, régler **Source** sur **GitHub Actions**. Sans cela, le job `deploy` échoue. Le dépôt doit par ailleurs être public.

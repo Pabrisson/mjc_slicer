@@ -1,0 +1,108 @@
+name: Publication
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+
+# Aucun droit par défaut : chaque job reçoit uniquement ce dont il a besoin.
+permissions: {}
+
+# Deux tags poussés coup sur coup se déploient en série, sans s'annuler.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  BASE_PATH: /mjc_slicer/
+  PDF_NAME: mjc-slicer-${{ github.ref_name }}.pdf
+
+jobs:
+  build:
+    name: Construire le site et le PDF
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Installer les dépendances
+        run: pnpm install --frozen-lockfile
+
+      # playwright-chromium ne fait pas partie des dépendances du projet :
+      # il n'est utile qu'à l'export PDF, donc uniquement ici.
+      - name: Installer Playwright
+        run: |
+          pnpm add -D -w playwright-chromium
+          pnpm exec playwright install-deps chromium
+
+      # Le build précède l'export : une erreur de compilation des slides
+      # échoue en une minute, sans attendre le démarrage de Chromium.
+      - name: Construire le site
+        run: pnpm exec slidev build --base "$BASE_PATH" --router-mode hash --out dist
+
+      # --dark est obligatoire : sans lui, Slidev exporte 45 pages blanches
+      # (thème sombre + Chromium n'imprime pas les fonds = texte blanc sur
+      # blanc). Voir les contraintes globales.
+      - name: Exporter le PDF
+        run: pnpm exec slidev export --format pdf --output "$PDF_NAME" --timeout 60000 --dark
+
+      # Un export vide réussit sans erreur et produit le bon nombre de pages :
+      # seule la taille le distingue d'un export correct (10 ko contre 2,3 Mo).
+      - name: Vérifier que le PDF n'est pas vide
+        run: |
+          taille=$(stat -c%s "$PDF_NAME")
+          echo "PDF : $taille octets"
+          if [ "$taille" -lt 200000 ]; then
+            echo "::error::PDF anormalement petit ($taille o) — export probablement vide"
+            exit 1
+          fi
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: pdf
+          path: ${{ env.PDF_NAME }}
+          if-no-files-found: error
+
+  deploy:
+    name: Déployer sur GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
+
+  release:
+    name: Créer la Release
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: pdf
+
+      # Le CLI gh est préinstallé sur les runners : aucune action tierce.
+      - name: Publier la Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: gh release create "$GITHUB_REF_NAME" --generate-notes "$PDF_NAME"
