@@ -1,10 +1,10 @@
 ---
 layout: section
-module: 7 · Galerie de défauts
+module: 7 · Diagnostiquer un échec
 routeAlias: mod7
 ---
 
-# Galerie de défauts
+# Diagnostiquer un échec
 
 De quel côté faut-il chercher ?
 
@@ -17,7 +17,7 @@ la plupart - c'est le but.
 -->
 
 ---
-module: 7 · Galerie de défauts
+module: 7 · Diagnostiquer un échec
 ---
 
 # Les défauts les plus fréquents
@@ -101,7 +101,7 @@ sa photo. C'est la meilleure ressource à donner à quelqu'un qui bute chez lui.
 -->
 
 ---
-module: 7 · Galerie de défauts
+module: 7 · Diagnostiquer un échec
 ---
 
 # La méthode, en trois questions

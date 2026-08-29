@@ -29,7 +29,7 @@ docs/superpowers/specs/ Le design de la formation
 ## Images
 
 Toutes les illustrations sont des `<Placeholder>` qui affichent, à l'écran, la consigne
-de prise de vue. **La slide 43 récapitule la liste complète** des captures et photos à
+de prise de vue. **La slide 44 récapitule la liste complète** des captures et photos à
 produire. Chaque placeholder se remplace par :
 
 ```html
@@ -42,9 +42,40 @@ Pour l'image de couverture, ajouter `background: /cover.jpg` au frontmatter de `
 
 ## Modèles 3D
 
-La slide 44 liste les modèles Printables utilisés comme objets témoins, avec le nombre
-d'exemplaires à imprimer et les variantes d'orientation ou de hauteur de couche qui
-servent aux comparaisons en séance.
+Les objets témoins de la formation, tous gratuits sur Printables. Vérifier la licence
+au téléchargement.
+
+| Sert à | Modèle | Ex. |
+|---|---|:---:|
+| **Fil rouge**, modules 2 à 6 | [Phone Stand (no supports)](https://www.printables.com/model/569525-phone-stand-no-supports) · OverMaintained | 1 |
+| **Anisotropie**, module 3 | [Simple low-poly wall hook](https://www.printables.com/model/153118-simple-low-poly-wall-hook) · A. Jachowicz | 2 |
+| **Règle des 45°**, module 3 | [Angle Test Print](https://www.printables.com/model/61391-angle-test-print) · Onnig | 1 |
+| **Couche et supports**, modules 4 et 5 | [Marie Curie bust](https://www.printables.com/model/588930-marie-curie-bust) · Antoine | 2 |
+| **Tolérances**, module 5 | [Tolerance Test for press fit Box](https://www.printables.com/model/12548-tolerance-test-for-press-fit-box) · Fipsthedog | 1 jeu |
+| **Tolérances**, module 5 | [Storage Box Snap-Fit Lid](https://www.printables.com/model/20961-storage-box-snap-fit-lid) · Extrutim | 2 |
+| **Stringing**, module 7 | [Quick Overhang and Stringing Test](https://www.printables.com/model/167648-quick-overhang-and-stringing-test) · mrichardson | 1 |
+
+**Les impressions en double comptent.** Le crochet en deux orientations, à plat et
+debout. Le buste en **0.35mm FAST** et **0.10mm DETAIL**. Le couvercle de boîte en
+version serrée et en version ajustée. C'est la comparaison qui enseigne, pas la pièce
+seule.
+
+Si un modèle ne convient pas :
+
+- porte-téléphone → [810465](https://www.printables.com/model/810465-phone-stand-no-support)
+- crochet → [864834](https://www.printables.com/model/864834-wall-hook-optimized-for-printing-wandhaken-3d-druc)
+- buste → [513569](https://www.printables.com/model/513569-albert-einstein-bust) (Einstein)
+- angles → [132290](https://www.printables.com/model/132290-convexconcavestraight-overhang-test)
+
+Notes de préparation :
+
+- Le **buste Marie Curie** sert trois fois : son maillage à plus d'un million de
+  triangles illustre le module 1, sa hauteur de couche le module 4, ses supports
+  organiques le module 5. C'est le modèle à imprimer en premier si le temps manque.
+  Son auteur indique 0,16 mm ; la MK2.5S n'a pas ce profil, prendre **0.15mm OPTIMAL**.
+- Le **porte-téléphone** d'OverMaintained a été choisi parce que son auteur précise
+  lui-même qu'il s'imprime sans supports « sur le côté » : la démonstration du module 3
+  est fournie avec le modèle, même pièce, deux orientations, deux résultats.
 
 ## Annotations déplaçables
 

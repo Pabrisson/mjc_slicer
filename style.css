@@ -2,10 +2,13 @@
   --prusa-orange: #fa6831;
   --prusa-orange-soft: #ff8b5e;
   --slidev-theme-primary: #fa6831;
+  /* Le rouge des pièges et des inconvénients */
+  --prusa-rouge: #c62828;
 }
 
 html.dark {
   --prusa-orange: #ff7a45;
+  --prusa-rouge: #ef5350;
 }
 
 /* Respirer un peu plus : une formation se lit de loin */
@@ -36,8 +39,8 @@ html.dark {
 
 /* Piège classique */
 .piege {
-  border-left: 4px solid #c62828;
-  background: color-mix(in srgb, #c62828 8%, transparent);
+  border-left: 4px solid var(--prusa-rouge, #c62828);
+  background: color-mix(in srgb, var(--prusa-rouge, #c62828) 8%, transparent);
   padding: 0.6em 1em;
   border-radius: 0 0.4em 0.4em 0;
 }

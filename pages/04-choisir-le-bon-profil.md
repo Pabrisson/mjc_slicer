@@ -1,10 +1,10 @@
 ---
 layout: section
-module: 4 · Choisir un profil
+module: 4 · Choisir le bon profil
 routeAlias: mod4
 ---
 
-# Choisir un profil
+# Choisir le bon profil
 
 Finesse, matière, et le paquet de réglages qu'on ne voit pas
 
@@ -13,7 +13,7 @@ Minutage : 42-43 min. Module 4, 12 minutes.
 -->
 
 ---
-module: 4 · Choisir un profil
+module: 4 · Choisir le bon profil
 ---
 
 # La hauteur de couche
@@ -73,7 +73,7 @@ temps explose et la moindre poussière se voit. Réservé aux très petites piè
 -->
 
 ---
-module: 4 · Choisir un profil
+module: 4 · Choisir le bon profil
 layout: two-cols-header
 ---
 
@@ -145,7 +145,7 @@ FAST est un profil de brouillon, pas un profil rapide « gratuit ».
 -->
 
 ---
-module: 4 · Choisir un profil
+module: 4 · Choisir le bon profil
 layout: two-cols-header
 ---
 

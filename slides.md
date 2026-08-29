@@ -59,17 +59,19 @@ routeAlias: sommaire
 
 <Link class="py-2" to="mod1"><span class="font-mono opacity-40 mr-1">1.</span><strong>Pourquoi un slicer ?</strong><br><span class="text-xs opacity-50">Le fossé entre un fichier et une machine</span></Link>
 
-<Link class="py-2" to="mod2"><span class="font-mono opacity-40 mr-1">2.</span><strong>Le tour du propriétaire</strong><br><span class="text-xs opacity-50">Les 3 vues, les 3 modes, le trio de profils</span></Link>
+<Link class="py-2" to="mod2"><span class="font-mono opacity-40 mr-1">2.</span><strong>Le tour du slicer</strong><br><span class="text-xs opacity-50">Les 3 vues, les 3 modes, le trio de profils</span></Link>
 
 <Link class="py-2" to="mod3"><span class="font-mono opacity-40 mr-1">3.</span><strong>Poser l'objet</strong><br><span class="text-xs opacity-50">Le geste qui décide de tout : l'orientation</span></Link>
 
-<Link class="py-2" to="mod4"><span class="font-mono opacity-40 mr-1">4.</span><strong>Choisir un profil</strong><br><span class="text-xs opacity-50">Hauteur de couche, qualité, matière</span></Link>
+<Link class="py-2" to="mod4"><span class="font-mono opacity-40 mr-1">4.</span><strong>Choisir le bon profil</strong><br><span class="text-xs opacity-50">Hauteur de couche, qualité, matière</span></Link>
 
-<Link class="py-2" to="mod5"><span class="font-mono opacity-40 mr-1">5.</span><strong>Les 5 réglages qui comptent</strong><br><span class="text-xs opacity-50">Et les vingt autres qu'on laisse tranquilles</span></Link>
+<Link class="py-2" to="mod5"><span class="font-mono opacity-40 mr-1">5.</span><strong>Les 5 réglages qui comptent</strong><br><span class="text-xs opacity-50">Et ceux qu'on laisse tranquilles</span></Link>
 
-<Link class="py-2" to="mod6"><span class="font-mono opacity-40 mr-1">6.</span><strong>Trancher et lire l'aperçu</strong><br><span class="text-xs opacity-50">Voir le problème avant de perdre 4 heures</span></Link>
+<Link class="py-2" to="mod6"><span class="font-mono opacity-40 mr-1">6.</span><strong>Trancher et lire l'aperçu</strong><br><span class="text-xs opacity-50">Voir le problème avant de perdre 4 heures d'impressions</span></Link>
 
-<Link class="py-2" to="mod7"><span class="font-mono opacity-40 mr-1">7.</span><strong>Galerie de défauts</strong><br><span class="text-xs opacity-50">Slicer ou machine : de quel côté chercher ?</span></Link>
+<Link class="py-2" to="mod7"><span class="font-mono opacity-40 mr-1">7.</span><strong>Diagnostiquer un échec</strong><br><span class="text-xs opacity-50">Slicer ou machine : de quel côté chercher ?</span></Link>
+
+<Link class="py-2" to="mod8"><span class="font-mono opacity-40 mr-1">8.</span><strong>Aller plus loin</strong><br><span class="text-xs opacity-50">Astuces, Annexes, etc...</span></Link>
 
 </v-clicks>
 
@@ -97,7 +99,7 @@ module: Accueil
 
 <div class="pr-6">
 
-## <carbon-checkmark-filled class="text-green-600" /> Au programme
+<h2 v-click><carbon-checkmark-filled class="text-green-600" /> Au programme</h2>
 
 <br/>
 
@@ -117,7 +119,7 @@ module: Accueil
 
 <div class="pl-6">
 
-## <carbon-close-filled class="text-red-500 opacity-70" /> Hors sujet aujourd'hui
+<h2 v-click><carbon-close-filled class="text-red-500 opacity-70" /> Hors sujet aujourd'hui</h2>
 
 <br/>
 
@@ -157,7 +159,7 @@ src: ./pages/01-pourquoi-un-slicer.md
 ---
 
 ---
-src: ./pages/02-tour-du-proprietaire.md
+src: ./pages/02-tour-du-slicer.md
 ---
 
 ---
@@ -165,7 +167,7 @@ src: ./pages/03-poser-lobjet.md
 ---
 
 ---
-src: ./pages/04-choisir-un-profil.md
+src: ./pages/04-choisir-le-bon-profil.md
 ---
 
 ---
@@ -177,7 +179,7 @@ src: ./pages/06-lire-lapercu.md
 ---
 
 ---
-src: ./pages/07-galerie-defauts.md
+src: ./pages/07-diagnostiquer-un-echec.md
 ---
 
 ---

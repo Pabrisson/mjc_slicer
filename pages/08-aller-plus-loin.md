@@ -6,6 +6,8 @@ routeAlias: mod8
 
 # Aller plus loin
 
+Astuces, Annexes, etc...
+
 <!--
 Minutage : 105-106 min. Module 8, 5 minutes.
 
@@ -61,31 +63,6 @@ une formation.
 
 Si quelqu'un demande la MMU ou l'impression multicolore : dire que la MJC en a
 une / n'en a pas (à adapter), et que c'est un sujet à part entière.
--->
-
----
-layout: end
-module: 8 · Aller plus loin
-bare: true
----
-
-# Des questions ?
-
-<div class="mt-6 text-base opacity-60">
-Et si vous repartez avec une seule chose&nbsp;:<br>
-<span style="color: var(--prusa-orange)">ouvrez l'aperçu avant de lancer.</span>
-</div>
-
-<!--
-Minutage : 109-120 min. Questions.
-
-Garder les quatre dernières minutes pour les questions restées en suspens
-depuis la slide « hors sujet » du début. Y revenir explicitement :
-« Qui avait noté une question au début ? »
-
-Si une impression a été lancée pendant la séance, elle devrait être bien
-avancée. Le montrer, et laisser la salle s'approcher de la machine. C'est la
-meilleure fin possible.
 -->
 
 ---
@@ -149,66 +126,8 @@ une pièce avec ses supports encore attachés et une pince coupante.
 
 <!--
 Cette slide est un aide-mémoire de production, pas une slide de formation.
-La retirer du deck final, ou la laisser en annexe après la slide de fin :
-elle n'est jamais atteinte en présentation normale.
--->
-
----
-layout: default
-module: Annexe
-hideInToc: true
-bare: true
----
-
-# Annexe - les modèles à télécharger
-
-<div class="text-sm opacity-60 -mt-3 mb-2">Tous gratuits sur <span class="font-mono">printables.com</span>. Vérifier la licence au téléchargement.</div>
-
-<div class="tight-table text-[0.72rem]">
-
-| Sert à | Modèle | Lien | Ex. |
-|---|---|---|:---:|
-| **Fil rouge**, modules 2 à 6 | Phone Stand (no supports) · OverMaintained | [569525](https://www.printables.com/model/569525-phone-stand-no-supports) | 1 |
-| **Anisotropie**, module 3 | Simple low-poly wall hook · A. Jachowicz | [153118](https://www.printables.com/model/153118-simple-low-poly-wall-hook) | 2 |
-| **Règle des 45°**, module 3 | Angle Test Print · Onnig | [61391](https://www.printables.com/model/61391-angle-test-print) | 1 |
-| **Couche et supports**, modules 4 et 5 | Marie Curie bust · Antoine | [588930](https://www.printables.com/model/588930-marie-curie-bust) | 2 |
-| **Tolérances**, module 5 | Tolerance Test for press fit Box · Fipsthedog | [12548](https://www.printables.com/model/12548-tolerance-test-for-press-fit-box) | 1 jeu |
-| **Tolérances**, module 5 | Storage Box Snap-Fit Lid · Extrutim | [20961](https://www.printables.com/model/20961-storage-box-snap-fit-lid) | 2 |
-| **Stringing**, module 7 | Quick Overhang and Stringing Test · mrichardson | [167648](https://www.printables.com/model/167648-quick-overhang-and-stringing-test) | 1 |
-
-</div>
-
-<div class="grid grid-cols-2 gap-6 mt-3 text-[0.68rem]">
-
-<div class="regle">
-
-**Les impressions en double comptent.** Le crochet en deux orientations, à plat et debout. Le buste en **0.35mm FAST** et **0.10mm DETAIL**. Le couvercle de boîte en version serrée et en version ajustée. C'est la comparaison qui enseigne, pas la pièce seule.
-
-</div>
-
-<div class="opacity-70">
-
-**Si un modèle ne convient pas** - porte-téléphone : [810465](https://www.printables.com/model/810465-phone-stand-no-support) · crochet : [864834](https://www.printables.com/model/864834-wall-hook-optimized-for-printing-wandhaken-3d-druc) · buste : [513569](https://www.printables.com/model/513569-albert-einstein-bust) (Einstein) · angles : [132290](https://www.printables.com/model/132290-convexconcavestraight-overhang-test)
-
-</div>
-
-</div>
-
-<!--
-Slide de préparation, pas de séance.
-
-Le buste Marie Curie sert trois fois dans la formation : son maillage à plus
-d'un million de triangles illustre le module 1, sa hauteur de couche le
-module 4, ses supports organiques le module 5. C'est le modèle à imprimer en
-premier si le temps manque.
-
-Le porte-téléphone d'OverMaintained a été choisi parce que son auteur précise
-lui-même qu'il s'imprime sans supports « sur le côté ». La démonstration du
-module 3 est donc fournie avec le modèle : même pièce, deux orientations,
-deux résultats.
-
-L'auteur du buste indique 0,16 mm ; la MK2.5S n'a pas ce profil, prendre
-0.15mm OPTIMAL.
+Elle précède désormais la slide de fin : passer vite en séance, ou lui ajouter
+« hide: true » le jour J.
 -->
 
 ---
@@ -278,10 +197,35 @@ La touche <KeyCap k="?" /> affiche la liste officielle complète, à jour pour v
 </div>
 
 <!--
-Slide de référence, à consulter ou à imprimer. Elle n'est pas parcourue en
+Slide de référence, à consulter ou à imprimer. Elle n'est pas commentée en
 séance : la touche « ? » de PrusaSlicer fait le même travail et reste juste.
 
 Les trois raccourcis qui changent vraiment la vie sont F (placer sur la face),
 Tab (basculer vers l'aperçu) et Ctrl+F (chercher un réglage sans savoir dans
 quel onglet il se cache).
+-->
+
+---
+layout: end
+module: 8 · Aller plus loin
+bare: true
+---
+
+# Des questions ?
+
+<div class="mt-6 text-base opacity-60">
+Et si vous repartez avec une seule chose&nbsp;:<br>
+<span style="color: var(--prusa-orange)">ouvrez l'aperçu avant de lancer.</span>
+</div>
+
+<!--
+Minutage : 109-120 min. Questions.
+
+Garder les quatre dernières minutes pour les questions restées en suspens
+depuis la slide « hors sujet » du début. Y revenir explicitement :
+« Qui avait noté une question au début ? »
+
+Si une impression a été lancée pendant la séance, elle devrait être bien
+avancée. Le montrer, et laisser la salle s'approcher de la machine. C'est la
+meilleure fin possible.
 -->

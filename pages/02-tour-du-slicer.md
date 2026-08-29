@@ -1,10 +1,10 @@
 ---
 layout: section
-module: 2 · Le tour du propriétaire
+module: 2 · Le tour du slicer
 routeAlias: mod2
 ---
 
-# Le tour du propriétaire
+# Le tour du slicer
 
 Trois vues, trois modes, trois profils
 
@@ -19,7 +19,7 @@ Annoncer : « Pendant 10 minutes, on ne fait que se repérer. Je ne règle rien.
 -->
 
 ---
-module: 2 · Le tour du propriétaire
+module: 2 · Le tour du slicer
 ---
 
 # L'écran, en quatre zones
@@ -77,7 +77,7 @@ C'est l'ordre des 90 minutes qui suivent.
 -->
 
 ---
-module: 2 · Le tour du propriétaire
+module: 2 · Le tour du slicer
 layout: two-cols-header
 ---
 
@@ -144,7 +144,7 @@ s'allonger. L'effet est parlant et prend 10 secondes.
 -->
 
 ---
-module: 2 · Le tour du propriétaire
+module: 2 · Le tour du slicer
 ---
 
 # Le trio qui décide de tout

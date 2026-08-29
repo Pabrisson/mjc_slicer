@@ -48,16 +48,16 @@ Toutes ces valeurs sont saisissables **au clavier** dans le panneau de droite. P
 
 <div class="pl-4">
 
-## Trois pièges classiques
+## Trois pièges classiques {v-click}
 
 <v-clicks>
 
-<div class="piege mb-2 text-sm">
+<div class="piege mb-3 mt-4 text-sm">
 <strong>Le modèle est 25 fois trop petit</strong><br>
 <span class="text-xs">Un STL dessiné en pouces. Mettre l'échelle à <span class="font-mono">2540 %</span>. PrusaSlicer propose souvent la correction : accepter.</span>
 </div>
 
-<div class="piege mb-2 text-sm">
+<div class="piege mb-3 text-sm">
 <strong>La pièce dépasse du plateau</strong><br>
 <span class="text-xs">Elle passe en gris et le bouton Découper se bloque. Réduire, tourner de 45° sur le plateau, ou couper en deux.</span>
 </div>
@@ -97,7 +97,7 @@ layout: two-cols-header
 
 <div class="pr-6">
 
-<div class="text-6xl font-mono my-4" style="color: var(--prusa-orange)">
+<div class="text-2xl font-mono my-4" style="color: var(--prusa-orange)">
   <KeyCap k="F" />
 </div>
 
@@ -111,12 +111,6 @@ On clique sur **une face de l'objet**, elle se retrouve à plat sur le plateau.
 
 </v-clicks>
 
-<div v-click class="regle mt-6 text-sm">
-
-Le réflexe : **on ouvre un fichier, on appuie sur <KeyCap k="F" />, on choisit la face qui doit toucher le plateau.** Ensuite seulement on réfléchit au reste.
-
-</div>
-
 </div>
 
 ::right::
@@ -127,11 +121,12 @@ Le réflexe : **on ouvre un fichier, on appuie sur <KeyCap k="F" />, on choisit 
   brief="Copie d'écran de PrusaSlicer avec l'outil « Placer sur la face » actif sur le porte-téléphone : les faces sélectionnables apparaissent surlignées en orange sur le modèle. Prendre le moment où le curseur survole une face."
   ratio="4/3" />
 
-<div v-click class="mt-4 text-sm opacity-60">
+<div v-click class="regle mt-2 text-sm">
 
-Vérifier ensuite dans le panneau de droite que la position <span class="font-mono">Z</span> vaut bien <span class="font-mono">0</span>. Un objet enfoncé de 0,2 mm dans le plateau perd sa première couche.
+Le réflexe : **on ouvre un fichier, on appuie sur <KeyCap k="F" />, on choisit la face qui doit toucher le plateau.** Ensuite seulement on réfléchit au reste.
 
 </div>
+
 
 </div>
 
@@ -175,16 +170,11 @@ layout: two-cols-header
 <div class="text-sm">
 
 Les couches sont **collées** par refusion partielle, pas fondues.
+Une pièce résiste **environ deux fois moins** dans l'axe vertical que dans le plan des couches.
 
 </div>
 
 <v-clicks>
-
-<div class="mt-2 text-sm">
-
-Une pièce résiste **environ deux fois moins** dans l'axe vertical que dans le plan des couches.
-
-</div>
 
 <div class="piege mt-2 text-sm">
 
@@ -233,7 +223,7 @@ layout: two-cols-header
 
 # La règle des 45°
 
-<div class="text-sm opacity-60 -mt-3 mb-2">Chaque couche doit reposer sur celle d'en dessous. Faites glisser.</div>
+<div class="text-sm opacity-60 -mt-3 mb-6">Chaque couche doit reposer sur celle d'en dessous.</div>
 
 ::left::
 
@@ -251,25 +241,19 @@ layout: two-cols-header
 
 <div>
 
-Chaque couche est décalée de **hauteur × tan(angle)**. Comparé à la largeur d'extrusion (0,45 mm), ça donne la part qui part dans le vide.
+À **45°**, la moitié de chaque trait repose encore sur le précédent. C'est la limite pratique, pas une loi de la physique.
 
 </div>
 
 <div class="mt-3">
 
-À **45°**, la moitié de chaque trait repose encore sur le précédent. C'est la limite pratique, pas une loi de la physique.
+Chaque couche est décalée de **hauteur × tan(angle)**. Comparé à la largeur d'extrusion (0,45 mm), ça donne la part qui part dans le vide.
 
 </div>
 
 <div class="regle mt-3">
 
 **Les ponts sont une exception.** Entre deux appuis, la buse tend un fil et le ventilateur le fige. PrusaSlicer le détecte tout seul et bascule en mode pont. Ça marche jusqu'à 5 cm environ.
-
-</div>
-
-<div class="piege mt-3">
-
-**Les trous horizontaux** sont des porte-à-faux à 90°. Le sommet d'un trou de vis s'affaisse toujours un peu - un trou de 5 mm sort à 4,7 mm en haut. Percer après coup, ou dessiner le trou en forme de goutte.
 
 </div>
 
@@ -293,62 +277,165 @@ Ne pas rentrer dans le calcul. Le montrer, pas le démontrer.
 
 ---
 module: 3 · Poser l'objet
+layout: two-cols-header
 ---
 
 # Le porte-téléphone : quelle orientation ?
 
-<div class="text-sm opacity-60 -mt-3 mb-2">Quatre critères, et ils se contredisent tous.</div>
+<div class="text-sm opacity-60 -mt-3 mb-3">Option 1 sur 3 - à plat sur le dos</div>
 
-<div class="grid grid-cols-3 gap-4">
+::left::
 
-<div v-click>
-<Placeholder ref="3.6a" brief="Le porte-téléphone à plat sur le plateau, dos contre la surface. Vue 3/4 dans PrusaSlicer." ratio="4/3" maxH="112px" />
-<div class="text-center text-sm font-semibold mt-1">À plat sur le dos</div>
-</div>
+<div class="pr-6">
 
-<div v-click>
-<Placeholder ref="3.6b" brief="Le même, dressé debout sur sa base, avec les supports visibles sous la partie inclinée." ratio="4/3" maxH="112px" />
-<div class="text-center text-sm font-semibold mt-1">Debout</div>
-</div>
-
-<div v-click>
-<Placeholder ref="3.6c" brief="Le même, couché sur le flanc. Orientation intermédiaire." ratio="4/3" maxH="112px" />
-<div class="text-center text-sm font-semibold mt-1">Sur le flanc</div>
-</div>
+<Placeholder ref="3.6a"
+  brief="Le porte-téléphone à plat sur le plateau, dos contre la surface. Vue 3/4 dans PrusaSlicer."
+  ratio="4/3" maxH="300px" />
 
 </div>
 
-<div v-click class="mt-3 text-sm">
+::right::
 
-| | À plat | Debout | Sur le flanc |
-|---|:---:|:---:|:---:|
-| **Supports** | aucun | beaucoup | un peu |
-| **Face visible** | contre le plateau | parfaite | correcte |
-| **Solidité** | faible | bonne | bonne |
-| **Temps** | court | long | moyen |
+<div class="pl-4 text-sm">
+
+<div v-click class="pb-4">
+
+| | |
+|---|:--|
+| **Supports** | aucun |
+| **Face visible** | cachée |
+| **Solidité** | faible |
+| **Temps** | court |
 
 </div>
 
-<div v-click class="regle mt-1.5 text-xs">
-
-Pas de bonne orientation dans l'absolu, mais une orientation qui **privilégie le critère qui compte pour cet objet-là**.
+<div v-click class="mt-4">
+<Verdict
+  :pour="['**Aucun support** : rien à retirer, rien à poncer', 'L\'impression **la plus courte** des trois']"
+  :contre="['La grande face prend la texture du plateau', 'Le poids tire dans le sens qui **décolle les couches**']" />
+</div>
 
 </div>
 
 <!--
-Minutage : 39-42 min. Fin du module 3.
+Minutage : 39-40 min.
 
-Faire voter la salle à main levée sur les trois orientations avant de montrer
-le tableau. Il y a rarement consensus - c'est exactement le message.
+Annoncer les trois orientations avant de les dérouler : « le même fichier, trois
+façons de le poser, et on va regarder les quatre mêmes critères à chaque fois. »
+
+Avant d'afficher le tableau, faire voter à main levée : « celle-là, elle demande
+des supports ou pas ? » Le vote sur les trois orientations n'a jamais de
+consensus - c'est exactement le message qu'on veut installer.
+
+La texture est un critère d'orientation à part entière : une pièce posée sur un
+plateau lisse ressort brillante, sur un plateau texturé elle ressort granuleuse.
+-->
+
+---
+module: 3 · Poser l'objet
+layout: two-cols-header
+---
+
+# Le porte-téléphone : quelle orientation ?
+
+<div class="text-sm opacity-60 -mt-3 mb-3">Option 2 sur 3 - debout sur sa base</div>
+
+::left::
+
+<div class="pr-6">
+
+<Placeholder ref="3.6b"
+  brief="Le même, dressé debout sur sa base, avec les supports visibles sous la partie inclinée."
+  ratio="4/3" maxH="300px" />
+
+</div>
+
+::right::
+
+<div class="pl-4 text-sm">
+
+<div v-click class="pb-4">
+
+| | |
+|---|:--|
+| **Supports** | beaucoup |
+| **Face visible** | parfaite |
+| **Solidité** | bonne |
+| **Temps** | long |
+
+</div>
+
+<div v-click class="mt-4">
+<Verdict
+  :pour="['La belle face ne touche **jamais le plateau**', 'L\'effort travaille dans le plan des couches']"
+  :contre="['Des supports partout : **temps et matière**', 'Des marques là où ils se détachent']" />
+</div>
+
+</div>
+
+<!--
+Minutage : 40-41 min.
+
+Le point à faire passer : les supports ne sont pas gratuits. Ils rallongent
+l'impression, consomment du filament qui part à la poubelle, et la surface qu'ils
+touchent ressort toujours plus rugueuse. On les détaillera au module 5.
+
+Si la salle a voté « debout » en majorité, c'est le moment de le souligner :
+l'orientation la plus jolie n'est pas forcément celle qu'on garde.
+-->
+
+---
+module: 3 · Poser l'objet
+layout: two-cols-header
+---
+
+# Le porte-téléphone : quelle orientation ?
+
+<div class="text-sm opacity-60 -mt-3 mb-3">Option 3 sur 3 - couché sur le flanc</div>
+
+::left::
+
+<div class="pr-6">
+
+<Placeholder ref="3.6c"
+  brief="Le même, couché sur le flanc. Orientation intermédiaire."
+  ratio="4/3" maxH="300px" />
+
+</div>
+
+::right::
+
+<div class="pl-4 text-sm">
+
+<div v-click="1" class="pb-4">
+
+| | |
+|---|:--|
+| **Supports** | un peu |
+| **Face visible** | correcte |
+| **Solidité** | bonne |
+| **Temps** | moyen |
+
+</div>
+
+<div v-click="2" class="mt-4">
+<Verdict
+  :pour="['Peu de supports, et faciles à retirer', 'L\'orientation que **l\'auteur du modèle** recommande']"
+  :contre="['**Moyen partout**, excellent nulle part']" />
+</div>
+
+</div>
+
+<!--
+Minutage : 41-42 min. Fin du module 3.
+
+Revenir en arrière sur les trois slides pour comparer les tableaux, maintenant
+que la salle les a tous vus. C'est le moment de la synthèse.
 
 Pour ce porte-téléphone précis, trancher devant eux et assumer : « moi je le
 mets à plat, parce que la face qui touche le plateau ne se voit pas une fois
 posé sur le bureau, et je préfère zéro support ». Une décision argumentée
 enseigne mieux qu'une règle.
-
-Rappeler au passage la texture : une pièce posée sur un plateau lisse ressort
-brillante, sur un plateau texturé elle ressort granuleuse. C'est un critère
-d'orientation à part entière.
 
 Transition vers le module 4 : « L'objet est posé. Maintenant, avec quelle
 finesse le fabrique-t-on ? »
