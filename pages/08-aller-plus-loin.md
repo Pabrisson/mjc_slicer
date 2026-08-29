@@ -6,7 +6,7 @@ routeAlias: mod8
 
 # Aller plus loin
 
-Astuces, Annexes, etc...
+Astuces, Lexique, Annexes, etc...
 
 <!--
 Minutage : 105-106 min. Module 8, 5 minutes.
@@ -66,6 +66,139 @@ une formation.
 
 Si quelqu'un demande la MMU ou l'impression multicolore : dire que l'atelier en a
 une / n'en a pas (à adapter), et que c'est un sujet à part entière.
+-->
+
+---
+layout: default
+module: Annexe
+hideInToc: true
+bare: true
+---
+
+# Annexe - le lexique (1/2)
+
+<div class="text-sm opacity-60 -mt-3 mb-2">Le mot de l'interface française, puis <span style="color: var(--prusa-orange)">celui des tutoriels et des forums</span> - presque toujours en anglais.</div>
+
+<div class="lex grid grid-cols-3 gap-x-5 text-[0.7rem]">
+<div>
+<div class="lex-titre">Le fichier et le logiciel</div>
+<div class="lex-mot"><span class="lex-fr">Trancheur</span><span class="lex-en">slicer</span><span class="lex-def">Le logiciel qui écrit les trajets de la buse.</span></div>
+<div class="lex-mot"><span class="lex-fr">Maillage</span><span class="lex-en">mesh</span><span class="lex-def">La peau de triangles qui décrit la forme.</span></div>
+<div class="lex-mot"><span class="lex-fr">G-code</span><span class="lex-en">G-code</span><span class="lex-def">Les instructions envoyées à la machine.</span></div>
+<div class="lex-mot"><span class="lex-fr">Découper, trancher</span><span class="lex-en">to slice</span><span class="lex-def">Convertir la forme en couches et en trajets.</span></div>
+<div class="lex-mot"><span class="lex-fr">Plateau</span><span class="lex-en">plater</span><span class="lex-def">L'onglet où l'on pose et oriente les objets.</span></div>
+<div class="lex-mot"><span class="lex-fr">Aperçu</span><span class="lex-en">preview</span><span class="lex-def">L'onglet qui montre le G-code, couche à couche.</span></div>
+<div class="lex-mot"><span class="lex-fr">Profil</span><span class="lex-en">preset</span><span class="lex-def">Un jeu de réglages cohérents, prêt à l'emploi.</span></div>
+<div class="lex-mot"><span class="lex-fr">Modifieur</span><span class="lex-en">modifier</span><span class="lex-def">Un volume qui impose ses réglages à une zone.</span></div>
+</div>
+<div>
+<div class="lex-titre">La machine</div>
+<div class="lex-mot"><span class="lex-fr">Buse</span><span class="lex-en">nozzle</span><span class="lex-def">L'orifice calibré par lequel sort la matière.</span></div>
+<div class="lex-mot"><span class="lex-fr">Plateau</span><span class="lex-en">print bed, heatbed</span><span class="lex-def">La surface chauffante qui porte la pièce.</span></div>
+<div class="lex-mot"><span class="lex-fr">Feuille PEI</span><span class="lex-en">PEI sheet</span><span class="lex-def">La tôle amovible, lisse ou texturée.</span></div>
+<div class="lex-mot"><span class="lex-fr">Extrudeur</span><span class="lex-en">extruder</span><span class="lex-def">Le moteur qui pousse et tire le filament.</span></div>
+<div class="lex-mot"><span class="lex-fr">Bobine</span><span class="lex-en">spool</span><span class="lex-def">Le filament enroulé, 1 kg le plus souvent.</span></div>
+<div class="lex-mot"><span class="lex-fr">Rétraction</span><span class="lex-en">retraction</span><span class="lex-def">Tirer le fil en arrière avant un déplacement.</span></div>
+<div class="lex-mot"><span class="lex-fr">Ventilation</span><span class="lex-en">cooling</span><span class="lex-def">Le ventilateur qui fige la matière déposée.</span></div>
+<div class="lex-mot"><span class="lex-fr">Débit</span><span class="lex-en">flow</span><span class="lex-def">La matière poussée par millimètre de trajet.</span></div>
+<div class="lex-mot"><span class="lex-fr">Décalage Z</span><span class="lex-en">Z-offset</span><span class="lex-def">Le réglage fin de la hauteur de 1re couche.</span></div>
+<div class="lex-mot"><span class="lex-fr">Courroie</span><span class="lex-en">belt</span><span class="lex-def">Ce qui déplace la buse. Elle peut sauter.</span></div>
+<div class="lex-mot"><span class="lex-fr">Dépôt de fil fondu</span><span class="lex-en">FDM, FFF</span><span class="lex-def">Le procédé de nos machines : on empile du fil.</span></div>
+</div>
+<div>
+<div class="lex-titre">La matière</div>
+<div class="lex-mot"><span class="lex-fr">PLA</span><span class="lex-en">polylactic acid</span><span class="lex-def">Facile et rigide, mais cassant. Mou dès 55 °C.</span></div>
+<div class="lex-mot"><span class="lex-fr">PETG</span><span class="lex-en">polyethylene terephthalate glycol</span><span class="lex-def">Tenace, tient 80 °C, mais il file beaucoup.</span></div>
+<div class="lex-mot"><span class="lex-fr">ABS, ASA</span><span class="lex-en">ABS, ASA</span><span class="lex-def">Techniques et résistants. Demandent un caisson.</span></div>
+<div class="lex-mot"><span class="lex-fr">TPU</span><span class="lex-en">thermoplastic polyurethane</span><span class="lex-def">Le filament souple, imprimé très lentement.</span></div>
+<div class="lex-mot"><span class="lex-fr">Multi-matériaux</span><span class="lex-en">MMU, multi material unit</span><span class="lex-def">Le module qui change de filament tout seul.</span></div>
+<div class="lex-mot"><span class="lex-fr">Résine</span><span class="lex-en">resin, SLA</span><span class="lex-def">L'autre technologie : de la résine durcie.</span></div>
+<div class="lex-mot"><span class="lex-fr">Séchage, étuvage</span><span class="lex-en">drying</span><span class="lex-def">Chasser l'humidité d'une bobine qui file.</span></div>
+<div class="lex-mot"><span class="lex-fr">Retrait</span><span class="lex-en">shrinkage</span><span class="lex-def">Le PLA perd 0,3 % en refroidissant.</span></div>
+<div class="lex-mot"><span class="lex-fr">Alcool isopropylique</span><span class="lex-en">IPA</span><span class="lex-def">Ce qui dégraisse le plateau. Le vrai secret.</span></div>
+</div>
+</div>
+
+<!--
+Slide de référence, comme celle des raccourcis : on ne la commente pas en
+séance, on signale seulement qu'elle existe.
+
+Pourquoi l'anglais : toutes les ressources utiles - le guide Simplify3D du
+module 7, Printables, les forums Prusa, YouTube - sont en anglais. Sans les
+mots, on ne peut même pas chercher.
+
+À dire si la question vient : PrusaSlicer bascule toute son interface en
+anglais par Configuration > Préférences > Général > Langue. C'est un bon
+exercice une fois qu'on est à l'aise, parce que les tutoriels redeviennent
+lisibles ligne à ligne.
+-->
+
+---
+layout: default
+module: Annexe
+hideInToc: true
+bare: true
+---
+
+# Annexe - le lexique (2/2)
+
+<div class="text-sm opacity-60 -mt-3 mb-2">Ce que la buse trace, ce qu'il y a autour de la pièce, et <span style="color: var(--prusa-orange)">les noms des ratés</span>.</div>
+
+<div class="lex grid grid-cols-3 gap-x-5 text-[0.7rem]">
+<div>
+<div class="lex-titre">Ce que trace la buse</div>
+<div class="lex-mot"><span class="lex-fr">Couche</span><span class="lex-en">layer</span><span class="lex-def">La tranche plate que la machine empile.</span></div>
+<div class="lex-mot"><span class="lex-fr">Hauteur de couche</span><span class="lex-en">layer height</span><span class="lex-def">L'épaisseur d'une tranche : 0,05 à 0,35 mm.</span></div>
+<div class="lex-mot"><span class="lex-fr">Première couche</span><span class="lex-en">first layer</span><span class="lex-def">Celle qui porte tout le reste.</span></div>
+<div class="lex-mot"><span class="lex-fr">Périmètre</span><span class="lex-en">perimeter</span><span class="lex-def">Un mur du contour. Il y en a 2 à 5.</span></div>
+<div class="lex-mot"><span class="lex-fr">Périmètre externe</span><span class="lex-en">external perimeter</span><span class="lex-def">Le seul trait qui se verra sur la pièce.</span></div>
+<div class="lex-mot"><span class="lex-fr">Largeur d'extrusion</span><span class="lex-en">extrusion width</span><span class="lex-def">La largeur d'un trait : 0,45 mm en buse 0,4.</span></div>
+<div class="lex-mot"><span class="lex-fr">Remplissage</span><span class="lex-en">infill</span><span class="lex-def">La structure interne, jamais visible.</span></div>
+<div class="lex-mot"><span class="lex-fr">Motif de remplissage</span><span class="lex-en">fill pattern</span><span class="lex-def">Son dessin. Gyroïde par défaut, et ça suffit.</span></div>
+<div class="lex-mot"><span class="lex-fr">Coques horizontales</span><span class="lex-en">horizontal shells</span><span class="lex-def">Les couches pleines du dessus et du dessous.</span></div>
+<div class="lex-mot"><span class="lex-fr">Couture</span><span class="lex-en">seam</span><span class="lex-def">La cicatrice où chaque boucle se referme.</span></div>
+<div class="lex-mot"><span class="lex-fr">Hauteur variable</span><span class="lex-en">variable layer height</span><span class="lex-def">Des couches fines là seulement où ça se voit.</span></div>
+</div>
+<div>
+<div class="lex-titre">Autour de la pièce</div>
+<div class="lex-mot"><span class="lex-fr">Porte-à-faux, surplomb</span><span class="lex-en">overhang</span><span class="lex-def">Une partie qui avance au-dessus du vide.</span></div>
+<div class="lex-mot"><span class="lex-fr">Pont</span><span class="lex-en">bridge</span><span class="lex-def">Un fil tendu entre deux appuis.</span></div>
+<div class="lex-mot"><span class="lex-fr">Îlot</span><span class="lex-en">island</span><span class="lex-def">Une forme qui apparaît sans rien en dessous.</span></div>
+<div class="lex-mot"><span class="lex-fr">Support</span><span class="lex-en">support material</span><span class="lex-def">L'échafaudage qu'on imprime pour le jeter.</span></div>
+<div class="lex-mot"><span class="lex-fr">Supports organiques</span><span class="lex-en">organic supports</span><span class="lex-def">Des troncs ramifiés, plus faciles à retirer.</span></div>
+<div class="lex-mot"><span class="lex-fr">Jupe</span><span class="lex-en">skirt</span><span class="lex-def">Un tour à vide qui amorce la buse.</span></div>
+<div class="lex-mot"><span class="lex-fr">Bordure</span><span class="lex-en">brim</span><span class="lex-def">Une collerette collée qui élargit l'accroche.</span></div>
+<div class="lex-mot"><span class="lex-fr">Radeau</span><span class="lex-en">raft</span><span class="lex-def">Un tapis complet imprimé sous la pièce.</span></div>
+<div class="lex-mot"><span class="lex-fr">Adhérence</span><span class="lex-en">bed adhesion</span><span class="lex-def">La tenue de la 1re couche sur le plateau.</span></div>
+<div class="lex-mot"><span class="lex-fr">Placer sur la face</span><span class="lex-en">place on face</span><span class="lex-def">Poser à plat la face qu'on a choisie.</span></div>
+<div class="lex-mot"><span class="lex-fr">Anisotropie</span><span class="lex-en">anisotropy</span><span class="lex-def">Deux fois moins solide entre les couches.</span></div>
+</div>
+<div>
+<div class="lex-titre">Les ratés, tels qu'on les nomme</div>
+<div class="lex-mot"><span class="lex-fr">Gondolage, tuilage</span><span class="lex-en">warping</span><span class="lex-def">Les coins se relèvent en refroidissant.</span></div>
+<div class="lex-mot"><span class="lex-fr">Pied d'éléphant</span><span class="lex-en">elephant foot</span><span class="lex-def">La 1re couche s'évase sous le poids.</span></div>
+<div class="lex-mot"><span class="lex-fr">Trous sur le dessus</span><span class="lex-en">pillowing</span><span class="lex-def">La coque du dessus manque d'appuis.</span></div>
+<div class="lex-mot"><span class="lex-fr">Fils, cheveux d'ange</span><span class="lex-en">stringing, oozing</span><span class="lex-def">La matière coule pendant les déplacements.</span></div>
+<div class="lex-mot"><span class="lex-fr">Bourrelets, points</span><span class="lex-en">blobs and zits</span><span class="lex-def">Des grumeaux là où la buse s'arrête.</span></div>
+<div class="lex-mot"><span class="lex-fr">Couches décalées</span><span class="lex-en">layer shift</span><span class="lex-def">L'objet part de travers à partir d'une hauteur.</span></div>
+<div class="lex-mot"><span class="lex-fr">Délaminage</span><span class="lex-en">delamination</span><span class="lex-def">Les couches se séparent sans effort.</span></div>
+<div class="lex-mot"><span class="lex-fr">Sous-extrusion</span><span class="lex-en">under-extrusion</span><span class="lex-def">Il manque de la matière : traits maigres.</span></div>
+<div class="lex-mot"><span class="lex-fr">Bouchon</span><span class="lex-en">clog</span><span class="lex-def">La buse est obstruée, plus rien ne sort.</span></div>
+<div class="lex-mot"><span class="lex-fr">Grignotage</span><span class="lex-en">grinding</span><span class="lex-def">L'extrudeur a raboté un méplat dans le fil.</span></div>
+<div class="lex-mot"><span class="lex-fr">Effet d'escalier</span><span class="lex-en">stair-stepping</span><span class="lex-def">Les marches visibles sur une pente douce.</span></div>
+</div>
+</div>
+
+<!--
+Suite de la slide précédente, même usage : à consulter, pas à commenter.
+
+La troisième colonne est la plus utile en pratique. C'est elle qui permet de
+taper le bon mot dans un moteur de recherche - « pillowing » ramène des
+centaines de photos, « trous sur le dessus » n'en ramène aucune.
+
+Elle prolonge aussi la galerie du module 7 : six défauts y étaient traités,
+onze sont nommés ici. Si quelqu'un décrit un raté qui n'était pas au module 7,
+c'est la slide vers laquelle le renvoyer.
 -->
 
 ---

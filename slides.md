@@ -75,7 +75,7 @@ routeAlias: sommaire
 
 <Link class="py-2" to="mod7"><span class="font-mono opacity-40 mr-1">7.</span><strong>Diagnostiquer un échec</strong><br><span class="text-xs opacity-50">Slicer ou machine : de quel côté chercher ?</span></Link>
 
-<Link class="py-2" to="mod8"><span class="font-mono opacity-40 mr-1">8.</span><strong>Aller plus loin</strong><br><span class="text-xs opacity-50">Astuces, Annexes, etc...</span></Link>
+<Link class="py-2" to="mod8"><span class="font-mono opacity-40 mr-1">8.</span><strong>Aller plus loin</strong><br><span class="text-xs opacity-50">Astuces, Lexique, Annexes, etc...</span></Link>
 
 </v-clicks>
 

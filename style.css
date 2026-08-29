@@ -97,6 +97,35 @@ input[type='range'] {
   font-weight: 600;
 }
 
+/* Lexique bilingue des annexes : le terme de l'interface française, puis le
+   mot anglais des tutoriels et des forums. Les entrées s'empilent en colonnes,
+   il faut donc des interlignes serrés et des marges minimales. */
+.lex-titre {
+  font-weight: 600;
+  color: var(--prusa-orange);
+  margin-bottom: 0.5em;
+}
+.lex-mot {
+  margin-bottom: 0.3em;
+  line-height: 1.25;
+}
+.lex-fr {
+  font-weight: 600;
+}
+.lex-en {
+  font-family: var(--slidev-code-font-family, monospace);
+  color: var(--prusa-orange);
+}
+/* Séparateur entre les deux langues, hérite de la couleur orange mais atténué */
+.lex-en::before {
+  content: '\00b7\00a0';
+  opacity: 0.4;
+}
+.lex-def {
+  display: block;
+  opacity: 0.6;
+}
+
 /* Bloc serré : neutralise les marges de paragraphe quand la slide est dense */
 .serre :is(p, ul, ol) {
   margin: 0;
