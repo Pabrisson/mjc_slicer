@@ -19,13 +19,18 @@ continue, on ne franchit pas le seuil.
 module: 8 · Aller plus loin
 ---
 
-# Quatre outils qui valent le détour
+# Les outils qui valent le détour
 
-<div class="grid grid-cols-2 gap-4 mt-6">
+<div class="grid grid-cols-2 gap-3 mt-4">
 
 <div v-click class="temoin">
 <strong style="color: var(--prusa-orange)"><carbon-cube class="inline" /> Les modifieurs</strong>
 <div class="text-sm opacity-70 mt-1">Poser une boîte invisible sur une zone de la pièce et lui donner ses propres réglages. Renforcer un seul trou de vis à 80 % de remplissage, sans alourdir le reste.</div>
+</div>
+
+<div v-click class="temoin">
+<strong style="color: var(--prusa-orange)"><carbon-layers class="inline" /> La hauteur de couche variable</strong>
+<div class="text-sm opacity-70 mt-1">Peindre des couches fines là où la forme est ronde ou en pente, et des couches épaisses sur les parties droites. Un bouton <em>Adaptatif</em> fait le premier jet tout seul : la finesse là où elle se voit, la vitesse partout ailleurs.</div>
 </div>
 
 <div v-click class="temoin">
@@ -45,17 +50,15 @@ module: 8 · Aller plus loin
 
 </div>
 
-<div v-click class="mt-6 text-center text-sm opacity-60">
-
-Aucun de ces outils n'est nécessaire aujourd'hui. Tous deviendront évidents vers la dixième impression.
-
-</div>
-
 <!--
 Minutage : 106-109 min.
 
 Si le temps le permet, faire une seule démonstration - le changement de couleur
 est le plus spectaculaire et le plus simple à comprendre. Trente secondes.
+
+La hauteur de couche variable est la suite directe du module 4 : on y a choisi
+une hauteur pour toute la pièce, ici on cesse d'avoir à choisir. C'est l'outil
+à citer pour quelqu'un qui a trouvé le compromis finesse / durée frustrant.
 
 Le message de la dernière ligne compte : ne pas donner l'impression qu'il reste
 une montagne à gravir. Ces outils s'attrapent au fil des impressions, pas dans
@@ -63,69 +66,6 @@ une formation.
 
 Si quelqu'un demande la MMU ou l'impression multicolore : dire que l'atelier en a
 une / n'en a pas (à adapter), et que c'est un sujet à part entière.
--->
-
----
-layout: default
-module: Annexe
-hideInToc: true
-bare: true
----
-
-# Annexe - les images à produire
-
-<div class="text-sm opacity-60 -mt-3 mb-2">Chaque emplacement porte sa consigne sur la slide. Récapitulatif pour la séance photo.</div>
-
-<div class="tight-table grid grid-cols-3 gap-x-6 gap-y-0.5 text-[0.7rem]">
-
-<div>
-
-**Captures PrusaSlicer**
-
-| Réf | Sujet |
-|---|---|
-| cover | photo d'accroche → `public/cover.jpg` |
-| 1.2 | maillage de triangles, porte-téléphone |
-| 2.2 | écran complet, onglet Plateau |
-| 2.3 | sélecteur Simple / Avancé / Expert |
-| 3.3 | outil « Placer sur la face » actif |
-| 3.6a-c | trois orientations du porte-téléphone |
-| 4.3 | liste déroulante des profils |
-| 5.7 | supports organiques sur la figurine |
-| 5.8 | jupe et bordure, vue de dessus |
-| 6.3 | aperçu, curseur sur la 1<sup>re</sup> couche |
-
-</div>
-
-<div>
-
-**Photos d'objets réels**
-
-| Réf | Sujet |
-|---|---|
-| 1.3 | macro de la buse en train d'extruder |
-| 3.4 | deux crochets : cassé à plat / intact debout |
-| 5.6 | dessus grumeleux / dessus lisse |
-
-</div>
-
-<div class="opacity-70">
-
-**À prévoir aussi, hors slides**
-
-
-un G-code ouvert dans un éditeur de texte, une caisse de pièces ratées,
-deux figurines en 0,35 et 0,10 mm, une pièce PLA et une pièce PETG à plier,
-une pièce avec ses supports encore attachés et une pince coupante.
-
-</div>
-
-</div>
-
-<!--
-Cette slide est un aide-mémoire de production, pas une slide de formation.
-Elle précède désormais la slide de fin : passer vite en séance, ou lui ajouter
-« hide: true » le jour J.
 -->
 
 ---
@@ -226,4 +166,68 @@ depuis la slide « hors sujet » du début. Y revenir explicitement :
 Si une impression a été lancée pendant la séance, elle devrait être bien
 avancée. Le montrer, et laisser la salle s'approcher de la machine. C'est la
 meilleure fin possible.
+-->
+
+---
+layout: default
+module: Annexe
+hideInToc: true
+bare: true
+---
+
+# Annexe - les images à produire
+
+<div class="text-sm opacity-60 -mt-3 mb-2">Chaque emplacement porte sa consigne sur la slide. Récapitulatif pour la séance photo.</div>
+
+<div class="tight-table grid grid-cols-3 gap-x-6 gap-y-0.5 text-[0.7rem]">
+
+<div>
+
+**Captures PrusaSlicer**
+
+| Réf | Sujet |
+|---|---|
+| cover | photo d'accroche → `public/cover.jpg` |
+| 1.2 | maillage de triangles, porte-téléphone |
+| 2.2 | écran complet, onglet Plateau |
+| 2.3 | sélecteur Simple / Avancé / Expert |
+| 3.3 | outil « Placer sur la face » actif |
+| 3.6a-c | trois orientations du porte-téléphone |
+| 4.3 | liste déroulante des profils |
+| 5.7 | supports organiques sur la figurine |
+| 5.8 | jupe et bordure, vue de dessus |
+| 6.3 | aperçu, curseur sur la 1<sup>re</sup> couche |
+
+</div>
+
+<div>
+
+**Photos d'objets réels**
+
+| Réf | Sujet |
+|---|---|
+| 1.3 | macro de la buse en train d'extruder |
+| 3.4 | deux crochets : cassé à plat / intact debout |
+| 5.6 | dessus grumeleux / dessus lisse |
+
+</div>
+
+<div class="opacity-70">
+
+**À prévoir aussi, hors slides**
+
+
+un G-code ouvert dans un éditeur de texte, une caisse de pièces ratées,
+deux figurines en 0,35 et 0,10 mm, une pièce PLA et une pièce PETG à plier,
+une pièce avec ses supports encore attachés et une pince coupante.
+
+</div>
+
+</div>
+
+<!--
+Cette slide est un aide-mémoire de production, pas une slide de formation.
+Elle est placée après la slide de fin et masquée par « hide: true » : elle ne
+sort plus dans le diaporama. Retirer cette ligne du frontmatter pour la revoir
+pendant la préparation de la séance photo.
 -->
