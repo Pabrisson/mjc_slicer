@@ -134,7 +134,7 @@ Manipuler les trois motifs et le curseur. Faire remarquer la barre verte
 (solidité) qui plafonne alors que la barre orange (temps) continue à monter :
 c'est tout le message en une image.
 
-Sur les motifs : Gyroïde est le défaut de Prusa depuis des années et il n'y a
+Sur les motifs : Gyroïde est le motif par défaut depuis des années et il n'y a
 presque jamais de raison d'en changer. Le mentionner et passer - c'est le genre
 de sujet où une salle peut s'enliser une demi-heure.
 
@@ -238,7 +238,7 @@ layout: two-cols-header
 
 <div class="mb-2 text-xs">
 
-| Réglage PrusaSlicer                | Quand                                      |
+| Réglage                            | Quand                                      |
 |------------------------------------|--------------------------------------------|
 | **Aucun**                          | Le défaut. Essayer d'abord                 |
 | **Depuis le plateau**              | Le plus sûr : rien ne s'appuie sur l'objet |
@@ -262,7 +262,7 @@ layout: two-cols-header
 <div class="pl-4">
 
 <Placeholder ref="5.7"
-  brief="Copie d'écran de PrusaSlicer, vue Aperçu, figurine avec supports organiques : troncs fins et ramifiés en violet sous les bras ou le menton."
+  brief="Copie d'écran du slicer, vue Aperçu, figurine avec supports organiques : troncs fins et ramifiés en vert sous les bras ou le menton."
   ratio="4/3" maxH="180px" />
 
 <div v-click class="mt-3 font-semibold text-center" style="color: var(--prusa-orange)">
@@ -325,7 +325,7 @@ layout: two-cols-header
 
 <div class="temoin">
 <strong style="color: var(--prusa-orange)">Radeau</strong> - <em>raft</em><br>
-<span class="text-xs opacity-70">Un tapis complet sous la pièce. Gaspille de la matière et abîme le dessous. Sur une Prusa, on n'en a quasiment jamais besoin.</span>
+<span class="text-xs opacity-70">Un tapis complet sous la pièce. Gaspille de la matière et abîme le dessous. Sur une imprimante à plateau chauffant bien réglée, on n'en a quasiment jamais besoin.</span>
 </div>
 
 </v-clicks>
@@ -337,7 +337,7 @@ layout: two-cols-header
 <div class="pl-4">
 
 <Placeholder ref="5.8"
-  brief="Copie d'écran de l'aperçu PrusaSlicer, vue de dessus de la première couche, montrant côte à côte une pièce avec jupe (anneau détaché) et une pièce avec bordure (collerette collée au contour). Bien montrer la différence entre les deux."
+  brief="Copie d'écran de l'aperçu du slicer, vue de dessus de la première couche, montrant côte à côte une pièce avec jupe (anneau détaché) et une pièce avec bordure (collerette collée au contour). Bien montrer la différence entre les deux."
   ratio="4/3" />
 
 <div v-click class="regle mt-4 text-sm">
@@ -367,30 +367,29 @@ Bon moment pour la pause de 5 minutes si nécessaire.
 module: 5 · Les 5 réglages
 ---
 
-# Ce qu'on ne touche pas
+# Ce qu'on garde pour plus tard
 
-<div class="grid grid-cols-3 gap-3 mt-6 text-center text-sm">
+<div class="text-sm opacity-60 -mt-3 mb-3">Trois familles de réglages qui ne s'ouvrent pas le premier jour.</div>
 
-<div v-click class="temoin opacity-70">
+<div class="grid grid-cols-3 gap-3 text-center text-sm">
+
+<div v-click class="temoin">
+<div class="text-xl leading-none mb-1" style="color: var(--prusa-orange)"><carbon-meter-alt /></div>
 <strong>Vitesses</strong>
-<div class="text-xs opacity-60 mt-1">et accélérations</div>
+<div class="text-xs opacity-60">et accélérations</div>
 </div>
 
-<div v-click class="temoin opacity-70">
+<div v-click class="temoin">
+<div class="text-xl leading-none mb-1" style="color: var(--prusa-orange)"><carbon-direction-u-turn /></div>
 <strong>Rétraction</strong>
-<div class="text-xs opacity-60 mt-1">longueur et vitesse</div>
+<div class="text-xs opacity-60">longueur et vitesse</div>
 </div>
 
-<div v-click class="temoin opacity-70">
+<div v-click class="temoin">
+<div class="text-xl leading-none mb-1" style="color: var(--prusa-orange)"><carbon-snowflake /></div>
 <strong>Ventilation</strong>
-<div class="text-xs opacity-60 mt-1">et débit de matière</div>
+<div class="text-xs opacity-60">et débit de matière</div>
 </div>
-
-</div>
-
-<div v-click class="mt-8">
-
-Ces réglages ne sont pas indépendants. **Ils forment un équilibre.**
 
 </div>
 
@@ -398,19 +397,13 @@ Ces réglages ne sont pas indépendants. **Ils forment un équilibre.**
 
 <div class="mt-4 text-sm">
 
-Monter la température améliore l'adhésion entre couches - et fait filer le filament. Alors on augmente la rétraction - et on ronge le filament dans l'extrudeur. Alors on ralentit - et la couche a le temps de trop refroidir. Chaque correction crée le problème suivant.
+Ils ne sont pas indépendants : **ils forment un équilibre**. Monter la température améliore l'adhésion entre couches et fait filer le filament. Alors on augmente la rétraction et on ronge le filament dans l'extrudeur. Alors on ralentit et la couche a le temps de trop refroidir. Chaque correction crée le problème suivant.
 
 </div>
 
-<div class="regle mt-6 text-sm">
+<div class="regle mt-3 text-sm">
 
-Prusa a passé des centaines d'heures à trouver cet équilibre pour **cette machine, cette matière, cette hauteur de couche**. Un débutant qui change une valeur ne l'améliore pas : il le casse.
-
-</div>
-
-<div class="piege mt-4 text-sm">
-
-**Le bon réflexe** : un problème de température, de fil ou de collage se corrige en **changeant de profil de filament**, pas en tapant une valeur. Si le profil de votre bobine n'existe pas, prendre le profil générique de la matière - jamais bricoler celui d'une autre.
+Le fabricant a passé des centaines d'heures à trouver cet équilibre pour **cette machine, cette matière, cette hauteur de couche**. Y toucher sans savoir ce qu'on déplace, ce n'est pas l'améliorer : c'est le casser. **Mais ça s'apprend**, et ces réglages redeviennent alors ce qu'ils sont : de vrais outils à modifier.
 
 </div>
 
@@ -419,18 +412,29 @@ Prusa a passé des centaines d'heures à trouver cet équilibre pour **cette mac
 <!--
 Minutage : 77-80 min. Fin du module 5.
 
-C'est une slide « d'interdiction », et les interdictions ne tiennent que si on
-donne la raison. La chaîne de conséquences (température → fils → rétraction →
-grignotage → lenteur → refroidissement) doit être racontée, pas lue.
+Ce n'est pas une slide d'interdiction, c'est une slide de calendrier : ces
+réglages ne sont ni sacrés ni hors de portée, ils sont simplement prématurés.
+Le dire explicitement, sinon la salle entend « c'est trop compliqué pour vous »
+et se ferme la porte toute seule.
+
+La chaîne de conséquences (température → fils → rétraction → grignotage →
+lenteur → refroidissement) doit être racontée, pas lue. C'est elle qui justifie
+l'attente : le problème n'est pas la difficulté d'un réglage pris isolément,
+c'est qu'ils bougent tous ensemble.
 
 Anticiper l'objection : « mais sur YouTube ils changent tout le temps la
 température ». Réponse honnête : oui, et ce sont des gens qui ont une machine
 qu'ils connaissent, une bobine qu'ils ont calibrée, et qui savent revenir en
 arrière. Ce n'est pas le point de départ, c'est l'étape d'après.
 
-Ne pas fermer complètement la porte : dire qu'après quelques dizaines
-d'impressions, la calibration devient un sujet intéressant - et que c'est
-le bon moment pour une deuxième formation.
+Les trois conditions sont le vrai contenu de la slide : elles donnent un critère
+vérifiable pour savoir si on est prêt, plutôt qu'une autorisation à demander.
+Insister sur « Enregistrer sous » - c'est ce qui transforme un bricolage
+irréversible en essai.
+
+Terminer par une invitation, pas par une barrière : après quelques dizaines
+d'impressions, la calibration devient un sujet passionnant, et c'est le bon
+moment pour une deuxième formation.
 
 Transition vers le module 6 : « Tout est réglé. On peut découper. Et surtout,
 on peut enfin vérifier. »

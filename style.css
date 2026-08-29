@@ -84,3 +84,8 @@ input[type='range'] {
 .tight-table th {
   font-weight: 600;
 }
+
+/* Bloc serré : neutralise les marges de paragraphe quand la slide est dense */
+.serre :is(p, ul, ol) {
+  margin: 0;
+}

@@ -93,7 +93,6 @@ bare: true
 | 4.3 | liste déroulante des profils |
 | 5.7 | supports organiques sur la figurine |
 | 5.8 | jupe et bordure, vue de dessus |
-| 6.2 | aperçu, vue Type de fonctionnalité |
 | 6.3 | aperçu, curseur sur la 1<sup>re</sup> couche |
 
 </div>

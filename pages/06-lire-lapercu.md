@@ -6,7 +6,7 @@ routeAlias: mod6
 
 # Trancher et lire l'aperçu
 
-Voir le problème avant de perdre quatre heures
+Voir le problème avant de perdre 4 heures d'impressions
 
 <!--
 Minutage : 80-81 min. Module 6, 15 minutes.
@@ -22,7 +22,7 @@ layout: two-cols-header
 
 # Le code couleur
 
-<div class="text-sm opacity-60 -mt-3 mb-2">Onglet <strong>Aperçu</strong>, vue « Type de fonctionnalité ». La grille de lecture.</div>
+<div class="text-sm opacity-60 -mt-3 mb-2">Onglet <strong>Aperçu</strong>, liste déroulante <strong>Type d'élément</strong>. La grille de lecture.</div>
 
 ::left::
 
@@ -34,34 +34,83 @@ layout: two-cols-header
 
 ::right::
 
-<div class="pl-4">
+<div class="pl-1 leading-snug">
 
-<Placeholder ref="6.2"
-  brief="Copie d'écran de l'onglet Aperçu de PrusaSlicer avec le porte-téléphone tranché, vue « Type de fonctionnalité », curseur de couche placé à mi-hauteur pour qu'on voie à la fois du remplissage, des périmètres et une surface pleine. La légende de couleurs doit être visible à droite."
-  ratio="4/3" />
+<v-clicks>
+
+<div class="temoin mb-2">
+<span class="pastille" style="background: #ff7d38"></span><strong>L'orange, c'est la peau</strong><br>
+<span class="text-xs opacity-70">Le <strong>périmètre externe</strong> : le seul trait qu'on verra et qu'on mesurera. Le jaune, c'est le même mur, caché derrière.</span>
+</div>
+
+<div class="temoin mb-2">
+<span class="pastille" style="background: #b03029"></span><strong>Le rouge, c'est du vide organisé</strong><br>
+<span class="text-xs opacity-70">Le <strong>remplissage interne</strong> : ici un tiers du temps, pour ce que personne ne verra jamais.</span>
+</div>
+
+<div class="temoin mb-2">
+<span class="pastille" style="background: #00ff00"></span><span class="pastille" style="background: #00876e"></span><strong>Les verts partent à la poubelle</strong><br>
+<span class="text-xs opacity-70">Supports, interface, jupe et bordure. Du temps et de la matière qu'on arrachera à la fin.</span>
+</div>
+
+<div class="text-xs opacity-65 px-1">
+La colonne <strong>Pourcentage</strong> compte du <strong>temps</strong>, pas de la matière.<br>
+Chaque ligne est cliquable : masquer une catégorie nettoie l'aperçu.
+</div>
+
+</v-clicks>
 
 </div>
 
 ::bottom::
 
-<div v-click class="regle mt-4 mx-2">
+<div v-click class="regle mt-2 mx-2 text-sm">
 
-Deux réflexes suffisent pour commencer : **le jaune est ce qui se verra**, **le violet finira à la poubelle**. Beaucoup de violet ? Il y a peut-être une meilleure orientation.
+Deux réflexes suffisent pour commencer : **l'orange est ce qui se verra**, **le vert finira à la poubelle**. Beaucoup de vert ? Il y a peut-être une meilleure orientation.
 
 </div>
+
+<style>
+/* La légende est dense : elle mérite un peu plus que la moitié de la slide. */
+.two-cols-header {
+  grid-template-columns: 1.35fr 1fr;
+  column-gap: 0.5rem;
+}
+/* Cartouches resserrés : la colonne de droite doit laisser la place à la règle. */
+.two-cols-header .temoin {
+  padding: 0.35em 0.75em;
+}
+/* Pastille de rappel, exactement la couleur du logiciel */
+.pastille {
+  display: inline-block;
+  width: 0.62em;
+  height: 0.62em;
+  border-radius: 2px;
+  margin-right: 0.4em;
+  vertical-align: middle;
+}
+</style>
 
 <!--
 Minutage : 81-84 min.
 
-Ne pas faire apprendre les neuf couleurs. Deux suffisent pour commencer :
-jaune = la peau visible, violet = les supports. Le reste vient à l'usage.
+Le panneau projeté est la copie exacte de celui du logiciel, chiffres compris :
+ouvrir PrusaSlicer à côté, la salle doit retrouver la même chose à l'écran.
+
+Ne pas faire apprendre les onze lignes. Deux suffisent pour commencer :
+orange = la peau visible, vert = ce qu'on jette. Le reste vient à l'usage.
+
+Le piège classique à désamorcer tout de suite : « périmètre » (jaune) et
+« périmètre externe » (orange) ne sont pas la même chose. Seul l'orange se voit.
+Et le violet n'est pas du support : c'est du remplissage solide, les couches
+pleines qui ferment le dessus et le dessous.
 
 Basculer en direct entre l'onglet Plateau et l'onglet Aperçu plusieurs fois,
 pour que le geste devienne évident. Beaucoup de débutants ne savent tout
 simplement pas que cet onglet existe.
 
-Montrer que la légende de droite est cliquable : masquer les déplacements
-(le vert) rend l'aperçu beaucoup plus lisible. C'est un bon premier geste.
+Montrer que la légende est cliquable : masquer une catégorie la retire de
+l'aperçu. Décocher les déplacements rend la vue beaucoup plus lisible.
 -->
 
 ---
@@ -164,9 +213,9 @@ Aucune n'est indispensable au quotidien. La vue **Vitesse** est la plus instruct
 
 <div class="pl-4">
 
-## Le verdict, en bas à droite
+## Le verdict, en bas à droite {v-click}
 
-<div class="temoin mt-3">
+<div v-click class="temoin mt-3">
 
 <div class="flex justify-between text-sm py-1">
   <span class="opacity-60">Temps estimé</span>
@@ -188,12 +237,6 @@ Aucune n'est indispensable au quotidien. La vue **Vitesse** est la plus instruct
 <div class="regle mt-4 text-sm">
 
 **C'est ici qu'on arbitre.** Trois heures de plus pour passer de 0,20 à 0,15 mm : est-ce que ça vaut le coup pour cette pièce-là ? La question n'a de réponse qu'en voyant les deux chiffres.
-
-</div>
-
-<div class="mt-3 text-xs opacity-60">
-
-Le temps annoncé par une Prusa est fiable à 10 % près. Le prix se règle dans le profil de filament, avec le prix réel de votre bobine.
 
 </div>
 
@@ -247,13 +290,13 @@ module: 6 · Lire l'aperçu
 </div>
 
 <div class="temoin">
-<strong style="color: var(--prusa-orange)">5 · Du violet sur la belle face</strong><br>
-<span class="text-xs opacity-70">Un support touche la surface qui doit être vue. Elle sortira marquée. → réorienter, ou accepter de poncer.</span>
+<strong style="color: var(--prusa-orange)">5 · Du vert sur la belle face</strong><br>
+<span class="text-xs opacity-70">Un support (vert vif) touche la surface qui doit être vue. Elle sortira marquée. → réorienter, ou accepter de poncer.</span>
 </div>
 
 <div class="regle">
 <strong>Le rituel, avant chaque export</strong><br>
-<span class="text-xs">Aperçu → première couche → monter jusqu'en haut → regarder le temps. <strong>Trente secondes.</strong></span>
+<span class="text-xs">Aperçu → première couche → monter jusqu'en haut → regarder le temps.</span>
 </div>
 
 </v-clicks>
