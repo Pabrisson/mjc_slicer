@@ -1,0 +1,83 @@
+:root {
+  --prusa-orange: #fa6831;
+  --prusa-orange-soft: #ff8b5e;
+  --slidev-theme-primary: #fa6831;
+}
+
+html.dark {
+  --prusa-orange: #ff7a45;
+}
+
+/* Respirer un peu plus : une formation se lit de loin */
+.slidev-layout {
+  --slidev-code-font-size: 0.8em;
+}
+
+.slidev-layout h1 {
+  color: var(--prusa-orange);
+  font-weight: 700;
+}
+
+.slidev-layout h2 {
+  font-weight: 600;
+}
+
+.slidev-layout blockquote {
+  border-left: 3px solid var(--prusa-orange);
+}
+
+/* Mise en avant d'une règle à retenir */
+.regle {
+  border-left: 4px solid var(--prusa-orange);
+  background: color-mix(in srgb, var(--prusa-orange) 8%, transparent);
+  padding: 0.6em 1em;
+  border-radius: 0 0.4em 0.4em 0;
+}
+
+/* Piège classique */
+.piege {
+  border-left: 4px solid #c62828;
+  background: color-mix(in srgb, #c62828 8%, transparent);
+  padding: 0.6em 1em;
+  border-radius: 0 0.4em 0.4em 0;
+}
+
+/* Cartouche « objet témoin » */
+.temoin {
+  border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+  border-radius: 0.5em;
+  padding: 0.5em 0.9em;
+  font-size: 0.85em;
+}
+
+/* Tables plus denses et plus lisibles en projection */
+.slidev-layout table {
+  font-size: 0.85em;
+}
+.slidev-layout th {
+  color: var(--prusa-orange);
+}
+
+/* Curseurs des composants interactifs */
+input[type='range'] {
+  accent-color: var(--prusa-orange);
+  cursor: pointer;
+}
+
+/* Tableau dense : pour les annexes et les listes de référence.
+   Le padding des cellules du thème l'emporte sur les utilitaires de taille,
+   il faut donc le neutraliser explicitement. */
+.tight-table table {
+  font-size: inherit;
+  margin: 0.2em 0;
+  width: 100%;
+}
+.tight-table th,
+.tight-table td {
+  padding: 0.06em 0.6em 0.06em 0;
+  line-height: 1.3;
+  border: none;
+}
+.tight-table th {
+  font-weight: 600;
+}

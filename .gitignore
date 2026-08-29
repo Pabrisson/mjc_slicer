@@ -5,3 +5,6 @@ dist
 .vite-inspect
 .remote-assets
 components.d.ts
+.playwright-mcp
+.idea
+docs/superpowers
