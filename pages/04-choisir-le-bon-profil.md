@@ -170,16 +170,11 @@ Cinq profils, une seule différence de fond : la finesse.
 
 <div class="pl-4">
 
-<Figure refId="4.3"
-  src="/img/4.3-profils.png"
-  credit="Prusa Research - Knowledge Base"
-  alt="La liste déroulante « Print settings » ouverte, montrant les préréglages système de 0,05 mm à 0,30 mm."
-  brief="Copie d'écran de la liste déroulante des réglages d'impression, ouverte sur les préréglages système. Capture d'une MK3 : les noms de profils ne sont pas traduits, la liste d'une MK2.5S diffère un peu."
-  ratio="598/364" maxH="200px" />
+<PresetsDropdown />
 
 <div v-click class="mt-2 text-xs opacity-55">
 
-Capture en anglais : <strong>Print settings</strong> se lit <strong>Réglages d'impression</strong>, et <strong>System presets</strong>, <strong>Préréglages système</strong>. Les noms des profils, eux, ne sont jamais traduits.
+Deux profils de la liste ne sont pas dans le tableau : les <strong>100mms Linear Advance</strong>. Mêmes hauteurs de couche, mais réglées pour imprimer à 100 mm/s. On les laisse de côté aujourd'hui.
 
 </div>
 

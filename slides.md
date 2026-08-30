@@ -108,7 +108,7 @@ module: Accueil
 
 <div class="pr-6">
 
-<h2 v-click><carbon-checkmark-filled class="text-green-600" /> Au programme</h2>
+<h2 v-click class="mt-2"><carbon-checkmark-filled class="text-green-600" /> Au programme</h2>
 
 <br/>
 
@@ -128,7 +128,7 @@ module: Accueil
 
 <div class="pl-6">
 
-<h2 v-click><carbon-close-filled class="text-red-500 opacity-70" /> Hors sujet aujourd'hui</h2>
+<h2 v-click class="mt-2"><carbon-close-filled class="text-red-500 opacity-70" /> Hors sujet aujourd'hui</h2>
 
 <br/>
 
