@@ -24,26 +24,24 @@ module: 2 · Le tour du slicer
 
 # L'écran, en quatre zones
 
-<Placeholder ref="2.2"
-  brief="Copie d'écran plein cadre de PrusaSlicer, onglet Plateau, mode Avancé, avec le porte-téléphone posé sur le plateau de la MK2.5S. Interface en français. Ne rien annoter : les repères sont ajoutés par-dessus dans Slidev."
-  ratio="16/7" maxH="360px" />
+<SlicerWindow />
 
-<div v-drag="[60,180,150,60]" class="drag-note">
+<div v-drag="[128,252,150,60]" class="drag-note">
   <strong>1 · Barre d'outils</strong><br>
   <span class="op-60">déplacer, tourner, poser sur la face</span>
 </div>
 
-<div v-drag="[350,120,150,60]" class="drag-note">
+<div v-drag="[169,146,150,60]" class="drag-note">
   <strong>2 · Les onglets</strong><br>
   <span class="op-60">Plateau · Aperçu · les réglages</span>
 </div>
 
-<div v-drag="[640,180,160,60]" class="drag-note">
+<div v-drag="[522,195,160,60]" class="drag-note">
   <strong>3 · Les trois profils</strong><br>
   <span class="op-60">imprimante, filament, qualité</span>
 </div>
 
-<div v-drag="[640,330,160,60]" class="drag-note">
+<div v-drag="[522,388,160,60]" class="drag-note">
   <strong>4 · Découper / Exporter</strong><br>
   <span class="op-60">et le temps estimé</span>
 </div>
@@ -114,9 +112,7 @@ layout: two-cols-header
 
 <div class="pl-4">
 
-<Placeholder ref="2.3"
-  brief="Copie d'écran serrée sur le sélecteur de mode en haut à droite de PrusaSlicer (Simple / Avancé / Expert), avec Avancé sélectionné. Zoom net, on doit lire les trois libellés."
-  ratio="16/6" />
+<ModeSwitch />
 
 <div v-click class="regle mt-5 text-sm">
 

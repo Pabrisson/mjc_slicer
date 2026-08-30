@@ -130,3 +130,26 @@ input[type='range'] {
 .serre :is(p, ul, ol) {
   margin: 0;
 }
+
+/* Voile de la slide de couverture.
+   La photo de fond est claire et chargée - un écran d'ordinateur allumé juste
+   sous le sous-titre. Sans voile, le sous-titre et l'URL s'y noient. On
+   assombrit la photo plutôt que d'éclaircir la typographie : la couleur du
+   titre reste celle du reste du diaporama.
+
+   Le voile passe en z-index négatif dans un contexte d'empilement isolé : il
+   se glisse entre la photo et le contenu sans qu'on ait à repositionner les
+   enfants. Leur imposer « position: relative » décrocherait les éléments
+   posés en absolu dans les coins. */
+.slidev-layout.cover {
+  position: relative;
+  isolation: isolate;
+}
+.slidev-layout.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.7));
+  pointer-events: none;
+  z-index: -1;
+}

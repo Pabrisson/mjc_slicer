@@ -18,13 +18,18 @@ fonts:
 layout: cover
 module: Accueil
 bare: true
+background: /cover.jpg
 ---
 
-<!-- IMAGE : photo d'accroche en fond, prise à l'atelier.
-     Une MK2.5S en cours d'impression, vue rapprochée sur la buse et les premières
-     couches, lumière chaude, arrière-plan flou. Cadrage 16/9 paysage.
-     Une fois la photo prise : la déposer dans public/ et ajouter au frontmatter
-     ci-dessus :  background: /cover.jpg  -->
+<!-- Photo d'accroche : une imprimante en train d'imprimer à côté du slicer
+     affiché sur l'écran - le sujet même de la formation.
+     Jonathan Juursema, Wikimedia Commons, CC BY-SA 3.0.
+     Récupérée par scripts/fetch-images.sh, attribution dans
+     docs/credits-images.md. Le crédit reste affiché sur la slide : c'est la
+     condition de la licence.
+     Pour la remplacer par une photo prise à l'atelier - une MK2.5S en cours
+     d'impression, vue rapprochée sur la buse, lumière chaude, arrière-plan
+     flou, cadrage 16/9 - il suffit d'écraser public/cover.jpg. -->
 
 # Les bases d'un slicer
 
@@ -36,6 +41,11 @@ Comprendre **PrusaSlicer** pour ne plus imprimer au hasard
 
 <div class="abs-br m-6 text-xs opacity-40">
   Espace ou <KeyCap k="→" /> pour avancer
+</div>
+
+<div class="abs-bl m-6 text-left text-[0.6rem] opacity-35">
+  Photo <a href="https://commons.wikimedia.org/wiki/File:Felix_3D_Printer_-_Printing_Set-up_With_Examples.JPG" target="_blank">Jonathan Juursema</a>,
+  <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.fr" target="_blank">CC BY-SA 3.0</a>
 </div>
 
 <!--

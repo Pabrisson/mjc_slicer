@@ -194,9 +194,7 @@ Moins dessous, parce que la première couche est déjà pleine et écrasée sur 
 
 <div class="pl-4">
 
-<Placeholder ref="5.6"
-  brief="Photo en lumière rasante du dessus d'une pièce ratée par « pillowing » : trous et bosses, on devine le remplissage dessous. À côté, la même réussie, surface lisse."
-  kind="photo" ratio="4/3" maxH="185px" />
+<Pillowing />
 
 <div v-click class="piege mt-3 text-sm">
 
@@ -261,9 +259,13 @@ layout: two-cols-header
 
 <div class="pl-4">
 
-<Placeholder ref="5.7"
-  brief="Copie d'écran du slicer, vue Aperçu, figurine avec supports organiques : troncs fins et ramifiés en vert sous les bras ou le menton."
-  ratio="4/3" maxH="180px" />
+<Figure refId="5.7"
+  src="/img/5.7-supports-organiques.jpg"
+  credit="Prusa Research - Knowledge Base"
+  kind="photo"
+  alt="Deux figurines imprimées côte à côte : à gauche, prise dans un bloc dense de supports en grille ; à droite, tenue par quelques branches fines de supports organiques."
+  brief="Deux figurines identiques : à gauche les supports en grille, un mur plein de matière ; à droite les supports organiques, quelques troncs ramifiés. La différence de matière dépensée doit sauter aux yeux."
+  ratio="16/9" maxH="200px" />
 
 <div v-click class="mt-3 font-semibold text-center" style="color: var(--prusa-orange)">
 
@@ -336,9 +338,7 @@ layout: two-cols-header
 
 <div class="pl-4">
 
-<Placeholder ref="5.8"
-  brief="Copie d'écran de l'aperçu du slicer, vue de dessus de la première couche, montrant côte à côte une pièce avec jupe (anneau détaché) et une pièce avec bordure (collerette collée au contour). Bien montrer la différence entre les deux."
-  ratio="4/3" />
+<SkirtBrim />
 
 <div v-click class="regle mt-4 text-sm">
 

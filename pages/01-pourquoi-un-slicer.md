@@ -51,9 +51,7 @@ Un **STL**, c'est une liste de triangles. Rien d'autre. Appeler "Maillage" ou "M
 
 <div>
 
-<Placeholder ref="1.2"
-  brief="Capture de PrusaSlicer, vue Plateau, porte-téléphone affiché avec les arêtes visibles, pour qu'on voie nettement le maillage de triangles. Zoomer sur une zone courbe."
-  ratio="4/3" maxH="180px" />
+<MeshGrain />
 
 <div v-click class="mt-3 text-sm">
 
@@ -118,9 +116,13 @@ Elle ne sait pas ce qu'est **un cube** ou **un cercle**. Elle ne voit rien, ne m
 
 <div class="pl-4">
 
-<Placeholder ref="1.3"
-  brief="Photo macro de la buse de la MK2.5S en train de déposer une ligne de PLA sur les premières couches. On doit voir la matière écrasée qui sort et le trait qui se forme derrière. Éclairage latéral pour faire ressortir le relief des couches."
-  kind="photo" ratio="4/3" />
+<Figure refId="1.3"
+  src="/img/1.3-buse-macro.jpg"
+  credit="Luke Jones - CC BY 2.0"
+  kind="photo"
+  alt="Gros plan sur la buse en laiton d'une imprimante, au ras du plateau, en train de déposer la première couche de matière."
+  brief="Photo macro de la buse en train de déposer une ligne de matière sur le plateau. On doit voir la matière écrasée qui sort et le trait qui se forme derrière. Éclairage latéral pour faire ressortir le relief."
+  ratio="16/9" maxH="215px" />
 
 <div v-click class="temoin mt-4">
 

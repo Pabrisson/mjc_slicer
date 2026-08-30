@@ -117,9 +117,12 @@ On clique sur **une face de l'objet**, elle se retrouve à plat sur le plateau.
 
 <div class="pl-4">
 
-<Placeholder ref="3.3"
-  brief="Copie d'écran de PrusaSlicer avec l'outil « Placer sur la face » actif sur le porte-téléphone : les faces sélectionnables apparaissent surlignées en orange sur le modèle. Prendre le moment où le curseur survole une face."
-  ratio="4/3" />
+<Figure refId="3.3"
+  src="/img/3.3-placer-sur-face.png"
+  credit="Prusa Research - Knowledge Base"
+  alt="Le modèle affiche ses faces sélectionnables en vert ; la face survolée par le curseur est en orange."
+  brief="Copie d'écran de PrusaSlicer avec l'outil « Placer sur la face » actif : les faces sélectionnables apparaissent surlignées sur le modèle. Prendre le moment où le curseur survole une face."
+  ratio="1/1" maxH="230px" />
 
 <div v-click class="regle mt-2 text-sm">
 
@@ -157,9 +160,7 @@ layout: two-cols-header
 
 <div class="pr-6">
 
-<Placeholder ref="3.4"
-  brief="Deux crochets identiques côte à côte sur fond neutre : à gauche celui imprimé à plat, cassé net à la base, cassure bien visible entre deux couches. À droite celui imprimé debout, intact, avec un poids accroché. Lumière rasante."
-  kind="photo" ratio="4/3" maxH="165px" />
+<AnisotropyBreak />
 
 </div>
 
@@ -288,9 +289,7 @@ layout: two-cols-header
 
 <div class="pr-6">
 
-<Placeholder ref="3.6a"
-  brief="Le porte-téléphone à plat sur le plateau, dos contre la surface. Vue 3/4 dans PrusaSlicer."
-  ratio="4/3" maxH="300px" />
+<OrientationPose pose="plat" />
 
 </div>
 
@@ -302,7 +301,7 @@ layout: two-cols-header
 
 | | |
 |---|:--|
-| **Supports** | aucun |
+| **Supports** | beaucoup |
 | **Face visible** | cachée |
 | **Solidité** | faible |
 | **Temps** | court |
@@ -311,8 +310,8 @@ layout: two-cols-header
 
 <div v-click class="mt-4">
 <Verdict
-  :pour="['**Aucun support** : rien à retirer, rien à poncer', 'L\'impression **la plus courte** des trois']"
-  :contre="['La grande face prend la texture du plateau', 'Le poids tire dans le sens qui **décolle les couches**']" />
+  :pour="['L\'impression **la plus courte** des trois : 47 mm de haut', 'Peu de couches, donc peu de risques de décollement']"
+  :contre="['La semelle part **en porte-à-faux** : des supports à retirer', 'La grande face prend la texture du plateau', 'Le poids tire dans le sens qui **décolle les couches**']" />
 </div>
 
 </div>
@@ -344,9 +343,7 @@ layout: two-cols-header
 
 <div class="pr-6">
 
-<Placeholder ref="3.6b"
-  brief="Le même, dressé debout sur sa base, avec les supports visibles sous la partie inclinée."
-  ratio="4/3" maxH="300px" />
+<OrientationPose pose="debout" />
 
 </div>
 
@@ -397,9 +394,7 @@ layout: two-cols-header
 
 <div class="pr-6">
 
-<Placeholder ref="3.6c"
-  brief="Le même, couché sur le flanc. Orientation intermédiaire."
-  ratio="4/3" maxH="300px" />
+<OrientationPose pose="flanc" />
 
 </div>
 
@@ -411,17 +406,17 @@ layout: two-cols-header
 
 | | |
 |---|:--|
-| **Supports** | un peu |
+| **Supports** | aucun |
 | **Face visible** | correcte |
 | **Solidité** | bonne |
-| **Temps** | moyen |
+| **Temps** | long |
 
 </div>
 
 <div v-click="2" class="mt-4">
 <Verdict
-  :pour="['Peu de supports, et faciles à retirer', 'L\'orientation que **l\'auteur du modèle** recommande']"
-  :contre="['**Moyen partout**, excellent nulle part']" />
+  :pour="['**Aucun support** : rien à retirer, rien à poncer', 'L\'orientation que **l\'auteur du modèle** recommande']"
+  :contre="['La pièce est la plus haute des trois : **104 mm de couches à empiler**']" />
 </div>
 
 </div>
@@ -433,9 +428,14 @@ Revenir en arrière sur les trois slides pour comparer les tableaux, maintenant
 que la salle les a tous vus. C'est le moment de la synthèse.
 
 Pour ce porte-téléphone précis, trancher devant eux et assumer : « moi je le
-mets à plat, parce que la face qui touche le plateau ne se voit pas une fois
-posé sur le bureau, et je préfère zéro support ». Une décision argumentée
-enseigne mieux qu'une règle.
+mets sur le flanc, parce que c'est la seule des trois où rien ne surplombe -
+je préfère une impression plus longue à une soirée passée à retirer des
+supports ». Une décision argumentée enseigne mieux qu'une règle.
+
+Si quelqu'un objecte que « à plat » a l'air plus économique : c'est vrai en
+hauteur, faux en matière. La pièce est basse mais toute sa semelle est en
+l'air. C'est exactement le piège que le module veut désamorcer - on juge une
+orientation à sa hauteur, jamais à ce qu'elle laisse dans le vide.
 
 Transition vers le module 4 : « L'objet est posé. Maintenant, avec quelle
 finesse le fabrique-t-on ? »

@@ -170,9 +170,18 @@ Cinq profils, une seule différence de fond : la finesse.
 
 <div class="pl-4">
 
-<Placeholder ref="4.3"
-  brief="Copie d'écran de la liste déroulante « Réglages d'impression » de PrusaSlicer, ouverte, montrant les cinq profils de la MK2.5S avec buse 0,4 : 0.05mm ULTRADETAIL, 0.10mm DETAIL, 0.15mm OPTIMAL, 0.20mm NORMAL, 0.35mm FAST."
-  ratio="4/3" maxH="165px" />
+<Figure refId="4.3"
+  src="/img/4.3-profils.png"
+  credit="Prusa Research - Knowledge Base"
+  alt="La liste déroulante « Print settings » ouverte, montrant les préréglages système de 0,05 mm à 0,30 mm."
+  brief="Copie d'écran de la liste déroulante des réglages d'impression, ouverte sur les préréglages système. Capture d'une MK3 : les noms de profils ne sont pas traduits, la liste d'une MK2.5S diffère un peu."
+  ratio="598/364" maxH="200px" />
+
+<div v-click class="mt-2 text-xs opacity-55">
+
+Capture en anglais : <strong>Print settings</strong> se lit <strong>Réglages d'impression</strong>, et <strong>System presets</strong>, <strong>Préréglages système</strong>. Les noms des profils, eux, ne sont jamais traduits.
+
+</div>
 
 </div>
 

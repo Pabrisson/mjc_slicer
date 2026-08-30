@@ -308,51 +308,56 @@ hideInToc: true
 bare: true
 ---
 
-# Annexe - les images à produire
+# Annexe - d'où viennent les images
 
-<div class="text-sm opacity-60 -mt-3 mb-2">Chaque emplacement porte sa consigne sur la slide. Récapitulatif pour la séance photo.</div>
+<div class="text-sm opacity-60 -mt-3 mb-2">Les quatorze emplacements sont remplis. Voici ce qui vient d'ailleurs, ce qui a été dessiné, et ce qui gagnerait à être refait à l'atelier.</div>
 
 <div class="tight-table grid grid-cols-3 gap-x-6 gap-y-0.5 text-[0.7rem]">
 
 <div>
 
-**Captures PrusaSlicer**
+**Images reprises**
 
-| Réf | Sujet |
-|---|---|
-| cover | photo d'accroche → `public/cover.jpg` |
-| 1.2 | maillage de triangles, porte-téléphone |
-| 2.2 | écran complet, onglet Plateau |
-| 2.3 | sélecteur Simple / Avancé / Expert |
-| 3.3 | outil « Placer sur la face » actif |
-| 3.6a-c | trois orientations du porte-téléphone |
-| 4.3 | liste déroulante des profils |
-| 5.7 | supports organiques sur la figurine |
-| 5.8 | jupe et bordure, vue de dessus |
-| 6.3 | aperçu, curseur sur la 1<sup>re</sup> couche |
+| Réf | Sujet | Source |
+|---|---|---|
+| cover | l'imprimante et le slicer | Wikimedia, CC BY-SA |
+| 1.3 | macro de la buse | Wikimedia, CC BY |
+| 3.3 | « Placer sur la face » | doc Prusa |
+| 4.3 | liste des profils | doc Prusa |
+| 5.7 | grille contre organique | doc Prusa |
+| 6.3 | curseur de couches | doc Prusa |
+
+<div class="mt-1 opacity-60">Captures Prusa en anglais. Attributions dans <code>docs/credits-images.md</code>, récupération par <code>scripts/fetch-images.sh</code>.</div>
 
 </div>
 
 <div>
 
-**Photos d'objets réels**
+**Schémas du diaporama**
 
-| Réf | Sujet |
+| Réf | Composant |
 |---|---|
-| 1.3 | macro de la buse en train d'extruder |
-| 3.4 | deux crochets : cassé à plat / intact debout |
-| 5.6 | dessus grumeleux / dessus lisse |
+| 1.2 | `MeshGrain` |
+| 2.2 | `SlicerWindow` |
+| 2.3 | `ModeSwitch` |
+| 3.4 | `AnisotropyBreak` |
+| 3.6a-c | `OrientationPose` |
+| 5.6 | `Pillowing` |
+| 5.8 | `SkirtBrim` |
+
+<div class="mt-1 opacity-60">Dessinés en SVG, en français, justes dans les deux thèmes.</div>
 
 </div>
 
 <div class="opacity-70">
 
-**À prévoir aussi, hors slides**
+**Ce qui gagnerait une vraie prise de vue**
 
+Trois emplacements sont corrects mais génériques : la **couverture** et la **macro de buse** ne montrent pas une MK2.5S, et **4.3** liste les profils d'une MK3. Les remplacer ne demande que d'écraser le fichier dans `public/`.
 
-un G-code ouvert dans un éditeur de texte, une caisse de pièces ratées,
-deux figurines en 0,35 et 0,10 mm, une pièce PLA et une pièce PETG à plier,
-une pièce avec ses supports encore attachés et une pince coupante.
+Chaque appel garde sa consigne de prise de vue dans son attribut `brief`. Ajouter `show-meta` fait réapparaître la référence et la source sur la slide, le temps de préparer la séance.
+
+**Toujours à prévoir hors slides** : un G-code ouvert dans un éditeur, une caisse de pièces ratées, deux figurines en 0,35 et 0,10 mm, une pièce PLA et une pièce PETG à plier.
 
 </div>
 
@@ -360,7 +365,10 @@ une pièce avec ses supports encore attachés et une pince coupante.
 
 <!--
 Cette slide est un aide-mémoire de production, pas une slide de formation.
-Elle est placée après la slide de fin et masquée par « hide: true » : elle ne
-sort plus dans le diaporama. Retirer cette ligne du frontmatter pour la revoir
-pendant la préparation de la séance photo.
+Elle est placée après la slide de fin et retirée du sommaire par
+« hideInToc: true » : on ne tombe pas dessus en naviguant par le programme,
+mais elle reste atteignable en avançant jusqu'au bout.
+
+Elle sert au moment où l'on veut refaire une image : elle dit d'où vient
+chacune, et laquelle mériterait une vraie prise de vue à l'atelier.
 -->
