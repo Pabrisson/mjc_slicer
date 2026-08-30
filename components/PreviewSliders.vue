@@ -54,6 +54,13 @@ const pctGeste = computed(() => `${partGeste.value * 100}%`)
 /** Près du bout du rail, l'étiquette passe à gauche pour ne pas sortir du cadre. */
 const gesteAuBout = computed(() => partGeste.value > 0.78)
 
+/**
+ * Quand les deux poignées se rejoignent - le geste que la slide demande :
+ * descendre sur la première couche - leurs deux étiquettes se superposeraient.
+ * Seule celle du haut reste, comme dans le logiciel.
+ */
+const coteBasLisible = computed(() => part(haut.value) - part(bas.value) > 0.13)
+
 /** La cote affichée : couche 1 à 0,20 mm, couche 125 à 25,00 mm. */
 function cote(n: number) {
   return (n * props.layerHeight).toFixed(2)
@@ -125,6 +132,31 @@ function clavier(e: KeyboardEvent, quoi: 'haut' | 'bas') {
     <!-- Le plateau, réduit à sa trame : il situe la scène sans rien y poser. -->
     <div class="pvs-plateau" aria-hidden="true" />
 
+    <!-- La poignée du logiciel est un hexagone, pas une pastille : ses deux
+         pointes désignent la couche exacte sur laquelle elle est posée.
+         Définie une fois, reprise par les trois poignées. -->
+    <svg width="0" height="0" class="pvs-defs" aria-hidden="true">
+      <defs>
+        <symbol id="pvs-hex" viewBox="0 0 16 16">
+          <polygon
+            points="8,0.9 14.15,4.45 14.15,11.55 8,15.1 1.85,11.55 1.85,4.45"
+            fill="currentColor" stroke="rgb(0 0 0 / 40%)" stroke-width="1.1"
+          />
+        </symbol>
+
+        <symbol id="pvs-hex-plus" viewBox="0 0 16 16">
+          <polygon
+            points="8,0.9 14.15,4.45 14.15,11.55 8,15.1 1.85,11.55 1.85,4.45"
+            fill="currentColor" stroke="rgb(0 0 0 / 40%)" stroke-width="1.1"
+          />
+          <path
+            d="M8 4.6v6.8M4.6 8h6.8" fill="none"
+            stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+          />
+        </symbol>
+      </defs>
+    </svg>
+
     <!-- ===== Le curseur vertical, sur le bord droit ===== -->
     <div class="pvs-v">
       <div ref="railV" class="pvs-v-rail" @pointerdown="viser">
@@ -139,7 +171,7 @@ function clavier(e: KeyboardEvent, quoi: 'haut' | 'bas') {
           <span>{{ cote(haut) }}</span><span class="pvs-tag-n">({{ haut }})</span>
         </div>
         <div
-          class="pvs-poignee pvs-plus" :style="{ bottom: pctHaut }"
+          class="pvs-poignee pvs-poignee-haute" :style="{ bottom: pctHaut }"
           role="slider" tabindex="0"
           aria-label="Curseur de couches, poignée haute"
           :aria-valuemin="1" :aria-valuemax="layers" :aria-valuenow="haut"
@@ -149,10 +181,13 @@ function clavier(e: KeyboardEvent, quoi: 'haut' | 'bas') {
           @pointerup="lacher"
           @pointercancel="lacher"
           @keydown="clavier($event, 'haut')"
-        />
+        >
+          <svg class="pvs-hex" viewBox="0 0 16 16"><use href="#pvs-hex-plus" /></svg>
+        </div>
 
         <!-- Poignée basse : elle masque tout ce qui est en dessous. -->
         <div
+          v-if="coteBasLisible"
           class="pvs-tag pvs-tag-bas" :style="{ bottom: pctBas }"
         >
           <span>{{ cote(bas) }}</span><span class="pvs-tag-n">({{ bas }})</span>
@@ -168,28 +203,33 @@ function clavier(e: KeyboardEvent, quoi: 'haut' | 'bas') {
           @pointerup="lacher"
           @pointercancel="lacher"
           @keydown="clavier($event, 'bas')"
-        />
+        >
+          <svg class="pvs-hex" viewBox="0 0 16 16"><use href="#pvs-hex" /></svg>
+        </div>
       </div>
 
-      <!-- Sous le rail : le mode « une seule couche », puis les réglages. -->
+      <!-- Sous le rail, le mode « une seule couche ». -->
       <svg class="pvs-ico pvs-ico-orange" viewBox="0 0 16 16" aria-hidden="true">
         <path d="M4.8 7.2V4.9a3.2 3.2 0 0 1 6.4 0v2.3" fill="none" stroke="currentColor" stroke-width="1.6" />
         <rect x="3.2" y="6.9" width="9.6" height="7" rx="1.1" fill="currentColor" />
       </svg>
-      <svg class="pvs-ico pvs-ico-gris" viewBox="0 0 16 16" aria-hidden="true">
-        <g fill="currentColor">
-          <rect
-            v-for="i in 8" :key="i"
-            x="7.1" y="0.9" width="1.8" height="3.2" rx="0.5"
-            :transform="`rotate(${(i - 1) * 45} 8 8)`"
-          />
-        </g>
-        <path
-          fill="currentColor" fill-rule="evenodd"
-          d="M8 3.1a4.9 4.9 0 1 0 0 9.8a4.9 4.9 0 0 0 0-9.8Zm0 2.7a2.2 2.2 0 1 1 0 4.4a2.2 2.2 0 0 1 0-4.4Z"
-        />
-      </svg>
     </div>
+
+    <!-- Les réglages de l'aperçu : dans le logiciel, la roue est posée au
+         croisement des deux curseurs, sur la ligne du curseur horizontal. -->
+    <svg class="pvs-ico pvs-ico-gris pvs-reglages" viewBox="0 0 16 16" aria-hidden="true">
+      <g fill="currentColor">
+        <rect
+          v-for="i in 8" :key="i"
+          x="7.1" y="0.9" width="1.8" height="3.2" rx="0.5"
+          :transform="`rotate(${(i - 1) * 45} 8 8)`"
+        />
+      </g>
+      <path
+        fill="currentColor" fill-rule="evenodd"
+        d="M8 3.1a4.9 4.9 0 1 0 0 9.8a4.9 4.9 0 0 0 0-9.8Zm0 2.7a2.2 2.2 0 1 1 0 4.4a2.2 2.2 0 0 1 0-4.4Z"
+      />
+    </svg>
 
     <!-- ===== Le curseur horizontal, en bas ===== -->
     <div ref="railH" class="pvs-h-rail" @pointerdown="saisir($event, 'geste')">
@@ -203,7 +243,9 @@ function clavier(e: KeyboardEvent, quoi: 'haut' | 'bas') {
         @pointermove="suivre"
         @pointerup="lacher"
         @pointercancel="lacher"
-      />
+      >
+        <svg class="pvs-hex" viewBox="0 0 16 16"><use href="#pvs-hex" /></svg>
+      </div>
       <div
         class="pvs-tag pvs-tag-geste" :class="{ 'pvs-tag-avant': gesteAuBout }"
         :style="{ left: pctGeste }"
@@ -248,22 +290,38 @@ function clavier(e: KeyboardEvent, quoi: 'haut' | 'bas') {
     radial-gradient(120% 90% at 40% 35%, #464646, #333);
 }
 
-/* ===== Curseur vertical ===== */
+.pvs-defs {
+  position: absolute;
+}
+
+/* ===== Curseur vertical =====
+   Le haut du rail laisse passer l'étiquette de la poignée, qui déborde de
+   moitié au-dessus ; le bas s'arrête bien avant le curseur horizontal, pour
+   que les deux ne se lisent jamais comme un seul dessin. */
 .pvs-v {
   position: absolute;
-  top: 12px;
-  right: 14px;
-  bottom: 10px;
+  top: 20px;
+  right: 10px;
+  bottom: 36px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 13px;
+}
+
+/* La roue partage l'axe du rail vertical - la colonne fait la largeur d'une
+   icône - et la ligne médiane du rail horizontal, 3 px de haut à 18 px du bas. */
+.pvs-reglages {
+  position: absolute;
+  right: 10px;
+  bottom: 12.5px;
 }
 
 .pvs-v-rail {
   position: relative;
   flex: 1;
   width: 3px;
+  margin-bottom: 4px;
   border-radius: 2px;
   background: rgb(255 255 255 / 22%);
   cursor: pointer;
@@ -280,9 +338,9 @@ function clavier(e: KeyboardEvent, quoi: 'haut' | 'bas') {
 /* ===== Curseur horizontal ===== */
 .pvs-h-rail {
   position: absolute;
-  bottom: 12px;
-  left: 22px;
-  right: 46px;
+  bottom: 18px;
+  left: 26px;
+  right: 40px;
   height: 3px;
   border-radius: 2px;
   background: rgb(255 255 255 / 22%);
@@ -298,43 +356,39 @@ function clavier(e: KeyboardEvent, quoi: 'haut' | 'bas') {
   background: var(--pvs-orange);
 }
 
-/* ===== Poignées ===== */
+/* ===== Poignées =====
+   La boîte est un peu plus grande que l'hexagone : elle donne une cible
+   confortable au doigt, et un peu d'air autour de la forme. */
 .pvs-poignee {
   position: absolute;
   left: 50%;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: var(--pvs-orange);
-  box-shadow: 0 0 0 1px rgb(0 0 0 / 35%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  color: var(--pvs-orange);
   transform: translate(-50%, 50%);
   cursor: grab;
 }
+/* Posées sur la même couche, c'est la poignée haute - celle qu'on manipule,
+   celle qui porte le « + » - qui reste devant. */
+.pvs-poignee-haute {
+  z-index: 2;
+}
+
 .pvs-poignee:focus-visible {
   outline: 2px solid #fff;
-  outline-offset: 2px;
+  outline-offset: 1px;
 }
 .pvs-poignee:active {
   cursor: grabbing;
 }
 
-/* Le « + » de la poignée haute, tracé en deux barres. */
-.pvs-plus::before,
-.pvs-plus::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  background: #fff;
-  transform: translate(-50%, -50%);
-}
-.pvs-plus::before {
-  width: 7px;
-  height: 1.5px;
-}
-.pvs-plus::after {
-  width: 1.5px;
-  height: 7px;
+.pvs-hex {
+  width: 16px;
+  height: 16px;
 }
 
 .pvs-h-poignee {
@@ -346,8 +400,8 @@ function clavier(e: KeyboardEvent, quoi: 'haut' | 'bas') {
 /* ===== Étiquettes ===== */
 .pvs-tag {
   position: absolute;
-  padding: 0.15em 0.35em;
-  border-radius: 0.15em;
+  padding: 0.3em 0.5em;
+  border-radius: 0.2em;
   background: var(--pvs-tag);
   color: #ededed;
   font-family: ui-monospace, "SFMono-Regular", "Menlo", monospace;
@@ -359,11 +413,11 @@ function clavier(e: KeyboardEvent, quoi: 'haut' | 'bas') {
    dans le logiciel : la valeur en mm, puis le numéro de couche en dessous. */
 .pvs-tag-haut,
 .pvs-tag-bas {
-  right: 10px;
+  right: 22px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 0.1em;
+  gap: 0.25em;
   transform: translateY(50%);
 }
 
@@ -374,18 +428,18 @@ function clavier(e: KeyboardEvent, quoi: 'haut' | 'bas') {
 /* Le compteur de gestes suit sa poignée, posé juste à sa droite. */
 .pvs-tag-geste {
   top: 50%;
-  margin-left: 10px;
+  margin-left: 22px;
   transform: translateY(-50%);
 }
 .pvs-tag-avant {
   margin-left: 0;
-  transform: translate(calc(-100% - 10px), -50%);
+  transform: translate(calc(-100% - 22px), -50%);
 }
 
 /* ===== Icônes sous le rail vertical ===== */
 .pvs-ico {
-  width: 13px;
-  height: 13px;
+  width: 14px;
+  height: 14px;
   flex: none;
 }
 .pvs-ico-orange {
