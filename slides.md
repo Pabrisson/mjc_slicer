@@ -43,11 +43,6 @@ Comprendre **PrusaSlicer** pour ne plus imprimer au hasard
   Espace ou <KeyCap k="→" /> pour avancer
 </div>
 
-<div class="abs-bl m-6 text-left text-[0.6rem] opacity-35">
-  Photo <a href="https://commons.wikimedia.org/wiki/File:3D_printer_at_35c3_01.jpg" target="_blank">Leonhard Lenz</a>,
-  <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank">CC BY-SA 4.0</a>
-</div>
-
 <!--
 Minutage : 0-2 min.
 

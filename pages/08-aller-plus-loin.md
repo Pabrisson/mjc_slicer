@@ -297,12 +297,7 @@ bare: true
 
 <div class="mt-6 text-base opacity-85">
 Et si vous repartez avec une seule chose&nbsp;:<br>
-<span style="color: var(--prusa-orange)">Toujours analyser l'aperçu avant l'export.</span>
-</div>
-
-<div class="abs-bl m-6 text-left text-[0.6rem] opacity-35">
-  Photo <a href="https://commons.wikimedia.org/wiki/File:3D_printer_at_35c3_02.jpg" target="_blank">Leonhard Lenz</a>,
-  <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank">CC BY-SA 4.0</a>
+<span style="color: var(--prusa-orange)">Toujours analyser l'aperçu avant l'export</span>
 </div>
 
 <!--
