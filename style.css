@@ -131,10 +131,10 @@ input[type='range'] {
   margin: 0;
 }
 
-/* Voile de la slide de couverture.
-   La photo de fond est claire et chargée - un écran d'ordinateur allumé juste
-   sous le sous-titre. Sans voile, le sous-titre et l'URL s'y noient. On
-   assombrit la photo plutôt que d'éclaircir la typographie : la couleur du
+/* Voile des slides à photo pleine page - la couverture et la slide de fin.
+   Le thème pose déjà son propre voile (#0005 vers #0008) ; celui-ci s'y
+   ajoute pour tenir la typographie au-dessus des zones claires de l'image.
+   On assombrit la photo plutôt que d'éclaircir la typographie : la couleur du
    titre reste celle du reste du diaporama.
 
    Le voile passe en z-index négatif dans un contexte d'empilement isolé : il
@@ -149,7 +149,21 @@ input[type='range'] {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.7));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
   pointer-events: none;
   z-index: -1;
+}
+
+/* Slide de fin. Le layout « end » du thème impose un fond noir et n'accepte
+   pas de photo : la slide reprend « cover » et cette classe rend ce que
+   « end » apportait - texte blanc, lettres espacées.
+
+   La photo est plus chargée que celle de la couverture : son voile est plus
+   dense, sinon le titre se perd dans les machines de l'arrière-plan. */
+.slidev-layout.cover.fin {
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.1em;
+}
+.slidev-layout.cover.fin::before {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.62));
 }

@@ -21,15 +21,15 @@ bare: true
 background: /cover.jpg
 ---
 
-<!-- Photo d'accroche : une imprimante en train d'imprimer à côté du slicer
-     affiché sur l'écran - le sujet même de la formation.
-     Jonathan Juursema, Wikimedia Commons, CC BY-SA 3.0.
-     Récupérée par scripts/fetch-images.sh, attribution dans
-     docs/credits-images.md. Le crédit reste affiché sur la slide : c'est la
-     condition de la licence.
-     Pour la remplacer par une photo prise à l'atelier - une MK2.5S en cours
-     d'impression, vue rapprochée sur la buse, lumière chaude, arrière-plan
-     flou, cadrage 16/9 - il suffit d'écraser public/cover.jpg. -->
+<!-- Photo d'accroche : une pièce en cours d'impression, buse au travail,
+     lumière rasante - le geste que la formation apprend à préparer.
+     Leonhard Lenz, Wikimedia Commons, CC BY-SA 4.0. Attribution détaillée
+     dans docs/credits-images.md. Le crédit reste affiché sur la slide :
+     c'est la condition de la licence.
+     La photo est déjà recadrée en 16/9 et sombre : le voile de style.css
+     reste léger. Pour la remplacer par une photo prise à l'atelier - une
+     MK2.5S en cours d'impression, vue rapprochée sur la buse, lumière
+     chaude, arrière-plan flou, cadrage 16/9 - écraser public/cover.jpg. -->
 
 # Les bases d'un slicer
 
@@ -44,8 +44,8 @@ Comprendre **PrusaSlicer** pour ne plus imprimer au hasard
 </div>
 
 <div class="abs-bl m-6 text-left text-[0.6rem] opacity-35">
-  Photo <a href="https://commons.wikimedia.org/wiki/File:Felix_3D_Printer_-_Printing_Set-up_With_Examples.JPG" target="_blank">Jonathan Juursema</a>,
-  <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.fr" target="_blank">CC BY-SA 3.0</a>
+  Photo <a href="https://commons.wikimedia.org/wiki/File:3D_printer_at_35c3_01.jpg" target="_blank">Leonhard Lenz</a>,
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank">CC BY-SA 4.0</a>
 </div>
 
 <!--

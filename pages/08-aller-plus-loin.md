@@ -277,16 +277,32 @@ quel onglet il se cache).
 -->
 
 ---
-layout: end
+layout: cover
+background: /fin.jpg
+class: text-center fin
 module: 8 · Aller plus loin
 bare: true
 ---
 
+<!-- Photo de sortie : le même photographe et le même hall que la couverture,
+     mais l'autre bout de l'histoire - des pièces terminées posées à côté des
+     machines. Les deux images encadrent la formation.
+     Le layout « end » du thème impose un fond noir et n'accepte pas de photo :
+     on reprend « cover », et la classe « fin » de style.css rend le peu que
+     « end » apportait (texte blanc, lettres espacées).
+     Leonhard Lenz, Wikimedia Commons, CC BY-SA 4.0. Le crédit reste affiché
+     sur la slide : c'est la condition de la licence. -->
+
 # Des questions ?
 
-<div class="mt-6 text-base opacity-60">
+<div class="mt-6 text-base opacity-85">
 Et si vous repartez avec une seule chose&nbsp;:<br>
 <span style="color: var(--prusa-orange)">Toujours analyser l'aperçu avant l'export.</span>
+</div>
+
+<div class="abs-bl m-6 text-left text-[0.6rem] opacity-35">
+  Photo <a href="https://commons.wikimedia.org/wiki/File:3D_printer_at_35c3_02.jpg" target="_blank">Leonhard Lenz</a>,
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" target="_blank">CC BY-SA 4.0</a>
 </div>
 
 <!--
