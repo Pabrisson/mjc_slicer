@@ -136,7 +136,7 @@ module: 7 · Diagnostiquer un échec
 
 </div>
 
-<div v-click="7" class="mt-3.5 text-center text-xs opacity-60">
+<div v-click="7" class="mt-3 text-center text-xs opacity-60">
 Guide complet, 25 défauts illustrés :
 <a href="https://www.simplify3d.com/resources/print-quality-troubleshooting/" target="_blank" rel="noopener" class="font-mono" style="color: var(--prusa-orange)">simplify3d.com/resources/print-quality-troubleshooting/</a>
 </div>

@@ -5,6 +5,10 @@
  * Porte le message du module : ce n'est pas le défaut qui compte, c'est le
  * côté où l'on va chercher - et ce qu'on fait une fois qu'on y est.
  * Le même code couleur sert dans l'arbre de décision de la slide précédente.
+ *
+ * Rendu comme les autres titres de colonne du diaporama - un h2 coloré suivi
+ * d'une ligne d'explication discrète, à la manière de « PLA » et « PETG » au
+ * module 4. Seule la couleur change d'une colonne à l'autre.
  */
 defineProps<{
   side: 'slicer' | 'machine' | 'matiere'
@@ -19,8 +23,7 @@ const cotes = {
 
 <template>
   <div class="cote" :style="{ '--tone': `var(--cote-${side})` }">
-    <div class="c-filet" />
-    <div class="c-label">{{ cotes[side].label }}</div>
+    <h2 class="c-label">{{ cotes[side].label }}</h2>
     <div class="c-geste">{{ cotes[side].geste }}</div>
   </div>
 </template>
@@ -28,33 +31,22 @@ const cotes = {
 <style scoped>
 .cote {
   --tone: var(--cote-slicer);
-  padding-bottom: 0.2rem;
+  padding-bottom: 0.15rem;
 }
 
-/* Le filet s'éteint vers la droite : donne un sens de lecture à la colonne */
-.c-filet {
-  height: 3px;
-  border-radius: 2px;
-  margin-bottom: 0.3rem;
-  background: linear-gradient(
-    90deg,
-    var(--tone),
-    color-mix(in srgb, var(--tone) 12%, transparent)
-  );
-}
-
+/* Le h2 du diaporama, ramené à la densité d'une slide qui porte six cartes */
 .c-label {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
   line-height: 1.2;
   color: var(--tone);
 }
 
 .c-geste {
-  font-size: 0.69rem;
+  margin-top: 0.1rem;
+  font-size: 0.75rem;
   line-height: 1.3;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 </style>
