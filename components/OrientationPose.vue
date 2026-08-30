@@ -42,6 +42,9 @@ const ECHELLE = 1.35
 const PLATEAU = 168
 const CX = 130
 
+/** L'écartement des colonnes de support, en coordonnées d'écran. */
+const PAS = 6.5
+
 /** Le profil tourné, reposé sur le plateau et centré, en coordonnées d'écran. */
 const silhouette = computed(() => {
   const a = (ANGLES[props.pose] * Math.PI) / 180
@@ -74,7 +77,6 @@ const supports = computed(() => {
   const pts = silhouette.value
   const xMin = Math.min(...pts.map(p => p.x))
   const xMax = Math.max(...pts.map(p => p.x))
-  const PAS = 6.5
   const SEUIL = 4
   const traits: { x: number, y: number }[] = []
 
@@ -97,10 +99,48 @@ const supports = computed(() => {
   return traits
 })
 
-/** Hauteur du plus haut support, pour poser les entretoises. */
-const hautSupports = computed(() =>
-  supports.value.length ? PLATEAU - Math.min(...supports.value.map(s => s.y)) : 0,
-)
+/**
+ * Les supports regroupés en massifs contigus.
+ * Là où la pièce redescend toucher le plateau, le champ de supports se coupe
+ * en deux : ce sont deux échafaudages distincts, qui ne se tiennent pas l'un
+ * l'autre.
+ */
+const massifs = computed(() => {
+  const groupes: { x: number, y: number }[][] = []
+  for (const s of supports.value) {
+    const courant = groupes[groupes.length - 1]
+    if (courant && s.x - courant[courant.length - 1].x < PAS * 1.5) courant.push(s)
+    else groupes.push([s])
+  }
+  return groupes
+})
+
+/**
+ * Les entretoises horizontales qui rigidifient chaque massif.
+ * Une entretoise ne relie que des colonnes qui montent réellement jusqu'à sa
+ * hauteur. Tracée d'un bord à l'autre du massif, elle traverserait la pièce
+ * partout où le dessous plonge sous elle - le dessin dirait alors qu'on
+ * imprime du support à l'intérieur de la matière.
+ */
+const entretoises = computed(() => {
+  const traits: { x1: number, x2: number, y: number }[] = []
+  for (const massif of massifs.value) {
+    const haut = PLATEAU - Math.min(...massif.map(s => s.y))
+    for (const f of [0.4, 0.75]) {
+      const y = PLATEAU - haut * f
+      let debut = -1
+      for (let i = 0; i <= massif.length; i++) {
+        const porte = i < massif.length && massif[i].y <= y
+        if (porte && debut < 0) debut = i
+        if (!porte && debut >= 0) {
+          if (i - debut > 1) traits.push({ x1: massif[debut].x, x2: massif[i - 1].x, y })
+          debut = -1
+        }
+      }
+    }
+  }
+  return traits
+})
 
 const legende = {
   plat: 'à plat, sur le dos',
@@ -124,9 +164,8 @@ const legende = {
         stroke="var(--prusa-orange)" stroke-width="0.9" stroke-opacity="0.8"
       />
       <line
-        v-for="f in [0.4, 0.75]" :key="`lien-${f}`"
-        :x1="supports[0].x" :y1="PLATEAU - hautSupports * f"
-        :x2="supports[supports.length - 1].x" :y2="PLATEAU - hautSupports * f"
+        v-for="(e, i) in entretoises" :key="`lien-${i}`"
+        :x1="e.x1" :y1="e.y" :x2="e.x2" :y2="e.y"
         stroke="var(--prusa-orange)" stroke-width="0.6" stroke-opacity="0.4"
       />
     </g>
