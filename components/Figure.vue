@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { resolveAssetUrl } from '@slidev/client/layoutHelper.ts'
+
 /**
  * Emplacement d'image de la formation.
  *
@@ -11,7 +14,7 @@
  * réservé de Vue, écarté des props avant d'atteindre le composant. Tant que
  * la prop s'appelait `ref`, le badge n'a jamais été rendu.
  */
-defineProps<{
+const props = defineProps<{
   /** Ce qu'il faut photographier ou capturer */
   brief: string
   /** 'capture' = copie d'écran PrusaSlicer, 'photo' = objet réel, 'schema' = dessin à produire */
@@ -36,6 +39,16 @@ defineProps<{
   showMeta?: boolean
 }>()
 
+/**
+ * Le site est publié sous un sous-chemin - `/mjc_slicer/` sur GitHub Pages.
+ * `src` arrive ici comme une chaîne passée en prop : Vite ne peut pas la
+ * réécrire à la construction, comme il le ferait pour un attribut statique,
+ * et un chemin absolu viserait alors la racine du domaine. On lui applique
+ * donc la base nous-mêmes, avec l'utilitaire dont Slidev se sert déjà pour
+ * les fonds de slide.
+ */
+const srcUrl = computed(() => (props.src ? resolveAssetUrl(props.src) : undefined))
+
 const label = {
   capture: 'Copie d’écran PrusaSlicer',
   photo: 'Photo d’objet réel',
@@ -54,7 +67,7 @@ const label = {
     class="fig relative mx-auto !my-0 w-fit max-w-full overflow-hidden rounded-lg"
   >
     <img
-      :src="src" :alt="alt ?? brief"
+      :src="srcUrl" :alt="alt ?? brief"
       class="block h-auto w-auto max-w-full"
       :style="{ maxHeight: maxH ?? '215px' }"
     >
