@@ -286,7 +286,7 @@ bare: true
 
 <div class="mt-6 text-base opacity-60">
 Et si vous repartez avec une seule chose&nbsp;:<br>
-<span style="color: var(--prusa-orange)">ouvrez l'aperçu avant de lancer.</span>
+<span style="color: var(--prusa-orange)">Toujours analyser l'aperçu avant l'export.</span>
 </div>
 
 <!--
