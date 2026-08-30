@@ -1,5 +1,6 @@
 ---
 theme: default
+colorSchema: dark
 title: Les bases d'un slicer
 info: |
   ## Les bases d'un slicer - PrusaSlicer

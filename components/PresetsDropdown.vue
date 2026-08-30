@@ -103,7 +103,6 @@ const courant = '0.20mm NORMAL'
   color: var(--ps-txt);
   font-size: 0.66rem;
   line-height: 1.35;
-  box-shadow: 0 6px 18px rgb(0 0 0 / 22%);
 }
 
 .ps-defs {

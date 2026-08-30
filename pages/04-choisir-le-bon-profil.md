@@ -182,7 +182,7 @@ Deux profils de la liste ne sont pas dans le tableau : les <strong>100mms Linear
 
 ::bottom::
 
-<div v-click class="regle m-0 text-sm">
+<div v-click class="regle m-0 text-sm !py-0.5">
 
 Un profil, c'est **plus de 300 réglages cohérents entre eux**, testés par Prusa sur cette machine. Le choisir, c'est hériter de milliers d'heures d'essais. En modifier un au hasard, c'est casser cet équilibre.
 
