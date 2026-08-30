@@ -4,7 +4,7 @@
  *
  * Porte le message du module : ce n'est pas le défaut qui compte, c'est le
  * côté où l'on va chercher - et ce qu'on fait une fois qu'on y est.
- * Le même code couleur sert dans l'arbre de décision de la slide suivante.
+ * Le même code couleur sert dans l'arbre de décision de la slide précédente.
  */
 defineProps<{
   side: 'slicer' | 'machine' | 'matiere'

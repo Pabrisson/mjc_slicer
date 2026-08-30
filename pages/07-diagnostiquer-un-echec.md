@@ -20,6 +20,62 @@ la plupart - c'est le but.
 module: 7 · Diagnostiquer un échec
 ---
 
+# La méthode, en trois questions
+
+```mermaid {scale: 0.65}
+flowchart LR
+    A["Une impression<br/>rate"] --> B{"Toujours au<br/>même endroit ?"}
+    B -->|Non| D["Côté machine"]
+    B -->|Oui| C{"Visible dans<br/>l'aperçu ?"}
+    C -->|Oui| E["Côté slicer"]
+    C -->|Non| F{"Change avec une<br/>autre bobine ?"}
+    F -->|Oui| G["Côté matière"]
+    F -->|Non| D
+
+    %% Les questions restent neutres : seule l'issue porte une couleur,
+    %% et ce sont celles des trois colonnes de la slide suivante.
+    classDef etape fill:transparent,stroke:#9ca3af
+    classDef slicer fill:#fa6831,stroke:#d8511e,color:#ffffff
+    classDef machine fill:#2f7fe0,stroke:#2467b8,color:#ffffff
+    classDef matiere fill:#7d5ba6,stroke:#654888,color:#ffffff
+    class A,B,C,F etape
+    class E slicer
+    class D machine
+    class G matiere
+```
+
+<div v-click class="regle mt-2 text-sm">
+
+**Une seule modification à la fois, et on relance.** Changer trois réglages ensemble et voir que ça marche n'apprend rien : on ne saura jamais lequel était le bon.
+
+</div>
+
+<!--
+Minutage : 96-99 min.
+
+Ce petit arbre est ce qu'il faut retenir du module, et il vient d'abord : on
+donne la méthode, les défauts de la slide suivante viendront s'y ranger. Les
+trois issues portent déjà les couleurs des trois colonnes à venir : orange le
+slicer, bleu la machine, violet la matière. Le dire une fois, ils feront le
+lien seuls.
+
+Le dérouler à voix haute sur un cas concret, par exemple une pièce qui se
+décolle toujours du même coin : même endroit → oui ; visible dans l'aperçu →
+non ; change avec une autre bobine → non → côté machine, plateau et Z-offset.
+
+La règle « une modification à la fois » est la plus difficile à tenir et la
+plus importante. C'est de la méthode, pas de la technique - et c'est ce qui
+sépare celui qui progresse de celui qui tourne en rond.
+
+Si la salle est encore vive, prendre une vraie pièce ratée apportée par un
+participant et dérouler l'arbre ensemble avant de passer aux défauts : la
+slide suivante devient alors une vérification, pas une liste.
+-->
+
+---
+module: 7 · Diagnostiquer un échec
+---
+
 # Les défauts les plus fréquents
 
 <div class="text-sm opacity-60 -mt-3 mb-2">Six défauts, trois côtés. Le symptôme, la cause, le geste qui corrige.</div>
@@ -86,10 +142,11 @@ Guide complet, 25 défauts illustrés :
 </div>
 
 <!--
-Minutage : 96-102 min.
+Minutage : 99-105 min. Fin du module 7.
 
-Les trois colonnes sont visibles avant le premier clic : c'est le plateau de
-jeu. Poser chaque défaut comme une devinette avant de cliquer -
+Les trois colonnes reprennent les trois issues de l'arbre qu'on vient de
+dérouler, dans les mêmes couleurs. Elles sont visibles avant le premier
+clic : c'est le plateau de jeu. Poser chaque défaut comme une devinette avant de cliquer -
 « La pièce se décolle. Qui a une idée ? » - et laisser la carte tomber dans
 sa colonne. La position EST la réponse, pas une étiquette à lire.
 
@@ -103,7 +160,7 @@ prouve que le module 5 a marché.
 Faire circuler les pièces ratées réelles au fur et à mesure. Une caisse de
 ratés est le meilleur investissement pédagogique d'un fablab.
 
-Le point à faire passer avant la slide suivante : deux défauts par côté, et
+Le point à faire passer en refermant le module : deux défauts par côté, et
 QUATRE sur six ne se corrigent pas dans le logiciel. Le slicer n'est pas le
 coupable par défaut.
 
@@ -111,62 +168,9 @@ Deux nuances à donner à l'oral si quelqu'un les soulève :
 - l'adhérence peut aussi se soigner au slicer (bordure, radeau), mais tant que
   le plateau est gras aucune bordure ne sauvera l'impression ;
 - le surplomb qui s'affaisse est le seul défaut de la slide qu'on voit dans
-  l'aperçu, en bleu « périmètre en surplomb » - lien direct avec le module 6.
+  l'aperçu, en bleu « périmètre en surplomb » - c'est la branche « visible dans
+  l'aperçu » de l'arbre, et le lien direct avec le module 6.
 
 La référence Simplify3D est en anglais mais très illustrée : chaque défaut a
 sa photo. C'est la meilleure ressource à donner à quelqu'un qui bute chez lui.
--->
-
----
-module: 7 · Diagnostiquer un échec
----
-
-# La méthode, en trois questions
-
-```mermaid {scale: 0.65}
-flowchart LR
-    A["Une impression<br/>rate"] --> B{"Toujours au<br/>même endroit ?"}
-    B -->|Non| D["Côté machine"]
-    B -->|Oui| C{"Visible dans<br/>l'aperçu ?"}
-    C -->|Oui| E["Côté slicer"]
-    C -->|Non| F{"Change avec une<br/>autre bobine ?"}
-    F -->|Oui| G["Côté matière"]
-    F -->|Non| D
-
-    %% Les questions restent neutres : seule l'issue porte une couleur,
-    %% et ce sont celles des trois colonnes de la slide précédente.
-    classDef etape fill:transparent,stroke:#9ca3af
-    classDef slicer fill:#fa6831,stroke:#d8511e,color:#ffffff
-    classDef machine fill:#2f7fe0,stroke:#2467b8,color:#ffffff
-    classDef matiere fill:#7d5ba6,stroke:#654888,color:#ffffff
-    class A,B,C,F etape
-    class E slicer
-    class D machine
-    class G matiere
-```
-
-<div v-click class="regle mt-2 text-sm">
-
-**Une seule modification à la fois, et on relance.** Changer trois réglages ensemble et voir que ça marche n'apprend rien : on ne saura jamais lequel était le bon.
-
-</div>
-
-<!--
-Minutage : 102-105 min. Fin du module 7.
-
-Ce petit arbre est ce qu'il faut retenir du module. Les trois issues reprennent
-exactement les couleurs des colonnes de la slide précédente : orange le slicer,
-bleu la machine, violet la matière. Le dire une fois, ils feront le lien seuls.
-
-Le dérouler à voix haute sur un cas concret, par exemple une pièce qui se
-décolle toujours du même coin : même endroit → oui ; visible dans l'aperçu →
-non ; change avec une autre bobine → non → côté machine, plateau et Z-offset.
-
-La règle « une modification à la fois » est la plus difficile à tenir et la
-plus importante. C'est de la méthode, pas de la technique - et c'est ce qui
-sépare celui qui progresse de celui qui tourne en rond.
-
-Si la salle est encore vive, prendre une vraie pièce ratée apportée par un
-participant et dérouler l'arbre ensemble. C'est la meilleure fin possible
-pour ce module.
 -->
