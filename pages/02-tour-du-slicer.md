@@ -26,45 +26,11 @@ module: 2 · Le tour du slicer
 
 <SlicerWindow />
 
-<div v-drag="[128,252,150,60]" class="drag-note">
-  <strong>1 · Barre d'outils</strong><br>
-  <span class="op-60">déplacer, tourner, poser sur la face</span>
-</div>
-
-<div v-drag="[169,146,150,60]" class="drag-note">
-  <strong>2 · Les onglets</strong><br>
-  <span class="op-60">Plateau · Aperçu · les réglages</span>
-</div>
-
-<div v-drag="[522,195,160,60]" class="drag-note">
-  <strong>3 · Les trois profils</strong><br>
-  <span class="op-60">imprimante, filament, qualité</span>
-</div>
-
-<div v-drag="[522,388,160,60]" class="drag-note">
-  <strong>4 · Découper / Exporter</strong><br>
-  <span class="op-60">et le temps estimé</span>
-</div>
-
-<style>
-.drag-note {
-  font-size: 0.72rem;
-  line-height: 1.25;
-  background: var(--prusa-orange);
-  color: white;
-  padding: 0.4em 0.6em;
-  border-radius: 0.35em;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
-}
-</style>
-
 <!--
 Minutage : 18-21 min.
 
-Les quatre étiquettes sont des éléments v-drag : en mode développement
-(pnpm dev), on peut les attraper à la souris et les repositionner sur la
-capture réelle - Slidev réécrit les coordonnées dans le fichier tout seul.
-Faire ce calage une fois la vraie capture en place.
+La maquette est redessinée, pas capturée : les libellés sont ceux de
+l'interface française, ceux que la salle va retrouver à l'écran.
 
 Pendant la démo, montrer chaque zone dans l'ordre 1-2-3-4 en pointant à
 l'écran, pas sur la slide. La slide sert de mémoire, la démo sert de guide.
