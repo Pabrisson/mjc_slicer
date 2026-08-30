@@ -150,12 +150,7 @@ Le geste qui compte : **poser le curseur vertical sur la première couche**, et 
 
 <div class="pl-4">
 
-<Figure refId="6.3"
-  src="/img/6.3-curseur-couches.png"
-  credit="Prusa Research - Knowledge Base"
-  alt="La vue Aperçu de PrusaSlicer, recadrée sur son bord droit : le curseur vertical de couches, un agrandissement de sa poignée montrant la couche 14 à 2,15 mm, et le repère de première couche en bas."
-  brief="Copie d'écran de l'aperçu avec le curseur vertical de couches bien visible sur le bord droit de la fenêtre, et le numéro de couche lisible."
-  ratio="16/10" maxH="300px" />
+<PreviewSliders />
 
 <div v-click class="mt-4 text-sm opacity-60">
 
