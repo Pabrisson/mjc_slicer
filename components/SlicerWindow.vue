@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { POSES, PORTE_TELEPHONE, poser, trace } from '../lib/coupe'
+
 /**
  * La fenêtre de PrusaSlicer, en maquette.
  *
@@ -26,6 +29,16 @@ const profils = [
 
 /** Les outils de la barre latérale, réduits à leur silhouette. */
 const OUTILS = 7
+
+/**
+ * L'objet posé sur le plateau : le porte-téléphone des slides suivantes, tiré
+ * du même profil qu'elles, debout comme on vient de l'importer. Pas de couches
+ * ici, et c'est voulu - l'onglet « Plateau » n'en montre aucune. Elles
+ * apparaissent à l'aperçu, deux modules plus loin.
+ */
+const objet = computed(() =>
+  trace(poser(PORTE_TELEPHONE, POSES.debout, { echelle: 0.48, cx: 174.95, plateau: 157 })),
+)
 </script>
 
 <template>
@@ -75,12 +88,12 @@ const OUTILS = 7
         :x1="70 + i * 36" y1="148" :x2="96 + i * 25.6" y2="166"
         stroke="currentColor" stroke-opacity="0.16" stroke-width="0.6"
       />
-      <!-- L'objet : très exactement le porte-téléphone des slides
-           suivantes, au même profil, pour que la salle reconnaisse la même
-           pièce du module 2 au module 3. -->
+      <!-- L'objet : très exactement le porte-téléphone des slides suivantes,
+           au vert de PrusaSlicer, pour que la salle reconnaisse la même pièce
+           du module 2 au module 3. -->
       <polygon
-        points="150,157 171.1,157 171.1,151.2 199.9,124.4 195.1,118.1 156.7,144.5 150,144.5"
-        fill="#4a9d4a" fill-opacity="0.62" stroke="#4a9d4a" stroke-width="1" stroke-linejoin="round"
+        :points="objet"
+        fill="#4a9d4a" fill-opacity="0.62" stroke="#4a9d4a" stroke-width="1.1" stroke-linejoin="round"
       />
     </g>
 

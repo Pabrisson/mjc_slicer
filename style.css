@@ -167,3 +167,55 @@ input[type='range'] {
 .slidev-layout.cover.fin::before {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.62));
 }
+
+/* ===== Dessins en coupe : la matière, ses couches, le plateau =====
+   Toutes les slides qui montrent une pièce tranchée parlent la même langue :
+   même opacité de matière, même épaisseur de couche, même plateau. Une slide
+   qui dessinerait sa propre hachure ferait croire à un autre objet.
+
+   Les valeurs sont ici et pas en attributs SVG pour deux raisons : elles se
+   règlent d'un seul endroit, et le preset attributify d'UnoCSS détourne
+   silencieusement « stroke-width » et « opacity » dans un <svg>. */
+.coupe-matiere {
+  fill: currentColor;
+  fill-opacity: 0.14;
+}
+.coupe-couche {
+  fill: none;
+  stroke: currentColor;
+  stroke-opacity: 0.42;
+  stroke-width: 0.9;
+}
+.coupe-contour {
+  fill: none;
+  stroke: currentColor;
+  stroke-opacity: 0.65;
+  stroke-width: 1.3;
+  stroke-linejoin: round;
+}
+/* Le plateau : le repère fixe d'une slide à l'autre */
+.coupe-plateau {
+  stroke: currentColor;
+  stroke-opacity: 0.45;
+  stroke-width: 1.6;
+}
+.coupe-plateau-corps {
+  fill: currentColor;
+  fill-opacity: 0.22;
+}
+/* Les supports : de la matière imprimée pour être jetée */
+.coupe-support {
+  stroke: var(--prusa-orange);
+  stroke-opacity: 0.8;
+  stroke-width: 0.9;
+}
+.coupe-entretoise {
+  stroke: var(--prusa-orange);
+  stroke-opacity: 0.4;
+  stroke-width: 0.6;
+}
+/* La face de rupture : un plan de couche, net */
+.coupe-rupture {
+  stroke: var(--prusa-rouge);
+  stroke-width: 2.6;
+}

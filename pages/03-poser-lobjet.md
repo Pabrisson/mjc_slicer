@@ -302,7 +302,6 @@ layout: two-cols-header
 | | |
 |---|:--|
 | **Supports** | beaucoup |
-| **Face visible** | cachée |
 | **Solidité** | faible |
 | **Temps** | court |
 
@@ -356,7 +355,6 @@ layout: two-cols-header
 | | |
 |---|:--|
 | **Supports** | beaucoup |
-| **Face visible** | parfaite |
 | **Solidité** | bonne |
 | **Temps** | long |
 
@@ -407,7 +405,6 @@ layout: two-cols-header
 | | |
 |---|:--|
 | **Supports** | aucun |
-| **Face visible** | correcte |
 | **Solidité** | bonne |
 | **Temps** | long |
 
