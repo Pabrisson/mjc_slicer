@@ -7,9 +7,10 @@
  * et lisibles au fond de la salle, ce qui est tout l'intérêt de la slide -
  * montrer où on clique et ce qu'on choisit.
  *
- * La barre qui les porte n'est pas décorative : elle situe le sélecteur en
- * haut à droite de la fenêtre, là où personne ne le cherche. Elle reste vide
- * à gauche, faute de quoi elle attirerait l'œil au lieu de le guider.
+ * La barre qui les porte n'est pas décorative : elle rappelle que le sélecteur
+ * vit dans le bandeau supérieur de la fenêtre, là où personne ne le cherche.
+ * Le trio y est centré - c'est la légende, dessous, qui dit de quel côté
+ * regarder ; le décaler à droite ne faisait que déséquilibrer le dessin.
  */
 const modes = [
   { nom: 'Simple', teinte: '#4a9d4a', actif: false },
@@ -18,12 +19,13 @@ const modes = [
 ]
 
 /**
- * Abscisse du premier mode, puis pas régulier : le groupe se termine à droite
- * de la barre. Le pas de 80 laisse de la place au cadre du mode actif sans
- * qu'il vienne toucher la pastille du suivant - les trois libellés font six
- * lettres, la largeur du cadre peut donc être fixe.
+ * Abscisse du premier mode, puis pas régulier. Le groupe encré va de X0 à
+ * X0 + 2 * PAS + largeur d'« Expert », soit 218 unités : le centrer sur les
+ * 165 du milieu de la barre donne X0 = 56. Le pas de 80 laisse de la place au
+ * cadre du mode actif sans qu'il vienne toucher la pastille du suivant - les
+ * trois libellés font six lettres, la largeur du cadre peut donc être fixe.
  */
-const X0 = 86
+const X0 = 56
 const PAS = 80
 </script>
 
