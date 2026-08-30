@@ -28,7 +28,7 @@ module: 4 · Choisir le bon profil
 
 <div class="regle p-2 text-sm">
 
-**La règle de la buse** : on ne dépasse pas **75 à 80 % du diamètre**. Avec une buse 0,4 mm, le profil FAST à 0,35 mm est déjà la limite haute. Au-delà, la matière ne s'écrase plus sur la couche précédente.
+**La règle de la buse** : on ne dépasse pas **75 à 80 % du diamètre**. Avec une buse 0.4 mm, le profil FAST à 0.35 mm est déjà la limite haute. Au-delà, la matière ne s'écrase plus sur la couche précédente.
 
 </div>
 
@@ -38,7 +38,7 @@ module: 4 · Choisir le bon profil
 
 <div class="piege p-2 text-sm">
 
-**Le piège de l'intuition** : « plus fin = mieux » est faux la moitié du temps. Sur un **mur vertical**, 0,35 et 0,10 mm donnent le même résultat, pour trois fois le temps. La finesse ne se voit que sur les **surfaces inclinées et courbes**.
+**Le piège de l'intuition** : « plus fin = mieux » est faux la moitié du temps. Sur un **mur vertical**, 0.35 et 0.10 mm donnent le même résultat, pour trois fois le temps. La finesse ne se voit que sur les **surfaces inclinées et courbes**.
 
 </div>
 
@@ -49,8 +49,8 @@ module: 4 · Choisir le bon profil
 <div v-click class="mt-1 text-center text-sm">
 
 <span class="opacity-60">Le choix par défaut raisonnable&nbsp;:</span>
-<span class="font-mono text-lg mx-2" style="color: var(--prusa-orange)">0,20 mm</span>
-<span class="opacity-60">on descend à 0,10 pour une figurine, on monte à 0,35 pour un brouillon.</span>
+<span class="font-mono text-lg mx-2" style="color: var(--prusa-orange)">0.20 mm</span>
+<span class="opacity-60">on descend à 0.10 pour une figurine, on monte à 0.35 pour un brouillon.</span>
 
 </div>
 
@@ -61,14 +61,14 @@ Le schéma est un quart de cercle vu de profil : c'est la joue d'une figurine.
 Faire remarquer que le trait pointillé (la forme voulue) et les marches (ce
 qu'on fabrique) s'écartent d'autant plus que la couche est épaisse.
 
-Faire circuler deux impressions réelles de la même figurine, une en 0,30 et une
-en 0,15. C'est immédiat au toucher, encore plus qu'à l'œil.
+Faire circuler deux impressions réelles de la même figurine, une en 0.30 et une
+en 0.15. C'est immédiat au toucher, encore plus qu'à l'œil.
 
-Le rapport de temps : passer de 0,20 à 0,10 ne double pas tout à fait le temps
-(les déplacements et le remplissage ne doublent pas), mais ×1,8 est une bonne
+Le rapport de temps : passer de 0.20 à 0.10 ne double pas tout à fait le temps
+(les déplacements et le remplissage ne doublent pas), mais ×1.8 est une bonne
 approximation à annoncer.
 
-Question fréquente : « et 0,05 mm ? » - possible avec la buse 0,4, mais le
+Question fréquente : « et 0.05 mm ? » - possible avec la buse 0.4, mais le
 temps explose et la moindre poussière se voit. Réservé aux très petites pièces.
 -->
 
@@ -88,7 +88,7 @@ module: 4 · Choisir le bon profil
 
 <div class="regle p-2 text-sm">
 
-**Un trait est plus large que l'orifice** : la matière s'écrase en sortant. Avec la buse **0,4 mm** de la machine, un trait fait **0,45 mm**. C'est le plus petit détail imprimable, et l'unité de base de tous les murs.
+**Un trait est plus large que l'orifice** : la matière s'écrase en sortant. Avec la buse **0.4 mm** de la machine, un trait fait **0.45 mm**. C'est le plus petit détail imprimable, et l'unité de base de tous les murs.
 
 </div>
 
@@ -98,7 +98,7 @@ module: 4 · Choisir le bon profil
 
 <div class="piege p-2 text-sm">
 
-**Le piège du détail trop fin** : une nervure de **0,3 mm** modélisée sur la pièce est plus fine qu'un trait. PrusaSlicer ne peut pas la tracer - elle disparaît, ou elle ressort à 0,45 mm.
+**Le piège du détail trop fin** : une nervure de **0.3 mm** modélisée sur la pièce est plus fine qu'un trait. PrusaSlicer ne peut pas la tracer - elle disparaît, ou elle ressort à 0.45 mm.
 
 </div>
 
@@ -110,12 +110,12 @@ module: 4 · Choisir le bon profil
 Minutage : 46-48 min.
 
 La ligne « couche max » de chaque colonne, c'est la règle des 75 % de la slide
-précédente appliquée au diamètre. Pour 0,4 elle donne 0,30 mm : voilà pourquoi
-le profil FAST à 0,35 est déjà un forçage.
+précédente appliquée au diamètre. Pour 0.4 elle donne 0.30 mm : voilà pourquoi
+le profil FAST à 0.35 est déjà un forçage.
 
-Les trois diamètres en une phrase chacun : 0,25 pour la miniature, très lent et
-bouché à la moindre poussière ; 0,4 le standard, monté sur les machines de
-l'atelier ; 0,6 pour les grosses pièces utilitaires, beaucoup moins de traits à poser,
+Les trois diamètres en une phrase chacun : 0.25 pour la miniature, très lent et
+bouché à la moindre poussière ; 0.4 le standard, monté sur les machines de
+l'atelier ; 0.6 pour les grosses pièces utilitaires, beaucoup moins de traits à poser,
 mais les détails partent avec.
 
 Rappel du module 2 : le diamètre fait partie du profil d'imprimante, pas du
@@ -123,7 +123,7 @@ profil d'impression. Changer la buse sans changer le profil, c'est la
 sous-extrusion ou le bouchon garanti. À l'atelier personne n'y touche, c'est une
 opération d'atelier.
 
-Question fréquente : « une buse 0,6 imprime deux fois plus vite ? » - mieux que
+Question fréquente : « une buse 0.6 imprime deux fois plus vite ? » - mieux que
 ça, parce qu'on gagne sur les deux tableaux : trait plus large ET couche plus
 épaisse. Le prix, c'est le détail perdu et des murs qu'on ne peut plus faire
 fins.
@@ -134,7 +134,7 @@ module: 4 · Choisir le bon profil
 layout: two-cols-header
 ---
 
-# Les profils de la MK2.5S en Ø 0,4 mm
+# Les profils de la MK2.5S en Ø 0.4 mm
 
 <div class="text-sm opacity-60 -mt-3 mb-2">Le nom dit la hauteur de couche, puis l'intention.</div>
 
@@ -200,7 +200,7 @@ réglage, existe-t-il déjà un profil pour ce que je veux ? »
 Ouvrir la liste en direct et faire défiler. Faire remarquer que les profils
 d'autres buses n'apparaissent pas : c'est le filtrage vu au module 2.
 
-Note technique si la question vient : 0.35 mm avec une buse 0,4 représente
+Note technique si la question vient : 0.35 mm avec une buse 0.4 représente
 87 % du diamètre. C'est au-delà de la règle des 75-80 %, et c'est pour ça que
 FAST est un profil de brouillon, pas un profil rapide « gratuit ».
 -->

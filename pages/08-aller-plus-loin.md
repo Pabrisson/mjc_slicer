@@ -114,7 +114,7 @@ bare: true
 <div class="lex-mot"><span class="lex-fr">Multi-matériaux</span><span class="lex-en">MMU, multi material unit</span><span class="lex-def">Le module qui change de filament tout seul.</span></div>
 <div class="lex-mot"><span class="lex-fr">Résine</span><span class="lex-en">resin, SLA</span><span class="lex-def">L'autre technologie : de la résine durcie.</span></div>
 <div class="lex-mot"><span class="lex-fr">Séchage, étuvage</span><span class="lex-en">drying</span><span class="lex-def">Chasser l'humidité d'une bobine qui file.</span></div>
-<div class="lex-mot"><span class="lex-fr">Retrait</span><span class="lex-en">shrinkage</span><span class="lex-def">Le PLA perd 0,3 % en refroidissant.</span></div>
+<div class="lex-mot"><span class="lex-fr">Retrait</span><span class="lex-en">shrinkage</span><span class="lex-def">Le PLA perd 0.3 % en refroidissant.</span></div>
 <div class="lex-mot"><span class="lex-fr">Alcool isopropylique</span><span class="lex-en">IPA</span><span class="lex-def">Ce qui dégraisse le plateau. Le vrai secret.</span></div>
 </div>
 </div>
@@ -148,11 +148,11 @@ bare: true
 <div>
 <div class="lex-titre">Ce que trace la buse</div>
 <div class="lex-mot"><span class="lex-fr">Couche</span><span class="lex-en">layer</span><span class="lex-def">La tranche plate que la machine empile.</span></div>
-<div class="lex-mot"><span class="lex-fr">Hauteur de couche</span><span class="lex-en">layer height</span><span class="lex-def">L'épaisseur d'une tranche : 0,05 à 0,35 mm.</span></div>
+<div class="lex-mot"><span class="lex-fr">Hauteur de couche</span><span class="lex-en">layer height</span><span class="lex-def">L'épaisseur d'une tranche : 0.05 à 0.35 mm.</span></div>
 <div class="lex-mot"><span class="lex-fr">Première couche</span><span class="lex-en">first layer</span><span class="lex-def">Celle qui porte tout le reste.</span></div>
 <div class="lex-mot"><span class="lex-fr">Périmètre</span><span class="lex-en">perimeter</span><span class="lex-def">Un mur du contour. Il y en a 2 à 5.</span></div>
 <div class="lex-mot"><span class="lex-fr">Périmètre externe</span><span class="lex-en">external perimeter</span><span class="lex-def">Le seul trait qui se verra sur la pièce.</span></div>
-<div class="lex-mot"><span class="lex-fr">Largeur d'extrusion</span><span class="lex-en">extrusion width</span><span class="lex-def">La largeur d'un trait : 0,45 mm en buse 0,4.</span></div>
+<div class="lex-mot"><span class="lex-fr">Largeur d'extrusion</span><span class="lex-en">extrusion width</span><span class="lex-def">La largeur d'un trait : 0.45 mm en buse 0.4.</span></div>
 <div class="lex-mot"><span class="lex-fr">Remplissage</span><span class="lex-en">infill</span><span class="lex-def">La structure interne, jamais visible.</span></div>
 <div class="lex-mot"><span class="lex-fr">Motif de remplissage</span><span class="lex-en">fill pattern</span><span class="lex-def">Son dessin. Gyroïde par défaut, et ça suffit.</span></div>
 <div class="lex-mot"><span class="lex-fr">Coques horizontales</span><span class="lex-en">horizontal shells</span><span class="lex-def">Les couches pleines du dessus et du dessous.</span></div>

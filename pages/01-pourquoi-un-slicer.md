@@ -160,7 +160,7 @@ Le langage que la machine comprend : une ligne, une execution.
 ```asm {all|1|2|3|4-5|all}
 G1 Z0.20 F720                    ; monter à la hauteur de la 1re couche (0.20mm)
 G1 X85.5 Y92.3 F7200             ; se positionne à ces coordonnées, sans rien extruder
-G1 X114.5 Y92.3 E0.9612 F1800    ; tracer 29 mm en poussant 0,96 mm de filament
+G1 X114.5 Y92.3 E0.9612 F1800    ; tracer 29 mm en poussant 0.96 mm de filament
 M104 S215                        ; chauffe la buse : 215 °C
 M106 S255                        ; ventilateur à fond
 ```
@@ -170,7 +170,7 @@ M106 S255                        ; ventilateur à fond
 <div v-click>
   <carbon-layers class="text-4xl mb-0" style="color: var(--prusa-orange)" />
   <div class="text-2xl font-mono mb-2" style="color: var(--prusa-orange)">500</div>
-  <div class="text-sm opacity-60">couches pour un cube<br>de 10 cm en 0,2 mm</div>
+  <div class="text-sm opacity-60">couches pour un cube<br>de 10 cm en 0.2 mm</div>
 </div>
 
 <div v-click>
@@ -198,7 +198,7 @@ Minutage : 11-13 min.
 
 Dérouler les lignes une par une avec les clics - la coloration suit.
 Sur la ligne 3, prendre le temps : c'est là que se trouve toute la magie.
-« 29 mm de trajet, 0,96 mm de filament » : le slicer a calculé le volume de
+« 29 mm de trajet, 0.96 mm de filament » : le slicer a calculé le volume de
 matière nécessaire pour remplir ce trait, à cette hauteur de couche, avec
 cette largeur d'extrusion. C'est un calcul de volume, fait un million de fois.
 
@@ -276,7 +276,7 @@ La machine ne fabrique **jamais un volume**. Elle empile des tranches plates.
 <!--
 Minutage : 13-17 min. On déborde un peu sur le module 2, c'est prévu.
 
-Manipuler le curseur de hauteur de couche en direct : montrer 0,05 puis 0,30
+Manipuler le curseur de hauteur de couche en direct : montrer 0.05 puis 0.30
 et laisser voir le nombre de couches changer. Cliquer « Empiler » pour
 l'animation de construction - ça vaut mille explications.
 

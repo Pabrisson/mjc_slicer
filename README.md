@@ -1,7 +1,7 @@
 # Les bases d'un slicer
 
 Support de formation **PrusaSlicer** — 2 h, pour débutants ayant déjà vu une imprimante 3D
-tourner. Matériel de référence : Prusa i3 MK2.5S, buse 0,4 mm, PLA.
+tourner. Matériel de référence : Prusa i3 MK2.5S, buse 0.4 mm, PLA.
 
 Huit modules, du fichier 3D au G-code : pourquoi un slicer, le tour de l'interface,
 orienter la pièce, choisir son profil, les cinq réglages qui comptent, lire l'aperçu,

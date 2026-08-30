@@ -169,13 +169,13 @@ module: 2 · Le tour du slicer
 
 <div v-click class="mt-6">
 
-Les trois sont **liées** : changer d'imprimante filtre les profils compatibles. On ne peut pas afficher un profil 0,25 mm avec une buse 0,4 - PrusaSlicer le cache automatiquement.
+Les trois sont **liées** : changer d'imprimante filtre les profils compatibles. On ne peut pas afficher un profil 0.25 mm avec une buse 0.4 - PrusaSlicer le cache automatiquement.
 
 </div>
 
 <div v-click class="piege mt-4">
 
-**Le piège n°1** : changer de diamètre la buse sur la machine sans changer le profil. Le slicer continue à calculer pour 0,4 mm. Résultat garanti : sous-extrusion ou bouchon.
+**Le piège n°1** : changer de diamètre la buse sur la machine sans changer le profil. Le slicer continue à calculer pour 0.4 mm. Résultat garanti : sous-extrusion ou bouchon.
 
 </div>
 

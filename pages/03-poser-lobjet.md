@@ -77,8 +77,8 @@ Minutage : 28-31 min.
 Le coup des pouces arrive vraiment souvent avec les modèles américains de
 Thingiverse. Le montrer : ouvrir un modèle, le voir minuscule, appliquer 2540 %.
 
-Sur l'échelle : rappeler que le PLA se rétracte d'environ 0,3 % en refroidissant.
-Sur 100 mm, ça fait 0,3 mm. Ne pas compenser à l'échelle - ça déforme tout
+Sur l'échelle : rappeler que le PLA se rétracte d'environ 0.3 % en refroidissant.
+Sur 100 mm, ça fait 0.3 mm. Ne pas compenser à l'échelle - ça déforme tout
 l'objet. Un ajustement se prévoit à la modélisation, pas au moment de poser.
 
 Sur les objets multiples : si quelqu'un demande, dire qu'on peut imprimer
@@ -105,8 +105,8 @@ On clique sur **une face de l'objet**, elle se retrouve à plat sur le plateau.
 
 <v-clicks>
 
-- Pas de rotation à 89,97° saisie à la main
-- Pas de pièce « posée » 0,05 mm au-dessus du vide
+- Pas de rotation à 89.97° saisie à la main
+- Pas de pièce « posée » 0.05 mm au-dessus du vide
 - Fonctionne sur n'importe quelle face, même inclinée
 
 </v-clicks>
@@ -248,7 +248,7 @@ layout: two-cols-header
 
 <div class="mt-3">
 
-Chaque couche est décalée de **hauteur × tan(angle)**. Comparé à la largeur d'extrusion (0,45 mm), ça donne la part qui part dans le vide.
+Chaque couche est décalée de **hauteur × tan(angle)**. Comparé à la largeur d'extrusion (0.45 mm), ça donne la part qui part dans le vide.
 
 </div>
 
@@ -269,7 +269,7 @@ Manipuler le curseur en direct de 0 à 75° et laisser la salle voir le verdict
 changer de couleur. S'arrêter sur 45 : « voilà d'où vient le chiffre ».
 
 Nuance à donner si la salle est attentive : la limite dépend de la hauteur de
-couche. En 0,1 mm le décalage est deux fois plus petit, donc on tient des angles
+couche. En 0.1 mm le décalage est deux fois plus petit, donc on tient des angles
 plus agressifs. C'est pour ça qu'imprimer plus fin fait parfois disparaître un
 besoin de supports.
 

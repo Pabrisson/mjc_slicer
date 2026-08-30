@@ -40,7 +40,7 @@ layout: two-cols-header
 
 <div>
 
-Avec une buse de 0,4 mm, un trait fait **0,45 mm de large**. Deux périmètres, c'est **0,9 mm de mur**. Un mur ne peut pas être plus fin qu'un trait.
+Avec une buse de 0.4 mm, un trait fait **0.45 mm de large**. Deux périmètres, c'est **0.9 mm de mur**. Un mur ne peut pas être plus fin qu'un trait.
 
 </div>
 
@@ -64,15 +64,15 @@ Avec une buse de 0,4 mm, un trait fait **0,45 mm de large**. Deux périmètres, 
 Minutage : 55-59 min.
 
 Manipuler le curseur « Périmètres » : montrer que le mur grossit par bonds de
-0,45 mm. Ce n'est pas continu, et c'est ce qui explique les emboîtements ratés.
+0.45 mm. Ce n'est pas continu, et c'est ce qui explique les emboîtements ratés.
 
 L'affirmation « la solidité vient des périmètres » est contre-intuitive et
 mérite d'être martelée. C'est probablement la meilleure économie de temps
 d'impression que la salle emportera aujourd'hui.
 
 Le deuxième curseur, « jeu », vaut trente secondes : deux pièces qui se touchent
-exactement à la modélisation sortent soudées. Prévoir 0,2 mm pour un ajustement
-juste, 0,3 mm pour une pièce qui doit coulisser. C'est une règle de conception,
+exactement à la modélisation sortent soudées. Prévoir 0.2 mm pour un ajustement
+juste, 0.3 mm pour une pièce qui doit coulisser. C'est une règle de conception,
 pas un réglage de slicer.
 -->
 
@@ -166,7 +166,7 @@ Sous le remplissage et au-dessus de lui, le slicer pose des **coques horizontale
 
 <div class="regle mt-3">
 
-**La règle du millimètre** : il faut environ **1 mm de matière pleine** au-dessus. En 0,20 mm, ça fait **5 couches**. En 0,15 mm, il en faut **7**. Le nombre change avec la hauteur de couche.
+**La règle du millimètre** : il faut environ **1 mm de matière pleine** au-dessus. En 0.20 mm, ça fait **5 couches**. En 0.15 mm, il en faut **7**. Le nombre change avec la hauteur de couche.
 
 </div>
 
@@ -213,7 +213,7 @@ que comme un réglage à ajuster.
 
 La règle du millimètre est facile à retenir et se recalcule de tête :
 1 mm divisé par la hauteur de couche. Le faire calculer à la salle pour
-0,30 mm (réponse : 3 à 4 couches).
+0.30 mm (réponse : 3 à 4 couches).
 
 Si on demande pourquoi ne pas mettre 10 couches partout : le temps, et surtout
 l'accumulation de matière qui fait bomber les surfaces.
@@ -297,7 +297,7 @@ toujours dégradée. C'est irréversible, il faut poncer. D'où le lien avec
 l'orientation du module 3 : on choisit QUELLE face sera abîmée.
 
 Sur le contact Z : en mode Expert on peut régler l'écart entre support et
-pièce. À 0 c'est soudé, à 0,2 ça s'enlève à la main. Mentionner sans détailler.
+pièce. À 0 c'est soudé, à 0.2 ça s'enlève à la main. Mentionner sans détailler.
 -->
 
 ---
