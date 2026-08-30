@@ -1,18 +1,28 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 
 /**
- * Les deux curseurs de la vue Aperçu de PrusaSlicer, redessinés.
+ * Les deux curseurs de la vue Aperçu de PrusaSlicer, redessinés, et la pièce
+ * sur laquelle ils agissent.
  *
  * Redessinés plutôt que capturés, pour la même raison que SlicerWindow et
  * PresetsDropdown : la capture disponible est en interface anglaise, et elle
- * embarque tout le plateau et l'objet, alors que la slide ne parle que des
- * deux curseurs. Ici ils sont seuls, donc lisibles depuis le fond de la salle.
+ * est figée - or c'est le mouvement qui explique ces deux curseurs.
  *
- * Et surtout ils bougent. La slide dit « poser le curseur vertical sur la
- * première couche » et rappelle les raccourcis flèches : autant que le geste
- * soit fait à l'écran plutôt que décrit. À la souris comme au clavier - le
- * curseur vertical prend le focus, ↑ ↓ le déplacent d'une couche, Maj de dix.
+ * La pièce est réduite à ce que la slide doit faire comprendre : dix couches
+ * au lieu de cent vingt-cinq, et dix-sept déplacements de buse par couche au
+ * lieu de quelques milliers. Assez pour que chaque cran du curseur se voie
+ * depuis le fond de la salle, ce qu'un vrai G-code ne permet pas.
+ *
+ *  - le curseur vertical empile et coupe : sa poignée haute est la dernière
+ *    couche posée, sa poignée basse masque tout ce qui est en dessous ;
+ *  - le curseur horizontal rejoue le trajet de la buse À L'INTÉRIEUR de la
+ *    couche du dessus, dans l'ordre réel : périmètre externe, périmètre
+ *    interne, puis remplissage.
+ *
+ * Les couleurs sont celles du logiciel, reprises telles quelles de
+ * PreviewLegend : la slide précédente vient d'enseigner ce code couleur,
+ * celle-ci le met en mouvement.
  *
  * La hauteur du bloc est fixe (300 px) : c'est celle de la capture qu'il
  * remplace, la colonne de droite est calée dessus.
@@ -22,18 +32,118 @@ const props = withDefaults(defineProps<{
   layers?: number
   /** Hauteur de couche, en mm - donne la cote affichée sur l'étiquette */
   layerHeight?: number
-  /** Nombre de déplacements de la buse dans la couche affichée */
-  moves?: number
   /** Hauteur du bloc, celle de l'image remplacée */
   height?: string
-}>(), { layers: 125, layerHeight: 0.2, moves: 14452, height: '300px' })
+}>(), { layers: 10, layerHeight: 0.2, height: '300px' })
+
+/* ===== La scène, en projection isométrique =====
+   Un point de la pièce est repéré par (u, v) dans le plan du plateau et par
+   son numéro de couche. S est le pas de la grille, EP l'épaisseur d'une
+   couche à l'écran - très exagérée, sans quoi dix couches feraient 2 mm. */
+/* La pièce est calée sur la place que les deux curseurs lui laissent : le
+   curseur vertical mange le bord droit, l'horizontal le bas du cadre. CY est
+   posé pour que la pile complète - dix couches, plus le losange du dessus -
+   tombe au milieu de ce qui reste. */
+const S = 20
+const EP = 13
+const CX = 180
+const CY = 201
+
+/**
+ * Le plateau ne s'arrête pas : ses lignes sortent du cadre de tous les côtés,
+ * comme dans le logiciel où l'on voit le plateau de près. Une ligne toutes les
+ * deux unités, sur seize de part et d'autre - de quoi couvrir les quatre coins
+ * du bloc quelle que soit la couche affichée.
+ */
+const GRILLE_MAX = 16
+const GRILLE = Array.from({ length: GRILLE_MAX + 1 }, (_, i) => -GRILLE_MAX + i * 2)
+
+/** Demi-côté de la pièce, en unités de grille : le périmètre externe. */
+const A = 2
+
+function iso(u: number, v: number) {
+  return { x: CX + (u - v) * S, y: CY + (u + v) * (S / 2) }
+}
+
+/** Les quatre coins de la pièce, du sommet de l'écran et dans le sens horaire. */
+const COINS = [iso(-A, -A), iso(A, -A), iso(A, A), iso(-A, A)]
+
+/** Les couleurs du logiciel, reprises de la légende du module. */
+const TEINTES = {
+  externe: '#ff7d38',
+  interne: '#ffe64d',
+  remplissage: '#b03029',
+}
+
+type Geste = { x1: number, y1: number, x2: number, y2: number, c: string }
+
+/** Un contour fermé, à l'écart `a` du centre : quatre déplacements. */
+function contour(a: number, c: string): Geste[] {
+  const p = [iso(-a, -a), iso(a, -a), iso(a, a), iso(-a, a)]
+  return p.map((d, i) => {
+    const f = p[(i + 1) % 4]
+    return { x1: d.x, y1: d.y, x2: f.x, y2: f.y, c }
+  })
+}
+
+/**
+ * Le remplissage : cinq passes en diagonale, reliées le long du mur. Les
+ * liaisons comptent comme des déplacements - c'est justement ce que le
+ * curseur horizontal donne à voir.
+ */
+function remplissage(a: number, c: string): Geste[] {
+  const g: Geste[] = []
+  let fin: { x: number, y: number } | null = null
+
+  ;[-1.7, -0.85, 0, 0.85, 1.7].forEach((k, i) => {
+    const uMin = Math.max(-a, k - a)
+    const uMax = Math.min(a, k + a)
+    const bouts = [iso(uMin, k - uMin), iso(uMax, k - uMax)]
+    const [d, f] = i % 2 ? [bouts[1], bouts[0]] : bouts
+
+    if (fin) g.push({ x1: fin.x, y1: fin.y, x2: d.x, y2: d.y, c })
+    g.push({ x1: d.x, y1: d.y, x2: f.x, y2: f.y, c })
+    fin = f
+  })
+
+  return g
+}
+
+/** Le trajet d'une couche, dans l'ordre où la buse le parcourt. */
+const trajet: Geste[] = [
+  ...contour(A, TEINTES.externe),
+  ...contour(A - 0.38, TEINTES.interne),
+  ...remplissage(A - 0.72, TEINTES.remplissage),
+]
 
 /** Couche du haut : celle qui coupe l'objet. Part du sommet, comme au chargement. */
 const haut = ref(props.layers)
 /** Couche du bas : tout ce qui est en dessous est masqué. */
 const bas = ref(1)
 /** Position dans le trajet de la buse, pour le curseur horizontal. */
-const geste = ref(Math.round(props.moves * 0.86))
+const geste = ref(trajet.length)
+
+/** Changer de couche la réaffiche entière, comme dans le logiciel. */
+watch(haut, () => { geste.value = trajet.length })
+
+/** Les déplacements déjà posés sur la couche du dessus. */
+const posés = computed(() => trajet.slice(0, geste.value))
+
+/** La buse, au bout du dernier déplacement. */
+const buse = computed(() => {
+  const g = posés.value[posés.value.length - 1]
+  return g ? { x: g.x2, y: g.y2 } : null
+})
+
+/** Les couches pleines, du bas visible jusqu'à celle qui est en cours. */
+const empilement = computed(() =>
+  Array.from({ length: haut.value - bas.value + 1 }, (_, i) => bas.value + i),
+)
+
+/** Le décalage à l'écran d'une couche : c'est toute la pile qui monte. */
+function niveau(n: number) {
+  return `translate(0 ${-n * EP})`
+}
 
 /** Poignée en cours de déplacement, pour router les pointermove. */
 const prise = ref<'haut' | 'bas' | 'geste' | null>(null)
@@ -49,7 +159,7 @@ function part(n: number) {
 const pctHaut = computed(() => `${part(haut.value) * 100}%`)
 const pctBas = computed(() => `${part(bas.value) * 100}%`)
 const pctPlage = computed(() => `${(part(haut.value) - part(bas.value)) * 100}%`)
-const partGeste = computed(() => geste.value / props.moves)
+const partGeste = computed(() => geste.value / trajet.length)
 const pctGeste = computed(() => `${partGeste.value * 100}%`)
 /** Près du bout du rail, l'étiquette passe à gauche pour ne pas sortir du cadre. */
 const gesteAuBout = computed(() => partGeste.value > 0.78)
@@ -88,7 +198,7 @@ function gesteSous(e: PointerEvent) {
   const r = railH.value?.getBoundingClientRect()
   if (!r) return geste.value
   const t = (e.clientX - r.left) / r.width
-  return Math.min(props.moves, Math.max(1, Math.round(t * props.moves)))
+  return Math.min(trajet.length, Math.max(1, Math.round(t * trajet.length)))
 }
 
 function suivre(e: PointerEvent) {
@@ -96,14 +206,27 @@ function suivre(e: PointerEvent) {
   else if (prise.value) poser(prise.value, coucheSous(e))
 }
 
-function saisir(e: PointerEvent, quoi: 'haut' | 'bas' | 'geste') {
-  ;(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId)
-  prise.value = quoi
-  suivre(e)
-}
-
 function lacher() {
   prise.value = null
+}
+
+function saisir(e: PointerEvent, quoi: 'haut' | 'bas' | 'geste') {
+  // La capture garde le pointeur sur la poignée même quand la main déborde du
+  // rail. Si elle échoue, le glissement doit quand même partir : en salle, un
+  // curseur qui ne répond pas au premier essai coûte plus cher que ce détail.
+  try {
+    ;(e.currentTarget as HTMLElement).setPointerCapture(e.pointerId)
+  }
+  catch {}
+
+  // Le relâchement est écouté au niveau de la fenêtre, et pas seulement sur la
+  // poignée : sans capture, un doigt levé ailleurs laisserait la prise ouverte,
+  // et le curseur suivrait ensuite la souris sans qu'on lui demande rien.
+  window.addEventListener('pointerup', lacher, { once: true })
+  window.addEventListener('pointercancel', lacher, { once: true })
+
+  prise.value = quoi
+  suivre(e)
 }
 
 /** Clic dans le rail : c'est la poignée la plus proche qui vient au doigt. */
@@ -129,8 +252,76 @@ function clavier(e: KeyboardEvent, quoi: 'haut' | 'bas') {
 
 <template>
   <div class="pvs" :style="{ height }">
-    <!-- Le plateau, réduit à sa trame : il situe la scène sans rien y poser. -->
-    <div class="pvs-plateau" aria-hidden="true" />
+    <div class="pvs-fond" aria-hidden="true" />
+
+    <!-- ===== La pièce, telle que les deux curseurs la donnent à voir ===== -->
+    <svg
+      class="pvs-scene" viewBox="0 0 420 300"
+      preserveAspectRatio="xMidYMid slice" aria-hidden="true"
+    >
+      <!-- Le plateau : la grille du logiciel, en projection, coupée par les
+           bords du cadre plutôt que par ses propres limites. -->
+      <g class="pvs-grille">
+        <template v-for="k in GRILLE" :key="`g${k}`">
+          <line
+            :x1="iso(k, -GRILLE_MAX).x" :y1="iso(k, -GRILLE_MAX).y"
+            :x2="iso(k, GRILLE_MAX).x" :y2="iso(k, GRILLE_MAX).y"
+          />
+          <line
+            :x1="iso(-GRILLE_MAX, k).x" :y1="iso(-GRILLE_MAX, k).y"
+            :x2="iso(GRILLE_MAX, k).x" :y2="iso(GRILLE_MAX, k).y"
+          />
+        </template>
+      </g>
+
+      <!-- Les flancs de la pile : une bande par couche, et le trait qui les
+           sépare - c'est là qu'on compte les couches à l'œil nu. -->
+      <g class="pvs-flancs">
+        <g v-for="n in empilement" :key="`c${n}`" :transform="niveau(n)">
+          <polygon
+            :points="`${COINS[1].x},${COINS[1].y} ${COINS[2].x},${COINS[2].y}
+                      ${COINS[2].x},${COINS[2].y + EP} ${COINS[1].x},${COINS[1].y + EP}`"
+            fill="#b25a26"
+          />
+          <polygon
+            :points="`${COINS[2].x},${COINS[2].y} ${COINS[3].x},${COINS[3].y}
+                      ${COINS[3].x},${COINS[3].y + EP} ${COINS[2].x},${COINS[2].y + EP}`"
+            fill="#d97337"
+          />
+        </g>
+      </g>
+
+      <!-- Le dessus de la couche précédente : ce que la buse recouvre au fur
+           et à mesure, et ce qui reste visible tant qu'elle n'y est pas. -->
+      <g :transform="niveau(haut)">
+        <template v-if="haut > bas">
+          <polygon
+            :points="COINS.map(c => `${c.x},${c.y}`).join(' ')"
+            fill="#6d3a24"
+          />
+          <g class="pvs-trace pvs-dessous">
+            <line
+              v-for="(g, i) in trajet" :key="`d${i}`"
+              :x1="g.x1" :y1="g.y1" :x2="g.x2" :y2="g.y2" :stroke="g.c"
+            />
+          </g>
+        </template>
+
+        <!-- Le trajet de la couche en cours, arrêté là où en est le curseur -->
+        <g class="pvs-trace">
+          <line
+            v-for="(g, i) in posés" :key="i"
+            :x1="g.x1" :y1="g.y1" :x2="g.x2" :y2="g.y2" :stroke="g.c"
+          />
+        </g>
+
+        <!-- La buse, posée sur le dernier déplacement -->
+        <circle
+          v-if="buse" class="pvs-buse" :cx="buse.x" :cy="buse.y" r="3.4"
+          fill="#fff"
+        />
+      </g>
+    </svg>
 
     <!-- La poignée du logiciel est un hexagone, pas une pastille : ses deux
          pointes désignent la couche exacte sur laquelle elle est posée.
@@ -238,7 +429,7 @@ function clavier(e: KeyboardEvent, quoi: 'haut' | 'bas') {
         class="pvs-poignee pvs-h-poignee" :style="{ left: pctGeste }"
         role="slider" tabindex="0"
         aria-label="Curseur de trajet dans la couche"
-        :aria-valuemin="1" :aria-valuemax="moves" :aria-valuenow="geste"
+        :aria-valuemin="1" :aria-valuemax="trajet.length" :aria-valuenow="geste"
         @pointerdown.stop="saisir($event, 'geste')"
         @pointermove="suivre"
         @pointerup="lacher"
@@ -281,13 +472,54 @@ function clavier(e: KeyboardEvent, quoi: 'haut' | 'bas') {
 
 /* La trame du plateau, volontairement discrète : elle donne le décor sans
    attirer l'œil, qui doit rester sur les deux curseurs. */
-.pvs-plateau {
+.pvs-fond {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(rgb(255 255 255 / 9%) 1px, transparent 1px) 0 0 / 100% 46px,
-    linear-gradient(90deg, rgb(255 255 255 / 9%) 1px, transparent 1px) 0 0 / 52px 100%,
-    radial-gradient(120% 90% at 40% 35%, #464646, #333);
+  background: radial-gradient(120% 90% at 40% 35%, #464646, #333);
+}
+
+/* La scène garde ses proportions et se cale à gauche : la colonne des
+   curseurs occupe le reste, et rien ne se recouvre. */
+/* La scène couvre tout le bloc - c'est ce qui permet à la grille d'être
+   coupée par les bords. `slice` la fait toujours déborder plutôt que laisser
+   une bande vide si le bloc est plus étroit que prévu. */
+.pvs-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Épaisseurs et couleurs de trait déclarées ici, et non en attributs SVG :
+   le preset attributify d'UnoCSS intercepte `stroke-width="1"` et le calcule
+   à 0 px - les arêtes disparaissent sans la moindre erreur en console. */
+.pvs-grille {
+  stroke: #fff;
+  stroke-opacity: 0.1;
+  stroke-width: 1px;
+}
+
+/* L'arête entre deux bandes : c'est elle qui rend les dix couches comptables.
+   Juste assez marquée pour qu'on les compte, pas au point de rayer le flanc. */
+.pvs-flancs {
+  stroke: rgb(122 56 22 / 32%);
+  stroke-width: 1px;
+}
+
+.pvs-trace {
+  stroke-width: 3.2px;
+  stroke-linecap: round;
+}
+
+/* La couche précédente, entrevue sous celle que la buse est en train de poser. */
+.pvs-dessous {
+  stroke-opacity: 0.32;
+}
+
+.pvs-buse {
+  stroke: rgb(60 24 8 / 40%);
+  stroke-width: 1px;
 }
 
 .pvs-defs {
