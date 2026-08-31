@@ -69,7 +69,7 @@ routeAlias: sommaire
 
 <Link class="py-2" to="mod1"><span class="font-mono opacity-40 mr-1">1.</span><strong>Pourquoi un slicer ?</strong><br><span class="text-xs opacity-50">Le fossé entre un fichier et une machine</span></Link>
 
-<Link class="py-2" to="mod2"><span class="font-mono opacity-40 mr-1">2.</span><strong>Le tour du slicer</strong><br><span class="text-xs opacity-50">Les 3 vues, les 3 modes, le trio de profils</span></Link>
+<Link class="py-2" to="mod2"><span class="font-mono opacity-40 mr-1">2.</span><strong>La présentation du Slicer</strong><br><span class="text-xs opacity-50">Les 3 vues, les 3 modes, le trio de profils</span></Link>
 
 <Link class="py-2" to="mod3"><span class="font-mono opacity-40 mr-1">3.</span><strong>Poser l'objet</strong><br><span class="text-xs opacity-50">Le geste qui décide de tout : l'orientation</span></Link>
 
@@ -169,7 +169,7 @@ src: ./pages/01-pourquoi-un-slicer.md
 ---
 
 ---
-src: ./pages/02-tour-du-slicer.md
+src: ./pages/02-presentation-du-slicer.md
 ---
 
 ---

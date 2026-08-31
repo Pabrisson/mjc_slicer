@@ -1,10 +1,10 @@
 ---
 layout: section
-module: 2 · Le tour du slicer
+module: 2 · La présentation du Slicer
 routeAlias: mod2
 ---
 
-# Le tour du slicer
+# La présentation du Slicer
 
 Trois vues, trois modes, trois profils
 
@@ -19,7 +19,7 @@ Annoncer : « Pendant 10 minutes, on ne fait que se repérer. Je ne règle rien.
 -->
 
 ---
-module: 2 · Le tour du slicer
+module: 2 · La présentation du Slicer
 ---
 
 # L'écran, en quatre zones
@@ -41,7 +41,7 @@ C'est l'ordre des 90 minutes qui suivent.
 -->
 
 ---
-module: 2 · Le tour du slicer
+module: 2 · La présentation du Slicer
 layout: two-cols-header
 ---
 
@@ -106,7 +106,7 @@ s'allonger. L'effet est parlant et prend 10 secondes.
 -->
 
 ---
-module: 2 · Le tour du slicer
+module: 2 · La présentation du Slicer
 ---
 
 # Le trio qui décide de tout
