@@ -263,59 +263,6 @@ Chaque couche est décalée de **hauteur × tan(angle)**. Comparé à la largeur
 </div>
 
 <!--
-Minutage : 36-39 min.
-
-Manipuler le curseur en direct de 0 à 75° et laisser la salle voir le verdict
-changer de couleur. S'arrêter sur 45 : « voilà d'où vient le chiffre ».
-
-Nuance à donner si la salle est attentive : la limite dépend de la hauteur de
-couche. En 0.1 mm le décalage est deux fois plus petit, donc on tient des angles
-plus agressifs. C'est pour ça qu'imprimer plus fin fait parfois disparaître un
-besoin de supports.
-
-Ne pas rentrer dans le calcul. Le montrer, pas le démontrer.
--->
-
----
-module: 3 · Poser l'objet
-layout: two-cols-header
----
-
-# Le porte-téléphone : quelle orientation ?
-
-<div class="text-sm opacity-60 -mt-3 mb-3">Option 1 sur 3 - à plat sur le dos</div>
-
-::left::
-
-<div class="pr-6">
-
-<OrientationPose pose="plat" />
-
-</div>
-
-::right::
-
-<div class="pl-4 text-sm">
-
-<div v-click class="pb-4">
-
-| | |
-|---|:--|
-| **Supports** | beaucoup |
-| **Solidité** | faible |
-| **Temps** | court |
-
-</div>
-
-<div v-click class="mt-4">
-<Verdict
-  :pour="['L\'impression **la plus courte** des trois : 47 mm de haut', 'Peu de couches, donc peu de risques de décollement']"
-  :contre="['La semelle part **en porte-à-faux** : des supports à retirer', 'Le poids tire dans le sens qui **décolle les couches**']" />
-</div>
-
-</div>
-
-<!--
 Minutage : 39-40 min.
 
 Annoncer les trois orientations avant de les dérouler : « le même fichier, trois
@@ -336,7 +283,7 @@ layout: two-cols-header
 
 # Le porte-téléphone : quelle orientation ?
 
-<div class="text-sm opacity-60 -mt-3 mb-3">Option 2 sur 3 - debout sur sa base</div>
+<div class="text-sm opacity-60 -mt-3 mb-3">Option 1 sur 3 - debout sur sa base</div>
 
 ::left::
 
@@ -364,6 +311,59 @@ layout: two-cols-header
 <Verdict
   :pour="['La belle face ne touche **jamais le plateau**', 'L\'effort travaille dans le plan des couches']"
   :contre="['Des supports partout : **temps et matière**', 'Des marques là où ils se détachent']" />
+</div>
+
+</div>
+
+<!--
+Minutage : 36-39 min.
+
+Manipuler le curseur en direct de 0 à 75° et laisser la salle voir le verdict
+changer de couleur. S'arrêter sur 45 : « voilà d'où vient le chiffre ».
+
+Nuance à donner si la salle est attentive : la limite dépend de la hauteur de
+couche. En 0.1 mm le décalage est deux fois plus petit, donc on tient des angles
+plus agressifs. C'est pour ça qu'imprimer plus fin fait parfois disparaître un
+besoin de supports.
+
+Ne pas rentrer dans le calcul. Le montrer, pas le démontrer.
+-->
+
+---
+module: 3 · Poser l'objet
+layout: two-cols-header
+---
+
+# Le porte-téléphone : quelle orientation ?
+
+<div class="text-sm opacity-60 -mt-3 mb-3">Option 2 sur 3 - à plat sur le dos</div>
+
+::left::
+
+<div class="pr-6">
+
+<OrientationPose pose="plat" />
+
+</div>
+
+::right::
+
+<div class="pl-4 text-sm">
+
+<div v-click class="pb-4">
+
+| | |
+|---|:--|
+| **Supports** | beaucoup |
+| **Solidité** | faible |
+| **Temps** | court |
+
+</div>
+
+<div v-click class="mt-4">
+<Verdict
+  :pour="['L\'impression **la plus courte** des trois : 47 mm de haut', 'Peu de couches, donc peu de risques de décollement']"
+  :contre="['La semelle part **en porte-à-faux** : des supports à retirer', 'Le poids tire dans le sens qui **décolle les couches**']" />
 </div>
 
 </div>
