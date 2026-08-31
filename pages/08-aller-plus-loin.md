@@ -296,8 +296,8 @@ bare: true
 # Des questions ?
 
 <div class="mt-6 text-base opacity-85">
-Et si vous repartez avec une seule chose&nbsp;:<br>
-<span style="color: var(--prusa-orange)">Toujours analyser l'aperçu avant l'export</span>
+Le point capital à retenir&nbsp;:<br>
+<span style="color: var(--prusa-orange)">Toujours analyser l'aperçu avant d'exporter</span>
 </div>
 
 <!--

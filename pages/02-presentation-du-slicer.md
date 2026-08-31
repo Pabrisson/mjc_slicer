@@ -82,7 +82,7 @@ layout: two-cols-header
 
 <div v-click class="regle mt-5 text-sm">
 
-**Le conseil** : rester en Avancé. Passer en Expert seulement pour un réglage précis qu'on est allé chercher volontairement - puis revenir.
+**Le conseil** : Restez en mode Avancé. Passez en mode Expert seulement pour un réglage précis qu'on est allé chercher volontairement.
 
 </div>
 
@@ -109,7 +109,9 @@ s'allonger. L'effet est parlant et prend 10 secondes.
 module: 2 · La présentation du Slicer
 ---
 
-# Le trio qui décide de tout
+# Le trio gagnant
+
+3 profils qui décident de tout
 
 <div class="grid grid-cols-3 gap-4 mt-6">
 
@@ -135,19 +137,19 @@ module: 2 · La présentation du Slicer
 
 <div v-click class="mt-6">
 
-Les trois sont **liées** : changer d'imprimante filtre les profils compatibles. On ne peut pas afficher un profil 0.25 mm avec une buse 0.4 - PrusaSlicer le cache automatiquement.
+Les trois profils sont **liés** : changer d'imprimante filtre les profils compatibles. On ne peut pas afficher un profil 0.25 mm avec une buse 0.4 - _PrusaSlicer le cache automatiquement_.
 
 </div>
 
 <div v-click class="piege mt-4">
 
-**Le piège n°1** : changer de diamètre la buse sur la machine sans changer le profil. Le slicer continue à calculer pour 0.4 mm. Résultat garanti : sous-extrusion ou bouchon.
+**Le piège n°1** : changer le diamètre de la buse sur la machine sans changer le profil. Le slicer continue à calculer pour 0.4 mm. Résultat garanti : sous-extrusion ou bouchon.
 
 </div>
 
 <div v-click class="mt-4 text-sm">
 
-<carbon-warning-alt class="inline opacity-60" /> Un **astérisque orange** devant un nom de profil signifie « modifié, non enregistré ». On le verra souvent aujourd'hui.
+<carbon-warning-alt class="inline opacity-60" /> Un texte _(modifié)_ devant le nom du profil signifie: modifié, mais non enregistré. On le verra souvent aujourd'hui.
 
 </div>
 

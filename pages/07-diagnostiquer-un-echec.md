@@ -88,7 +88,7 @@ module: 7 · Diagnostiquer un échec
 
 <div v-click="1">
 <DefectCard side="slicer"
-  title="Trous sur le dessus"
+  title="Trous sur le dessus (Pillowing)"
   symptom="La surface du dessus est grumeleuse et percée"
   cause="Les coques horizontales n'ont pas assez d'appuis pour se tendre au-dessus du remplissage."
   fix="Ajouter 2 coques horizontales, ou monter le remplissage à 20 %" />

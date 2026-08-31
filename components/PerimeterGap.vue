@@ -50,8 +50,7 @@ const gapPx = computed(() => gap.value * SC)
       <text :x="30 + wallPx + gapPx + 8" y="90" style="font-size:8px" fill="currentColor" fill-opacity="0.6">
         jeu {{ gap.toFixed(2) }} mm
       </text>
-      <text x="30" y="10" style="font-size:8px" fill="var(--prusa-orange, #fa6831)">boîte - mur {{ wall.toFixed(2) }} mm</text>
-      <text x="290" y="10" text-anchor="end" style="font-size:8px" fill="currentColor" fill-opacity="0.6">couvercle</text>
+      <text x="30" y="10" style="font-size:8px" fill="var(--prusa-orange, #fa6831)">mur {{ wall.toFixed(2) }} mm</text>
     </svg>
 
     <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm">

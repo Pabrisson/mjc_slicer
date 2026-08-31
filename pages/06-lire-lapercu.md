@@ -66,7 +66,7 @@ Chaque ligne est cliquable : masquer une catégorie nettoie l'aperçu.
 
 <div v-click class="regle mt-2 mx-2 text-sm">
 
-Deux réflexes suffisent pour commencer : **l'orange est ce qui se verra**, **le vert finira à la poubelle**. Beaucoup de vert ? Il y a peut-être une meilleure orientation.
+Deux réflexes suffisent pour commencer : **l'orange est ce qui se verra**, **le vert finira à la poubelle**.<br>Beaucoup de vert ? Il y a peut-être une meilleure orientation.
 
 </div>
 
@@ -211,7 +211,7 @@ Aucune n'est indispensable au quotidien. La vue **Vitesse** est la plus instruct
 
 <div class="pl-4">
 
-## Le verdict, en bas à droite {v-click}
+### Le verdict, en bas à droite {v-click}
 
 <div v-click class="temoin mt-3">
 
@@ -234,7 +234,7 @@ Aucune n'est indispensable au quotidien. La vue **Vitesse** est la plus instruct
 
 <div class="regle mt-4 text-sm">
 
-**C'est ici qu'on arbitre.** Trois heures de plus pour passer de 0.20 à 0.15 mm : est-ce que ça vaut le coup pour cette pièce-là ? La question n'a de réponse qu'en voyant les deux chiffres.
+**C'est ici qu'on arbitre.** Trois heures de plus pour passer de 0.20 à 0.15 mm : est-ce que ça vaut le coup pour cette pièce-là ?<br>La question n'a de réponse qu'en voyant les chiffres.
 
 </div>
 
@@ -261,7 +261,7 @@ Sur le coût : à l'atelier c'est un sujet concret. Une bobine de 1 kg à 25 €
 module: 6 · Lire l'aperçu
 ---
 
-# Cinq ratés qu'on voit avant d'imprimer
+# Cinq ratés visibles avant d'imprimer
 
 <div class="grid grid-cols-2 gap-x-8 gap-y-3 mt-5 text-sm">
 
@@ -269,22 +269,22 @@ module: 6 · Lire l'aperçu
 
 <div class="temoin">
 <strong style="color: var(--prusa-orange)">1 · Une première couche minuscule</strong><br>
-<span class="text-xs opacity-70">La pièce ne touche le plateau que par quelques centimètres carrés. Elle se décollera. → bordure, ou réorienter.</span>
+<span class="text-xs opacity-70">La pièce ne touche le plateau que par quelques centimètres carrés. Elle se décollera. → mettre une bordure, ou la réorienter.</span>
 </div>
 
 <div class="temoin">
 <strong style="color: var(--prusa-orange)">2 · Un îlot qui flotte</strong><br>
-<span class="text-xs opacity-70">En montant couche par couche, une forme apparaît sans rien en dessous. La buse va extruder dans le vide. → supports.</span>
+<span class="text-xs opacity-70">En montant couche par couche, une forme apparaît sans rien en dessous. La buse va extruder dans le vide. → mettre des supports.</span>
 </div>
 
 <div class="temoin">
 <strong style="color: var(--prusa-orange)">3 · Des murs qui se troublent</strong><br>
-<span class="text-xs opacity-70">En vue Largeur, des traits très fins ou des trous entre périmètres. Le mur du modèle n'est pas un multiple de 0.45 mm. → épaissir à la modélisation.</span>
+<span class="text-xs opacity-70">En vue Largeur, des traits très fins ou des trous entre périmètres. Le mur du modèle n'est pas un multiple de 0.45 mm (Buse Ø 0.4 mm).<br>→ épaissir à la modélisation.</span>
 </div>
 
 <div class="temoin">
-<strong style="color: var(--prusa-orange)">4 · Une couche trop rapide</strong><br>
-<span class="text-xs opacity-70">Tout en haut, une pointe minuscule : chaque couche dure deux secondes, la matière n'a pas le temps de figer. → le profil ralentit tout seul, mais vérifier.</span>
+<strong style="color: var(--prusa-orange)">4 · Une cicatrice sur la face avant</strong><br>
+<span class="text-xs opacity-70">Chaque boucle se referme quelque part. En montant couche par couche, ces points de fermeture s'alignent.<br>→ Position de la couture : Arrière, ou peindre au pinceau.</span>
 </div>
 
 <div class="temoin">
@@ -315,6 +315,12 @@ Le point 3 mérite une démonstration si le temps le permet : un mur de 1.0 mm
 avec des traits de 0.45 mm, ça fait deux traits et 0.1 mm de trou au milieu.
 PrusaSlicer le comble comme il peut. C'est pour ça qu'on modélise les murs en
 multiples de la largeur d'extrusion - 0.9 ou 1.35 mm plutôt que 1.0.
+
+Le point 4 se démontre en dix secondes : monter d'une dizaine de couches au
+curseur vertical, et montrer que les points de fermeture des boucles s'empilent
+toujours au même endroit. Faire circuler une pièce imprimée : la couture se
+trouve au doigt avant de se voir à l'œil. On y reviendra au module 8 avec
+l'outil de peinture (touche P).
 
 Inviter la salle à photographier cette slide. C'est celle qu'ils voudront
 revoir.

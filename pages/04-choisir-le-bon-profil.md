@@ -262,7 +262,7 @@ layout: two-cols-header
 
 <div v-click class="regle mt-5 mx-2 text-sm">
 
-**Changer de filament = changer le profil de filament.** Pas ajuster la température à la main. Le profil PETG modifie la ventilation, la rétraction, le débit et la première couche en même temps.
+**Changer de filament = changer le profil de filament.** Pas besoin d'ajuster la température à la main. Le profil PETG modifie la ventilation, la rétraction, le débit et la première couche en même temps.
 
 </div>
 

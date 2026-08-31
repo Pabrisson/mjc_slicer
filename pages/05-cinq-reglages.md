@@ -46,7 +46,7 @@ Avec une buse de 0.4 mm, un trait fait **0.45 mm de large**. Deux périmètres, 
 
 <div class="regle mt-3">
 
-**La solidité vient des périmètres, pas du remplissage.** Passer de 2 à 3 périmètres coûte quelques minutes et raidit énormément. Passer le remplissage de 15 à 40 % coûte le double du temps pour beaucoup moins.
+**La solidité vient des périmètres, pas du remplissage.** Passer de 2 à 3 périmètres coûte quelques minutes et rigidifie énormément. Passer le remplissage de 15 à 40 % coûte le double du temps et consomme plus de plastique.
 
 </div>
 
@@ -113,7 +113,7 @@ layout: two-cols-header
 
 <div class="regle mt-3">
 
-Besoin de solidité ? **Ajouter un périmètre avant d'ajouter du remplissage.** Toujours.
+Besoin de solidité ?<br>**Ajouter un périmètre avant d'ajouter du remplissage.**
 
 </div>
 
@@ -198,7 +198,7 @@ Moins dessous, parce que la première couche est déjà pleine et écrasée sur 
 
 <div v-click class="piege mt-3 text-sm">
 
-**Des trous et des bosses sur le dessus** - ce qu'on appelle le *pillowing*. La coque horizontale n'a pas assez d'appuis pour se tendre. Deux corrections : **+2 coques horizontales**, ou **remplissage à 20 %** pour rapprocher les points d'appui.
+**Des trous et des bosses sur le dessus** - ce qu'on appelle le *pillowing*. La coque horizontale n'a pas assez d'appuis pour se tendre. Deux corrections : **+ de coques horizontales**, ou **remplissage à 20 %** pour rapprocher les points d'appui.
 
 </div>
 
@@ -236,12 +236,12 @@ layout: two-cols-header
 
 <div class="mb-2 text-xs">
 
-| Réglage                            | Quand                                      |
+| Réglage                            | Quand ?                                    |
 |------------------------------------|--------------------------------------------|
-| **Aucun**                          | Le défaut. Essayer d'abord                 |
+| **Aucun**                          | Par défaut. À essayer d'abord              |
 | **Depuis le plateau**              | Le plus sûr : rien ne s'appuie sur l'objet |
 | **Partout**                        | Nécessaire, mais laisse des marques        |
-| **Seulement pour les générateurs** | Uniquement là où il y as les générateurs   |
+| **Seulement pour les générateurs** | Il y a besoin de cibler un endroit précis  |
 
 </div>
 
@@ -267,7 +267,7 @@ layout: two-cols-header
   brief="Deux figurines identiques : à gauche les supports en grille, un mur plein de matière ; à droite les supports organiques, quelques troncs ramifiés. La différence de matière dépensée doit sauter aux yeux."
   ratio="16/9" maxH="200px" />
 
-<div v-click class="mt-3 font-semibold text-center" style="color: var(--prusa-orange)">
+<div v-click class="mt-3 font-semibold text-center text-sm" style="color: var(--prusa-orange)">
 
 Le meilleur support est celui qu'on n'imprime pas.
 

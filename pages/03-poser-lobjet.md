@@ -32,13 +32,13 @@ layout: two-cols-header
 - <KeyCap k="M" /> **Déplacer** - ou glisser à la souris
 - <KeyCap k="S" /> **Échelle** - en % ou en millimètres
 - <KeyCap k="R" /> **Rotation** - par axe, ou à l'angle exact
-- <KeyCap k="A" /> **Ranger** tous les objets automatiquement
+- <KeyCap k="A" /> **Aligner** tous les objets automatiquement
 
 </v-clicks>
 
 <div v-click class="regle mt-6 text-sm">
 
-Toutes ces valeurs sont saisissables **au clavier** dans le panneau de droite. Pour un angle ou une cote précise, ne jamais tirer à la souris.
+Toutes ces valeurs sont saisissables **au clavier** dans le panneau de droite. Pour un angle ou une cote précise, priviligier le clavier.
 
 </div>
 
@@ -54,17 +54,17 @@ Toutes ces valeurs sont saisissables **au clavier** dans le panneau de droite. P
 
 <div class="piege mb-3 mt-4 text-sm">
 <strong>Le modèle est 25 fois trop petit</strong><br>
-<span class="text-xs">Un STL modélisé en pouces. Mettre l'échelle à <span class="font-mono">2540 %</span>. PrusaSlicer propose souvent la correction : accepter.</span>
+<span class="text-xs">Un STL modélisé en pouces. Solution: Mettre l'échelle à <span class="font-mono">2540 %</span>. PrusaSlicer propose souvent la correction : accepter.</span>
 </div>
 
 <div class="piege mb-3 text-sm">
 <strong>La pièce dépasse du plateau</strong><br>
-<span class="text-xs">Elle passe en gris et le bouton Découper se bloque. Réduire, tourner de 45° sur le plateau, ou couper en deux.</span>
+<span class="text-xs">Elle passe en gris et le bouton Découper se bloque. Solution: Réduire, tourner de 45° sur le plateau, ou couper en deux.</span>
 </div>
 
 <div class="piege text-sm">
 <strong>Dix objets d'un coup</strong><br>
-<span class="text-xs">Plus de déplacements, plus de fils entre les pièces, et si une se décolle elle promène les autres. Commencer par une.</span>
+<span class="text-xs">Plus de déplacements, plus de fils entre les pièces, et si une se décolle elle promène les autres. Solution: Commencer par une.</span>
 </div>
 
 </v-clicks>
@@ -254,7 +254,7 @@ Chaque couche est décalée de **hauteur × tan(angle)**. Comparé à la largeur
 
 <div class="regle mt-3">
 
-**Les ponts sont une exception.** Entre deux appuis, la buse tend un fil et le ventilateur le fige. PrusaSlicer le détecte tout seul et bascule en mode pont. Ça marche jusqu'à 5 cm environ.
+**Les ponts sont une exception.** Entre deux appuis, la buse tend un fil et le ventilateur le fige. PrusaSlicer le détecte tout seul et bascule en mode pont.
 
 </div>
 
@@ -310,7 +310,7 @@ layout: two-cols-header
 <div v-click class="mt-4">
 <Verdict
   :pour="['L\'impression **la plus courte** des trois : 47 mm de haut', 'Peu de couches, donc peu de risques de décollement']"
-  :contre="['La semelle part **en porte-à-faux** : des supports à retirer', 'La grande face prend la texture du plateau', 'Le poids tire dans le sens qui **décolle les couches**']" />
+  :contre="['La semelle part **en porte-à-faux** : des supports à retirer', 'Le poids tire dans le sens qui **décolle les couches**']" />
 </div>
 
 </div>

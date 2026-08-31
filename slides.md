@@ -116,7 +116,7 @@ module: Accueil
 
 <v-clicks>
 
-- **Comprendre** ce qu'un slicer fabrique réellement
+- **Comprendre** comment un slicer fonctionne
 - Le **mode Avancé** de PrusaSlicer, en entier
 - **Orienter** une pièce et savoir pourquoi
 - **Lire un aperçu** et repérer un raté à l'avance
@@ -136,7 +136,7 @@ module: Accueil
 
 <v-clicks>
 
-- **Modèliser** un objet en 3D (c'est une autre formation)
+- **Modèliser** un objet en 3D
 - Le **mode Expert** et ses 350 réglages
 - Le **multi-matériaux** (MMU), la résine, le SLA-SLS
 - Les **autres slicers que PrusaSlicer** - les principes sont les mêmes
@@ -149,7 +149,7 @@ module: Accueil
 
 <div v-click class="regle mx-2">
 
-**Le but de la sortie** : que vous puissiez ouvrir un fichier trouvé sur internet, l'orienter correctement, choisir votre profil, vérifier l'aperçu et lancer.
+**Le but à la sortie** : que vous puissiez ouvrir un fichier trouvé sur internet, l'orienter correctement, choisir votre profil, vérifier l'aperçu et lancer.
 
 </div>
 

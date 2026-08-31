@@ -30,20 +30,20 @@ module: 1 · Pourquoi un slicer ?
 
 <div>
 
-Un **STL**, c'est une liste de triangles. Rien d'autre. Appeler "Maillage" ou "Mesh" en anglais.
+Un **STL**, c'est une liste de triangles. Rien d'autre. Appelé "Maillage" ou "Mesh" en anglais.
 
 <v-clicks>
 
 - Une **coque fermée**, comme une peau de ballon
 - Pas d'épaisseur, pas de matière, pas de vide
 - Aucune notion de **temps**, de **trajet**, de **température**
-- Aucune idée de ce qu'est le haut, le bas, de sa position
+- Aucune idée de ce qu'est le haut, le bas, de sa position sur un plateau d'impréssion
 
 </v-clicks>
 
 <div v-click class="regle mt-4 p-2">
   <span class="text-sm">
-    C'est <strong>le plan d'une maison</strong>, pas la maison. Il décrit une forme, il ne dit pas comment la fabriquer.
+     C'est <strong>la photo sur la boîte de Lego</strong>, pas la notice de montage. Il montre le  résultat, il ne dit pas dans quel ordre poser les briques.
   </span>
 </div>
 
@@ -55,7 +55,7 @@ Un **STL**, c'est une liste de triangles. Rien d'autre. Appeler "Maillage" ou "M
 
 <div v-click class="mt-3 text-sm">
 
-| Format          | Ce qu'il transporte                            |
+| Format          | Ce qu'il contient                              |
 |-----------------|------------------------------------------------|
 | **STL/OBJ/FBX** | Seulement le mesh. Le standard, le plus simple |
 | **3MF**         | Mesh + réglages d'impression                   |
@@ -89,7 +89,7 @@ layout: two-cols-header
 
 # Ce que la machine sait faire
 
-<div class="text-sm opacity-60 -mt-3 mb-4">Quatre verbes. La liste complète.</div>
+<div class="text-sm opacity-60 -mt-3 mb-4">5 verbes à retenir.</div>
 
 ::left::
 
@@ -97,8 +97,9 @@ layout: two-cols-header
 
 <v-clicks depth="2">
 
-1. **Déplacer** la buse par rapport au plateau - <span class="font-mono text-sm">X</span>, <span class="font-mono text-sm">Y</span>, <span class="font-mono text-sm">Z</span>
-2. **Pousser (Extruder) ou tirer (Retracter)** le filament - <span class="font-mono text-sm">E</span>
+1. **Déplacer** la buse par rapport au plateau
+2. **Pousser** _(Extruder)_ le filament
+3. **Tirer** _(Retracter)_ le filament
 3. **Chauffer** la buse et le plateau
 4. **Ventiler** pour figer la matière déposée
 
@@ -158,11 +159,11 @@ module: 1 · Pourquoi un slicer ?
 Le langage que la machine comprend : une ligne, une execution.
 
 ```asm {all|1|2|3|4-5|all}
-G1 Z0.20 F720                    ; monter à la hauteur de la 1re couche (0.20mm)
-G1 X85.5 Y92.3 F7200             ; se positionne à ces coordonnées, sans rien extruder
-G1 X114.5 Y92.3 E0.9612 F1800    ; tracer 29 mm en poussant 0.96 mm de filament
-M104 S215                        ; chauffe la buse : 215 °C
-M106 S255                        ; ventilateur à fond
+G1 Z0.20 F720                    ; Monter à la hauteur de la 1re couche (0.20mm)
+G1 X85.5 Y92.3 F7200             ; Se positionne à ces coordonnées, sans rien extruder
+G1 X114.5 Y92.3 E0.9612 F1800    ; Tracer 29 mm en poussant 0.96 mm de filament
+M104 S215                        ; Chauffe la buse : 215 °C
+M106 S255                        ; Ventilateur à fond
 ```
 
 <div class="grid grid-cols-3 gap-6 mt-4 text-center">
@@ -176,7 +177,7 @@ M106 S255                        ; ventilateur à fond
 <div v-click>
   <carbon-code class="text-4xl mb-0" style="color: var(--prusa-orange)" />
   <div class="text-2xl font-mono mb-2" style="color: var(--prusa-orange)">~1 M</div>
-  <div class="text-sm opacity-60">lignes de G-code<br>pour cet objet</div>
+  <div class="text-sm opacity-60">lignes de G-code<br>pour ce cube</div>
 </div>
 
 <div v-click>
@@ -267,7 +268,7 @@ La machine ne fabrique **jamais un volume**. Elle empile des tranches plates.
 
 <div v-click class="regle mt-4 p-2">
   <span class="text-sm">
-    Ces quatre conséquences sont <strong>les quatre chapitres suivants</strong>. Tout découle de cette seule contrainte.
+    Tout découle des couches, ces quatre conséquences seront expliquées dans <strong>les chapitres suivants</strong>. 
   </span>
 </div>
 
