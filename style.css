@@ -219,3 +219,56 @@ input[type='range'] {
   stroke: var(--prusa-rouge);
   stroke-width: 2.6;
 }
+
+/* ===== Révélations au clic =====
+   Le diaporama compte une centaine de points de clic : chaque révélation doit
+   se voir depuis le fond de la salle sans jamais retarder l'orateur. D'où une
+   durée courte et une courbe qui démarre vite et se pose en douceur, plutôt
+   qu'un fondu linéaire qu'on ne remarque pas.
+
+   Le mouvement par défaut - le contenu monte en apparaissant - est déclaré une
+   fois pour tout le deck par « clickAnimation: up » dans l'en-tête de
+   slides.md. Il ne se règle donc pas ici, seulement sa durée et ses exceptions.
+
+   Ces exceptions suivent les trois familles de blocs du diaporama, jamais une
+   slide en particulier : un même type de bloc entre toujours de la même façon,
+   d'un bout à l'autre de la formation.
+
+   Les sélecteurs sont préfixés par « .slidev-layout » pour passer devant les
+   règles de @slidev/client/styles/vclick.css, qui ont deux classes de
+   spécificité. Le « :has(>) » couvre le cas fréquent où le v-click est posé sur
+   un div qui enveloppe le cartouche au lieu du cartouche lui-même. */
+.slidev-layout .slidev-vclick-target {
+  transition:
+    opacity 280ms ease,
+    translate 280ms cubic-bezier(0.22, 1, 0.36, 1),
+    scale 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Les encadrés à filet gauche entrent par la gauche : c'est le filet coloré
+     qui ouvre la marche, le geste dit « voici la règle » avant qu'on la lise. */
+  .slidev-layout .slidev-vclick-hidden:is(.regle, .piege),
+  .slidev-layout .slidev-vclick-hidden:has(> :is(.regle, .piege)) {
+    translate: -1.25rem 0;
+  }
+
+  /* Les cartouches « objet témoin » arrivent en grille, souvent trois ou cinq
+     d'affilée. Une carte se pose, elle ne monte pas : elle grandit sur place.
+     Le décalage vertical est neutralisé, sinon la grille tangue. */
+  .slidev-layout .slidev-vclick-hidden:is(.temoin),
+  .slidev-layout .slidev-vclick-hidden:has(> .temoin) {
+    translate: 0;
+    scale: 0.96;
+  }
+}
+
+/* Réglage système « réduire les animations » : on garde le fondu, qui porte
+   l'information (ce bloc est arrivé), on retire le déplacement, qui n'est que
+   du confort. */
+@media (prefers-reduced-motion: reduce) {
+  .slidev-layout .slidev-vclick-target.slidev-vclick-hidden {
+    translate: none;
+    scale: none;
+  }
+}

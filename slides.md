@@ -9,6 +9,7 @@ info: |
 author: Atelier impression 3D
 class: text-center
 transition: slide-left
+clickAnimation: up
 mdc: true
 duration: 120min
 drawings:
